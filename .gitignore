@@ -1,2 +1,5 @@
 # Pas de modules node.js
 node_modules/
+
+# Pas de VSC
+.vscode/
