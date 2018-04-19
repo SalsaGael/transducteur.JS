@@ -2,7 +2,8 @@
 
 var CACHE = 'sw-precache';
 var precacheFiles = [
-  '/index.html',
+  './',
+  './index.html',
   './manifest.json',
   './images/logo.png',
   './images/android-chrome-192x192.png',
@@ -29,7 +30,7 @@ var precacheFiles = [
   './css/style.css',
   './app.js',
   './dist/bundle.js',
-  './data.json',
+  './dist/data.json'
 ];
 
 function precache() {
