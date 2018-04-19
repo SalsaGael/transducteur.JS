@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Transducteur</title>
+	<meta name="application-name" content="Transducteur" />
+	<link rel="manifest" href="./manifest.json">
+
+	<link rel="icon" type="image/png" href="/images/favicon.ico" />
+	<link rel="icon" type="image/png" href="/images/logo.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+	<link rel="mask-icon" href="./images/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ebebeb">
+	<meta name="msapplication-TileColor" content="#ebebeb">
+	<meta name="msapplication-config" content="/images/browserconfig.xml">
+	<meta name="msapplication-square70x70logo" content="./win-tiles/small.png" />
+	<meta name="msapplication-square150x150logo" content="./win-tiles/medium.png" />
+	<meta name="msapplication-wide310x150logo" content="./win-tiles/wide.png" />
+	<meta name="msapplication-square310x310logo" content="./win-tiles/large.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no" />
+	<link rel="manifest" href="./manifest.json">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body id='body'>
+
+	<nav class="navbar navbar-light justify-content-between w-100">
+		<span class="navbar-brand">
+			<a href="#">
+				<img id="logo" src="./images/logo.png" alt="Logo App" height="36" class="d-inline-block align-middle">
+			</a>
+		</span>
+		<span id="titleAppShort" class="mr-auto">
+			<a class="h6">Calculette capteur</a>
+		</span>
+		<span id="titleAppMedium" class="mr-auto">
+			<a class="h5">Calculette pour capteur</a>
+		</span>
+		<span id="titleApp" class="mr-auto">
+			<a class="h5">Calculette pour transducteur de mesure</a>
+		</span>
+		<span class="btn-group">
+			<button class="btn btn-sm btn-secondary" type="button" id="tabCalcPuisAct">
+				<a class="btn-reduct">P</a>
+				<a class="btn-origin">Puissance active</a>
+			</button>
+			<button class="btn btn-sm btn-secondary" type="button" id="tabCalcPuisReact">
+				<a class="btn-reduct">Q</a>
+				<a class="btn-origin">Puissance réactive</a>
+			</button>
+			<button class="btn btn-sm btn-secondary" type="button" id="tabCalcTens">
+				<a class="btn-reduct">U²</a>
+				<a class="btn-origin">Tension quadratique</a>
+			</button>
+		</span>
+	</nav>
+
+	<div class="container" id="container">
+	</div>
+
+	<div class="bg-info p-1" id="footer">
+
+		<button class="btn btn-sm btn-dark ml-1 mr-2" onClick="location.href='mailto:gael.piconcely@free.fr?subject=Retour utilisateur'">
+			<i class="fa fa-envelope-open" aria-hidden="true"></i>
+		</button>
+		<button class="btn btn-sm btn-dark mr-2" onClick="location.href='https://twitter.com/salsagael'">
+			<i class="fa fa-twitter" aria-hidden="true"></i>
+		</button>
+		<button class="btn btn-sm btn-dark mr-2" onClick="location.href='https://paypal.me/PICONCELY/2EUR'">
+			<i class="fa fa-paypal" aria-hidden="true"></i>
+		</button>
+
+	</div>
+	<script type="text/javascript" src="./app.js"></script>
+	<script type="text/javascript" src="./dist/bundle.js"></script>
+</body>
+
+</html>

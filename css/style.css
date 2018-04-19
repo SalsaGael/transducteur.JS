@@ -1,0 +1,169 @@
+nav {
+    border-bottom: 2px solid gray;
+}
+ 
+.body {
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+#container {
+    height: calc(100vh - 105px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.intercal {
+    padding-top: 6vh !important;
+    padding-bottom: 1vh;
+}
+
+#footer {
+    border-top: 2px solid gray;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (max-width: 374px) {
+    .intercal {
+        padding-top: 1vh !important;
+    }
+    .input-group-text,
+    .form-control,
+    .custom-select {
+        padding: 4px;
+        height: 32px;
+        font-size: auto;
+    }
+    .custom-select {
+        padding: 0px 0px 4px 4px;
+    }
+    #titleAppShort {
+        display: block;
+    }
+    #titleAppMedium {
+        display: none;
+    }
+    #titleApp {
+        display: none;
+    } 
+    .btn-origin {
+        display: none;
+    }
+    .btn-reduct {
+        display: block;
+    }
+}
+
+/* Medium devices (medium phone, 374px and up) */
+
+@media (min-width: 374px) {
+    .intercal {
+        padding-top: 2vh !important;
+    }
+    #titleAppShort {
+        display: block;
+    }
+    #titleAppMedium {
+        display: none;
+    }    
+    #titleApp {
+        display: none;
+    }
+    .btn-origin {
+        display: none;
+    }
+    .btn-reduct {
+        display: block;
+    }
+}
+
+/* Medium devices (large phone, 400px and up) */
+
+@media (min-width: 400px) {
+    .intercal {
+        padding-top: 3vh !important;
+    }
+    #titleAppShort {
+        display: none;
+    }
+    #titleAppMedium {
+        display: block;
+    }    
+    #titleApp {
+        display: none;
+    }
+    .btn-origin {
+        display: none;
+    }
+    .btn-reduct {
+        display: block;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 720px) {
+    .intercal {
+        padding-top: 4vh !important;
+    }
+    #titleAppShort {
+        display: none;
+    }
+    #titleAppMedium {
+        display: block;
+    }
+    #titleApp {
+        display: none;
+    }
+    .btn-origin {
+        display: block;
+    }
+    .btn-reduct {
+        display: none;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    #titleAppShort {
+        display: none;
+    }
+    #titleAppMedium {
+        display: none;
+    }
+    #titleApp {
+        display: block;
+    }
+    .btn-origin {
+        display: block;
+    }
+    .btn-reduct {
+        display: none;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    #titleAppShort {
+        display: none;
+    }
+    #titleAppMedium {
+        display: none;
+    }
+    #titleApp {
+        display: block;
+    }
+    .btn-origin {
+        display: block;
+    }
+    .btn-reduct {
+        display: none;
+    }
+}
