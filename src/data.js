@@ -23,6 +23,7 @@ const readData = () => {
             .then((data_import) => {
                 data = data_import;
                 data_json = JSON.stringify(data);
+                writeData();
                 renderPuisAct();
                 calcPuisAct();
                 tabCalcPuisAct.classList.add("active");

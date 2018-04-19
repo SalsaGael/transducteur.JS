@@ -3,8 +3,13 @@
 var CACHE = 'sw-precache';
 var precacheFiles = [
   './',
-  './index.html',
   './manifest.json',
+  './index.html',
+  'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+  './css/reset.css',
+  'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css',
+  './css/style.css',
+  './data.json',  
   './images/logo.png',
   './images/android-chrome-192x192.png',
   './images/android-chrome-512x512.png',
@@ -19,18 +24,13 @@ var precacheFiles = [
   './images/favicon-32x32.png',
   './images/safari-pinned-tab.svg',
   './images/favicon.ico',
-  './win-tiles/large.jpg',
-  './win-tiles/medium.jpg',
-  './win-tiles/small.jpg',
-  './win-tiles/wide.jpg',
+  './win-tiles/large.png',
+  './win-tiles/medium.png',
+  './win-tiles/small.png',
+  './win-tiles/wide.png',
   './AppImages/ios/ios-appicon-180-180.png',
-  'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
-  './css/reset.css',
-  'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css',
-  './css/style.css',
   './app.js',
-  './dist/bundle.js',
-  './dist/data.json'
+  './dist/bundle.js'
 ];
 
 function precache() {
