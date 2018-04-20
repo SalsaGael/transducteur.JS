@@ -18,13 +18,12 @@ if (navigator.serviceWorker) {
   if (navigator.serviceWorker.controller) {
     console.log("SW déja présent, inutile de l'enregister")
   } else {
-
     //Register the ServiceWorker
-    navigator.serviceWorker.register('./sw.js', {
-      scope: './'
-    }).then(function (reg) {
-      console.log('SW enregistré pour ce scope :' + reg.scope);
-    });
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js', {
+        scope: './'
+      }).then(function (reg) {console.log('SW enregistré pour ce scope :' + reg.scope)})
+    })
   }
 } else {
   console.log("SW indisponible avec ce Navigateur")
