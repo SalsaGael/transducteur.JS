@@ -38,18 +38,20 @@ const calcTens = ()=> {
         let faMax = smaPlageU / (Math.pow(bvMax, 2) - Math.pow(bvMin, 2));
         let faMoo = (smaPlageU - faMin) / faMax;
         let faTot = Math.sqrt(faMoo);
+        console.log(faMax);
+
 
         // Stocker les datas constantes //
-        data.smaPlageU = parseFloat(smaPlageU);
-        data.KU = parseFloat(KU.value);
-        data.uMin = parseFloat(uMin.value);
-        data.uMax = parseFloat(uMax.value);
-        data.faMin = parseFloat(faMin);
-        data.faMax = parseFloat(faMax);
-        data.faMoo = parseFloat(faMoo);
-        data.faTot = parseFloat(faTot);
-        data.smaMinU = parseFloat(smaMinU.value);
-        data.smaMaxU = parseFloat(smaMaxU.value);
+        data.smaPlageU = Number.parseFloat(smaPlageU);
+        data.KU = Number.parseFloat(KU.value);
+        data.uMin = Number.parseFloat(uMin.value);
+        data.uMax = Number.parseFloat(uMax.value);
+        data.faMin = Number.parseFloat(faMin);
+        data.faMax = Number.parseFloat(faMax);
+        data.faMoo = Number.parseFloat(faMoo);
+        data.faTot = Number.parseFloat(faTot);
+        data.smaMinU = Number.parseFloat(smaMinU.value);
+        data.smaMaxU = Number.parseFloat(smaMaxU.value);
     }
 
     // Sélection famille //
@@ -59,13 +61,13 @@ const calcTens = ()=> {
         if (fuHTS.value == 1) {
             uMin.value = 0;
             uMax.value = Math.round(data.KU * 124 / 10) / 100;
-            data.uMin = parseFloat(uMin.value);
-            data.uMax = parseFloat(uMax.value);
+            data.uMin = Number.parseFloat(uMin.value);
+            data.uMax = Number.parseFloat(uMax.value);
         } else if (fuHTS.value == 2) {
             uMin.value = Math.round(data.KU * 78 / 10) / 100;
             uMax.value = Math.round(data.KU * 121.25 / 10) / 100;
-            data.uMin = parseFloat(uMin.value);
-            data.uMax = parseFloat(uMax.value);
+            data.uMin = Number.parseFloat(uMin.value);
+            data.uMax = Number.parseFloat(uMax.value);
         }
         writeData();
     }
@@ -101,7 +103,7 @@ const calcTens = ()=> {
     document.getElementById("uHT").addEventListener('change', function () {
         calcConst();
 
-        data.uHT = parseFloat(uHT.value * 1000);
+        data.uHT = Number.parseFloat(uHT.value * 1000);
         data.vHT = data.uHT / Math.sqrt(3);
         data.vBT = data.uHT / Math.sqrt(3) / data.KU;
         data.sma = ((data.vBT * data.vBT * data.faMax) + data.faMin);
@@ -119,7 +121,7 @@ const calcTens = ()=> {
     document.getElementById("vHT").addEventListener('change', function () {
         calcConst();
 
-        data.vHT = parseFloat(vHT.value * 1000);
+        data.vHT = Number.parseFloat(vHT.value * 1000);
         data.uHT = data.vHT * Math.sqrt(3);
         data.vBT = data.vHT / data.KU;
         data.sma = ((data.vBT * data.vBT * data.faMax) + data.faMin);
@@ -137,7 +139,7 @@ const calcTens = ()=> {
     document.getElementById("vBT").addEventListener('change', function () {
         calcConst();
 
-        data.vBT = parseFloat(vBT.value);
+        data.vBT = Number.parseFloat(vBT.value);
         data.vHT = data.vBT * data.KU;
         data.uHT = data.vBT * data.KU * Math.sqrt(3);
         data.sma = ((data.vBT * data.vBT * data.faMax) + data.faMin);
@@ -156,7 +158,7 @@ const calcTens = ()=> {
         calcConst();
         
 
-        data.sma = parseFloat(vsma.value) - data.smaMinU;
+        data.sma = Number.parseFloat(vsma.value) - data.smaMinU;
         data.vHT = Math.sqrt((data.sma - data.faMin) / data.faMax) * data.KU;
         data.uHT = Math.sqrt((data.sma - data.faMin) / data.faMax) * data.KU * Math.sqrt(3);
         data.vBT = Math.sqrt((data.sma - data.faMin) / data.faMax);

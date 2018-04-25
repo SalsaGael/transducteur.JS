@@ -36,15 +36,15 @@ const calcPuisAct = ()=> {
 
      // Stocker les datas constantes //
 
-     data.KU = parseFloat(KU.value);
+     data.KU = Number.parseFloat(KU.value);
      data.KI = KI;
      data.KP = KP;
-     data.pTC = parseFloat(pTC.value);
-     data.sTC = parseFloat(sTC.value);
-     data.smaMin = parseFloat(smaMin.value);
-     data.smaMax = parseFloat(smaMax.value);
+     data.pTC = Number.parseFloat(pTC.value);
+     data.sTC = Number.parseFloat(sTC.value);
+     data.smaMin = Number.parseFloat(smaMin.value);
+     data.smaMax = Number.parseFloat(smaMax.value);
      data.smaPlage = (data.smaMax - data.smaMin) / 2;
-     data.paMaxHT = parseFloat(paMaxHT.value);
+     data.paMaxHT = Number.parseFloat(paMaxHT.value);
      data.paMaxHT1 = 606.2 * KP / 1000000;
      data.paMaxHT2 = 744.8 * KP / 1000000;
      data.paMaxHT3 = 866 * KP / 1000000;
@@ -84,7 +84,7 @@ const calcPuisAct = ()=> {
 
   document.getElementById("paMaxHTS").addEventListener('change', function () {
      calcConst();
-     data.paMaxHT = parseFloat(paMaxHTS.value);
+     data.paMaxHT = Number.parseFloat(paMaxHTS.value);
      paMaxHT.value = Math.round(data.paMaxHT * 100) / 100;
      writeData();
      paHT.placeholder = `Entrez la valeur`;

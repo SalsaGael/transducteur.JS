@@ -38,15 +38,15 @@ import {
 
         // Stocker les datas constantes //
 
-        data.KU = parseFloat(KU.value);
+        data.KU = Number.parseFloat(KU.value);
         data.KI = KI;
         data.KP = KP;
-        data.pTC = parseFloat(pTC.value);
-        data.sTC = parseFloat(sTC.value);
-        data.smaMin = parseFloat(smaMin.value);
-        data.smaMax = parseFloat(smaMax.value);
+        data.pTC = Number.parseFloat(pTC.value);
+        data.sTC = Number.parseFloat(sTC.value);
+        data.smaMin = Number.parseFloat(smaMin.value);
+        data.smaMax = Number.parseFloat(smaMax.value);
         data.smaPlage = (data.smaMax - data.smaMin) / 2;
-        data.prMaxHT = parseFloat(prMaxHT.value);
+        data.prMaxHT = Number.parseFloat(prMaxHT.value);
         data.prMaxHT1 = 303.1 * KP / 1000000;
         data.prMaxHT2 = 372.4 * KP / 1000000;
         data.prMaxHT3 = 433 * KP / 1000000;
