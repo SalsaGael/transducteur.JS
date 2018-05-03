@@ -74,7 +74,7 @@ const renderTens = ()=> {
         <label class="input-group-text" for="fuHTS">Famille BT</label>
     </div>
     <select class="custom-select" id='fuHTS'>
-        <option id="fuHT0" value="0">Familles</option>
+        <option id="fuHT0" value="0">Plage réglée</option>
         <option id="fuHT1" value="1">U1 : de 0 à 124 V BT = de 0 à ${Math.round(data.KU * 124 / 10) / 100} kV</option>
         <option id="fuHT2" value="2">U2 : de 78 à 121,25 V BT = de ${Math.round(data.KU * 78 / 10) / 100} à ${Math.round(data.KU * 121.25 / 10) / 100}
             kV

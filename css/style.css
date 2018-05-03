@@ -30,7 +30,7 @@ nav {
 
 @media (max-width: 374px) {
     .intercal {
-        padding-top: 1vh !important;
+        padding-top: auto !important;
     }
     .input-group-text,
     .form-control,

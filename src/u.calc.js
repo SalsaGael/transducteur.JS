@@ -13,6 +13,7 @@ const calcTens = ()=> {
     let vBT = document.getElementById("vBT");
     let vsma = document.getElementById("vsma");
     let fuHTS = document.getElementById("fuHTS");
+    let fuHT0 = document.getElementById("fuHT0");
     let fuHT1 = document.getElementById("fuHT1");
     let fuHT2 = document.getElementById("fuHT2");
     let KU = document.getElementById("KU");
@@ -56,7 +57,11 @@ const calcTens = ()=> {
 
     const calcFam = ()=> {
         calcConst();
-        if (fuHTS.value == 1) {
+        if (fuHTS.value == 0) {
+            fuHT0.innerText = `Plage réglée`;
+            data.uMin = parseFloat(uMin.value);
+            data.uMax = parseFloat(uMax.value);
+        } else if (fuHTS.value == 1) {
             uMin.value = 0;
             uMax.value = Math.round(data.KU * 124 / 10) / 100;
             data.uMin = parseFloat(uMin.value);
@@ -79,6 +84,18 @@ const calcTens = ()=> {
     document.getElementById("fuHTS").addEventListener('change', function () {
         calcFam()
     });
+
+    // Changement de plage réglée //
+
+        uMin.addEventListener('change', function () {
+            fuHTS.value = 0;
+            calcFam()
+        });
+
+        uMax.addEventListener('change', function () {
+            fuHTS.value = 0;            
+            calcFam()
+        });
 
     // Changement rapport TT //
 

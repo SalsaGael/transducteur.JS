@@ -83,15 +83,15 @@ const renderPuisAct = ()=> {
         <label class="input-group-text" for="paMaxHTS">Famille BT</label>
     </div>
     <select class="custom-select" id='paMaxHTS'>
-        <option id="paMaxHT0" value="${data.paMaxHT}">Plage réglée</option>
-        <option id="paMaxHT1" value="${data.paMaxHT1}">P1 602,2</option>
-        <option id="paMaxHT2" value="${data.paMaxHT2}">P2 744,8</option>
-        <option id="paMaxHT3" value="${data.paMaxHT3}">P3 866</option>
-        <option id="paMaxHT4" value="${data.paMaxHT4}">P4 1039</option>
-        <option id="paMaxHT5" value="${data.paMaxHT5}">P5 1212</option>
-        <option id="paMaxHT6" value="${data.paMaxHT6}">P6 1464</option>
-        <option id="paMaxHT8" value="${data.paMaxHT8}">P8 1732</option>
-        <option id="paMaxHT9" value="${data.paMaxHT9}">P9 2148</option>
+        <option id="paMaxHT0" value="0">Plage réglée</option>
+        <option id="paMaxHT1" value="1">P1 602,2</option>
+        <option id="paMaxHT2" value="2">P2 744,8</option>
+        <option id="paMaxHT3" value="3">P3 866</option>
+        <option id="paMaxHT4" value="4">P4 1039</option>
+        <option id="paMaxHT5" value="5">P5 1212</option>
+        <option id="paMaxHT6" value="6">P6 1464</option>
+        <option id="paMaxHT8" value="8">P8 1732</option>
+        <option id="paMaxHT9" value="9">P9 2148</option>
     </select>
     <div class="input-group-apppend">
         <span class="input-group-text">± W</span>

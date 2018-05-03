@@ -83,16 +83,16 @@ const renderPuisReact = ()=> {
         <label class="input-group-text" for="prMaxHTS">Famille BT</label>
     </div>
     <select class="custom-select" id='prMaxHTS'>
-        <option id="prMaxHT0" value="${data.prMaxHT}">Plage réglée</option>
-        <option id="prMaxHT1" value="${data.prMaxHT1}">Q1 303,1</option>
-        <option id="prMaxHT2" value="${data.prMaxHT2}">Q2 372,4</option>
-        <option id="prMaxHT3" value="${data.prMaxHT3}">Q3 433</option>
-        <option id="prMaxHT4" value="${data.prMaxHT4}">Q4 519,6</option>
-        <option id="prMaxHT5" value="${data.prMaxHT5}">Q5 602,2</option>
-        <option id="prMaxHT6" value="${data.prMaxHT6}">Q6 848,7</option>
-        <option id="prMaxHT7" value="${data.prMaxHT7}">Q7 731,8</option>
-        <option id="prMaxHT8" value="${data.prMaxHT8}">Q8 866</option>
-        <option id="prMaxHT9" value="${data.prMaxHT9}">Q9 1074</option>
+        <option id="prMaxHT0" value="0">Plage réglée</option>
+        <option id="prMaxHT1" value="1">Q1 303,1</option>
+        <option id="prMaxHT2" value="2">Q2 372,4</option>
+        <option id="prMaxHT3" value="3">Q3 433</option>
+        <option id="prMaxHT4" value="4">Q4 519,6</option>
+        <option id="prMaxHT5" value="5">Q5 602,2</option>
+        <option id="prMaxHT6" value="6">Q6 848,7</option>
+        <option id="prMaxHT7" value="7">Q7 731,8</option>
+        <option id="prMaxHT8" value="8">Q8 866</option>
+        <option id="prMaxHT9" value="9">Q9 1074</option>
     </select>
     <div class="input-group-apppend">
         <span class="input-group-text">± var</span>
