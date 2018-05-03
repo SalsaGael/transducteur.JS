@@ -57,25 +57,35 @@ const calcPuisReact = () => {
         data.prMaxHT9 = 1074 * KP / 1000000;
 
         if (data.prMaxHTS == 0) {
-            data.prMaxHT = prMaxHT.value
+            data.prMaxHT = prMaxHT.value;
+            prMaxHTS.value = 0;
         } else if (data.prMaxHTS == 1) {
-            data.prMaxHT = data.prMaxHT1
+            data.prMaxHT = data.prMaxHT1;
+            prMaxHTS.value = 1;
         } else if (data.prMaxHTS == 2) {
-            data.prMaxHT = data.prMaxHT2
+            data.prMaxHT = data.prMaxHT2;
+            prMaxHTS.value = 2;
         } else if (data.prMaxHTS == 3) {
-            data.prMaxHT = data.prMaxHT3
+            data.prMaxHT = data.prMaxHT3;
+            prMaxHTS.value = 3;
         } else if (data.prMaxHTS == 4) {
-            data.prMaxHT = data.prMaxHT4
+            data.prMaxHT = data.prMaxHT4;
+            prMaxHTS.value = 4;
         } else if (data.prMaxHTS == 5) {
-            data.prMaxHT = data.prMaxHT5
+            data.prMaxHT = data.prMaxHT5;
+            prMaxHTS.value = 5;
         } else if (data.prMaxHTS == 6) {
-            data.prMaxHT = data.prMaxHT6
+            data.prMaxHT = data.prMaxHT6;
+            prMaxHTS.value = 6;
         } else if (data.prMaxHTS == 7) {
-            data.prMaxHT = data.prMaxHT7
+            data.prMaxHT = data.prMaxHT7;
+            prMaxHTS.value = 7;
         } else if (data.prMaxHTS == 8) {
-            data.prMaxHT = data.prMaxHT8
+            data.prMaxHT = data.prMaxHT8;
+            prMaxHTS.value = 8;
         } else if (data.prMaxHTS == 9) {
-            data.prMaxHT = data.prMaxHT9
+            data.prMaxHT = data.prMaxHT9;
+            prMaxHTS.value = 9;
         };
         writeData();
 

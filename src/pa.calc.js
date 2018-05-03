@@ -55,25 +55,35 @@ const calcPuisAct = () => {
         data.paMaxHT9 = 2148 * KP / 1000000;
 
         if (data.paMaxHTS == 0) {
-            data.paMaxHT = paMaxHT.value
+            data.paMaxHT = paMaxHT.value;
+            paMaxHTS.value = 0;
         } else if (data.paMaxHTS == 1) {
-            data.paMaxHT = data.paMaxHT1
+            data.paMaxHT = data.paMaxHT1;
+            paMaxHTS.value = 1;
         } else if (data.paMaxHTS == 2) {
-            data.paMaxHT = data.paMaxHT2
+            data.paMaxHT = data.paMaxHT2;
+            paMaxHTS.value = 2;
         } else if (data.paMaxHTS == 3) {
-            data.paMaxHT = data.paMaxHT3
+            data.paMaxHT = data.paMaxHT3;
+            paMaxHTS.value = 3;
         } else if (data.paMaxHTS == 4) {
-            data.paMaxHT = data.paMaxHT4
+            data.paMaxHT = data.paMaxHT4;
+            paMaxHTS.value = 4;
         } else if (data.paMaxHTS == 5) {
-            data.paMaxHT = data.paMaxHT5
+            data.paMaxHT = data.paMaxHT5;
+            dpaMaxHTS.value = 5;
         } else if (data.paMaxHTS == 6) {
-            data.paMaxHT = data.paMaxHT6
+            data.paMaxHT = data.paMaxHT6;
+            paMaxHTS.value = 6;
         } else if (data.paMaxHTS == 7) {
-            data.paMaxHT = data.paMaxHT7
+            data.paMaxHT = data.paMaxHT7;
+            paMaxHTS.value = 7;
         } else if (data.paMaxHTS == 8) {
-            data.paMaxHT = data.paMaxHT8
+            data.paMaxHT = data.paMaxHT8;
+            paMaxHTS.value = 8;
         } else if (data.paMaxHTS == 9) {
-            data.paMaxHT = data.paMaxHT9
+            data.paMaxHT = data.paMaxHT9;
+            paMaxHTS.value = 9;
         };
         writeData();
     }

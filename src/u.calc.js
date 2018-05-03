@@ -4,7 +4,7 @@ import {
     data,
 } from './data.js'
 
-const calcTens = ()=> { 
+const calcTens = () => {
 
     // Liaison avec le DOM //
 
@@ -26,7 +26,7 @@ const calcTens = ()=> {
 
     function calcConst() {
 
-         // Calculer les constantes //
+        // Calculer les constantes //
 
         let smaPlageU = smaMaxU.value - smaMinU.value;
         let vMin = uMin.value / Math.sqrt(3);
@@ -55,18 +55,20 @@ const calcTens = ()=> {
 
     // Sélection famille //
 
-    const calcFam = ()=> {
+    const calcFam = () => {
         calcConst();
-        if (fuHTS.value == 0) {
-            fuHT0.innerText = `Plage réglée`;
+        if (data.fuHTS == 0) {
+            fuHTS.value = 0;
             data.uMin = parseFloat(uMin.value);
             data.uMax = parseFloat(uMax.value);
-        } else if (fuHTS.value == 1) {
+        } else if (data.fuHTS == 1) {
+            fuHTS.value = 1;
             uMin.value = 0;
             uMax.value = Math.round(data.KU * 124 / 10) / 100;
             data.uMin = parseFloat(uMin.value);
             data.uMax = parseFloat(uMax.value);
-        } else if (fuHTS.value == 2) {
+        } else if (data.fuHTS == 2) {
+            fuHTS.value = 2;
             uMin.value = Math.round(data.KU * 78 / 10) / 100;
             uMax.value = Math.round(data.KU * 121.25 / 10) / 100;
             data.uMin = parseFloat(uMin.value);
@@ -75,34 +77,33 @@ const calcTens = ()=> {
         writeData();
     }
 
+    calcFam();
 
-    
-// Evenements //
+    // Evenements //
 
     // Changement de Famille //
 
-    document.getElementById("fuHTS").addEventListener('change', function () {
+    fuHTS.addEventListener('change', function () {
+        data.fuHTS = fuHTS.value;
         calcFam()
     });
 
     // Changement de plage réglée //
 
-        uMin.addEventListener('change', function () {
-            fuHTS.value = 0;
-            calcFam()
-        });
+    uMin.addEventListener('change', function () {
+        data.fuHTS = 0;
+        calcFam()
+    });
 
-        uMax.addEventListener('change', function () {
-            fuHTS.value = 0;            
-            calcFam()
-        });
+    uMax.addEventListener('change', function () {
+        data.fuHTS = 0;
+        calcFam()
+    });
 
     // Changement rapport TT //
 
-    document.getElementById("KU").addEventListener('change', function () {
+    KU.addEventListener('change', function () {
         calcFam();
-        fuHT1.innerText = `U1 : de 0 à 124 V BT = de 0 à ${Math.round(data.KU * 124 / 10) / 100} kV`;
-        fuHT2.innerText = `U2 : de 78 à 121,25 V BT = de ${Math.round(data.KU * 78 / 10) / 100} à ${Math.round(data.KU * 121.25 / 10) / 100} kV`;
         vHT.placeholder = `Entrez la valeur`;
         vHT.value = ``;
         uHT.placeholder = `Entrez la valeur`;
@@ -115,7 +116,7 @@ const calcTens = ()=> {
 
     // Calcul et affichage des valeurs de smaPlageUs //
 
-    document.getElementById("uHT").addEventListener('change', function () {
+    uHT.addEventListener('change', function () {
         calcConst();
 
         data.uHT = parseFloat(uHT.value * 1000);
@@ -127,13 +128,13 @@ const calcTens = ()=> {
         vHT.value = Math.round(data.vHT / 10) / 100;
         vBT.placeholder = Math.round(data.vBT * 100) / 100;
         vBT.value = Math.round(data.vBT * 100) / 100;
-        vsma.placeholder = Math.round((data.sma + data.smaMinU)* 100) / 100;
-        vsma.value = Math.round((data.sma + data.smaMinU)* 100) / 100;
+        vsma.placeholder = Math.round((data.sma + data.smaMinU) * 100) / 100;
+        vsma.value = Math.round((data.sma + data.smaMinU) * 100) / 100;
 
         writeData();
     });
 
-    document.getElementById("vHT").addEventListener('change', function () {
+    vHT.addEventListener('change', function () {
         calcConst();
 
         data.vHT = parseFloat(vHT.value * 1000);
@@ -145,13 +146,13 @@ const calcTens = ()=> {
         uHT.value = Math.round(data.uHT / 10) / 100;
         vBT.placeholder = Math.round(data.vBT * 100) / 100;
         vBT.value = Math.round(data.vBT * 100) / 100;
-        vsma.placeholder = Math.round((data.sma + data.smaMinU)* 100) / 100;
-        vsma.value = Math.round((data.sma + data.smaMinU)* 100) / 100;
+        vsma.placeholder = Math.round((data.sma + data.smaMinU) * 100) / 100;
+        vsma.value = Math.round((data.sma + data.smaMinU) * 100) / 100;
 
         writeData();
     });
 
-    document.getElementById("vBT").addEventListener('change', function () {
+    vBT.addEventListener('change', function () {
         calcConst();
 
         data.vBT = parseFloat(vBT.value);
@@ -163,15 +164,15 @@ const calcTens = ()=> {
         vHT.value = Math.round(data.vHT / 10) / 100;
         uHT.placeholder = Math.round(data.uHT * 1000) / 1000;
         uHT.value = Math.round(data.uHT / 10) / 100;
-        vsma.placeholder = Math.round((data.sma + data.smaMinU)* 100) / 100;
-        vsma.value = Math.round((data.sma + data.smaMinU)* 100) / 100;
+        vsma.placeholder = Math.round((data.sma + data.smaMinU) * 100) / 100;
+        vsma.value = Math.round((data.sma + data.smaMinU) * 100) / 100;
 
         writeData();
     });
 
-    document.getElementById("vsma").addEventListener('change', function () {
+    vsma.addEventListener('change', function () {
         calcConst();
-        
+
 
         data.sma = parseFloat(vsma.value) - data.smaMinU;
         data.vHT = Math.sqrt((data.sma - data.faMin) / data.faMax) * data.KU;
