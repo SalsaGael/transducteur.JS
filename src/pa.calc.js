@@ -25,6 +25,11 @@ const calcPuisAct = () => {
     const smaMin = document.getElementById("smaMin");
     const smaMax = document.getElementById("smaMax");
 
+    smaMin.value = data.smaMin;
+    smaMax.value = data.smaMax;
+    KU.value = data.KU;
+    sTC.value = data.sTC;
+    paMaxHTS.value = data.paMaxHTS;
 
     // Calcul des constantes //
 

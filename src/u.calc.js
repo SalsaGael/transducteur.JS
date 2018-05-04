@@ -22,6 +22,11 @@ const calcTens = () => {
     let smaMinU = document.getElementById("smaMinU");
     let smaMaxU = document.getElementById("smaMaxU");
 
+    smaMinU.value = data.smaMinU;
+    smaMaxU.value = data.smaMaxU;
+    fuHTS.value = data.fuHTS;
+    KU.value = data.KU;
+
     // Calcul des constantes //
 
     function calcConst() {
