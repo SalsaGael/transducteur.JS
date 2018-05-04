@@ -33,7 +33,7 @@ const calcPuisAct = () => {
 
     // Calcul des constantes //
 
-    function calcConst() {
+    const calcConst = ()=> {
 
         // Calculer les constantes //
 
@@ -99,32 +99,32 @@ const calcPuisAct = () => {
 
     // Effacement Caculette //
 
-    const effCalc = () => {
+    const razAff = () => {
         paHT.placeholder = `Entrez la valeur`;
         paHT.value = ``;
         iaBT.placeholder = `Entrez la valeur`;
         iaBT.value = ``;
         sma.placeholder = `Entrez la valeur`;
         sma.value = ``;
+        calcConst();
+        paMaxHT.value = Math.round(data.paMaxHT * 100) / 100;
     }
 
     // DOM Actualisation //
 
-    function ActuaDOM() {
-        calcConst();
-        paMaxHT.value = Math.round(data.paMaxHT * 100) / 100;
-        effCalc();
-    }
+    KU.addEventListener('change', razAff);
 
-    KU.addEventListener('change', ActuaDOM);
+    pTC.addEventListener('change', razAff);
 
-    pTC.addEventListener('change', ActuaDOM);
+    sTC.addEventListener('change', razAff);
 
-    sTC.addEventListener('change', ActuaDOM);
+    smaMin.addEventListener('change', razAff);
+
+    smaMax.addEventListener('change', razAff);
 
     paMaxHTS.addEventListener('change', function () {
         data.paMaxHTS = parseFloat(paMaxHTS.value);
-        ActuaDOM();
+        razAff();
     });
 
     // Changement de plage réglée //
@@ -132,7 +132,7 @@ const calcPuisAct = () => {
     paMaxHT.addEventListener('change', function () {
         paMaxHTS.value = 0;
         data.paMaxHTS = 0;
-        ActuaDOM();
+        razAff();
     });
 
     // Calcul et affichage des valeurs de sorties //

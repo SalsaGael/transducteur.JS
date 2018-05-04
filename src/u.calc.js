@@ -60,7 +60,7 @@ const calcTens = () => {
 
     // Sélection famille //
 
-    const calcFam = () => {
+    const razAff = () => {
         calcConst();
         if (data.fuHTS == 0) {
             fuHTS.value = 0;
@@ -79,36 +79,6 @@ const calcTens = () => {
             data.uMin = parseFloat(uMin.value);
             data.uMax = parseFloat(uMax.value);
         }
-        writeData();
-    }
-
-    calcFam();
-
-    // Evenements //
-
-    // Changement de Famille //
-
-    fuHTS.addEventListener('change', function () {
-        data.fuHTS = fuHTS.value;
-        calcFam()
-    });
-
-    // Changement de plage réglée //
-
-    uMin.addEventListener('change', function () {
-        data.fuHTS = 0;
-        calcFam()
-    });
-
-    uMax.addEventListener('change', function () {
-        data.fuHTS = 0;
-        calcFam()
-    });
-
-    // Changement rapport TT //
-
-    KU.addEventListener('change', function () {
-        calcFam();
         vHT.placeholder = `Entrez la valeur`;
         vHT.value = ``;
         uHT.placeholder = `Entrez la valeur`;
@@ -117,9 +87,49 @@ const calcTens = () => {
         vsma.value = ``;
         vBT.placeholder = `Entrez la valeur`;
         vBT.value = ``;
+        writeData();
+    }
+
+    razAff();
+
+    // Evenements //
+
+    // Changement de Famille //
+
+    fuHTS.addEventListener('change', function () {
+        data.fuHTS = fuHTS.value;
+        razAff()
     });
 
-    // Calcul et affichage des valeurs de smaPlageUs //
+    // Changement de plage réglée //
+
+    uMin.addEventListener('change', function () {
+        data.fuHTS = 0;
+        razAff()
+    });
+
+    uMax.addEventListener('change', function () {
+        data.fuHTS = 0;
+        razAff()
+    });
+
+    // Changement rapport TT //
+
+    KU.addEventListener('change', function () {
+        razAff();
+    });
+
+    // Changement des valeurs Min Max de sortie mA //
+
+    smaMinU.addEventListener('change', function () {
+        razAff();
+    });
+
+    smaMaxU.addEventListener('change', function () {
+        razAff();
+    });
+
+    // Calcul et affichage des valeurs  //
 
     uHT.addEventListener('change', function () {
         calcConst();

@@ -35,7 +35,7 @@ const calcPuisReact = () => {
     
     // Calcul des constantes //
 
-    function calcConst() {
+   const calcConst = ()=> {
 
         // Calculer les constantes //
 
@@ -103,30 +103,32 @@ const calcPuisReact = () => {
 
     // Effacement Caculette //
 
-    const effCalc = () => {
-        paHT.placeholder = `Entrez la valeur`;
-        paHT.value = ``;
-        iaBT.placeholder = `Entrez la valeur`;
-        iaBT.value = ``;
+    const razAff = () => {
+        prHT.placeholder = `Entrez la valeur`;
+        prHT.value = ``;
+        irBT.placeholder = `Entrez la valeur`;
+        irBT.value = ``;
         sma.placeholder = `Entrez la valeur`;
         sma.value = ``;
+        calcConst();
+        prMaxHT.value = Math.round(data.prMaxHT * 100) / 100;
     }
 
     // DOM Actualisation //
 
-    function ActuaDOM() {
-        calcConst();
-        prMaxHT.value = Math.round(data.prMaxHT * 100) / 100;
-        effCalc();
-    }
+    KU.addEventListener('change', razAff);
 
-    KU.addEventListener('change', ActuaDOM);
+    pTC.addEventListener('change', razAff);
 
-    pTC.addEventListener('change', ActuaDOM);
+    sTC.addEventListener('change', razAff);
+
+    smaMin.addEventListener('change', razAff);
+
+    smaMax.addEventListener('change', razAff);
 
     prMaxHTS.addEventListener('change', function () {
         data.prMaxHTS = parseFloat(prMaxHTS.value);
-        ActuaDOM();
+        razAff();
     });
 
     // Changement de plage réglée //
@@ -134,18 +136,18 @@ const calcPuisReact = () => {
     prMaxHT.addEventListener('change', function () {
         prMaxHTS.value = 0;
         data.prMaxHTS = 0;
-        ActuaDOM();
+        razAff();
     });
 
     // Calcul et affichage des valeurs de sorties //
 
-    document.getElementById("prHT").addEventListener('change', function () {
+    prHT.addEventListener('change', function () {
         calcConst();
         prMaxHTS.value = 0;
         writeData();
     });
 
-    document.getElementById("irBT").addEventListener('change', function () {
+    irBT.addEventListener('change', function () {
         calcConst();
         data.irBT = irBT.value;
         data.prHT = data.irBT * data.KI * (data.KU * 100) * Math.sqrt(3);
@@ -158,7 +160,7 @@ const calcPuisReact = () => {
         writeData();
     });
 
-    document.getElementById("sma").addEventListener('change', function () {
+    sma.addEventListener('change', function () {
         calcConst();
         data.sma = sma.value - ((data.smaMin + data.smaMax) / 2);
         data.prHT = (data.sma) * (data.prMaxHT * 1000000 / data.smaPlage);
