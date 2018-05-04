@@ -143,10 +143,17 @@ const calcPuisReact = () => {
 
     prHT.addEventListener('change', function () {
         calcConst();
-        prMaxHTS.value = 0;
+        data.prHT = prHT.value * 1000000;
+        data.irBT = data.prHT / (data.KU * 100 * Math.sqrt(3)) / data.KI;
+        data.sma = (data.prHT / ((data.prMaxHT * 1000000) / data.smaPlage)) + ((data.smaMin + data.smaMax) / 2);
+
+        irBT.placeholder = Math.round(data.irBT * 1000) / 1000;
+        irBT.value = Math.round(data.irBT * 1000) / 1000;
+        sma.placeholder = Math.round(data.sma * 100) / 100;
+        sma.value = Math.round(data.sma * 100) / 100;
         writeData();
     });
-
+    
     irBT.addEventListener('change', function () {
         calcConst();
         data.irBT = irBT.value;
