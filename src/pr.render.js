@@ -60,7 +60,7 @@ const renderPuisReact = ()=> {
     <div class="input-group-prepend">
         <label class="input-group-text" for="pTC">Courant primaire TC</label>
     </div>
-    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='pTC' type="number" value="${data.pTC}"
+    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='pTC' type="number" value=""
     />
     <div class="input-group-apppend">
         <label class="input-group-text" for="pTC">A</label>
@@ -101,8 +101,7 @@ const renderPuisReact = ()=> {
     <div class="input-group-prepend">
         <label class="input-group-text" for="prMaxHT">Plage HT réglée</label>
     </div>
-    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='prMaxHT' type="number" value="${Math.round(data.prMaxHT * 100) / 100}"
-    />
+    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='prMaxHT' type="number" value="" />
     <div class="input-group-apppend">
         <span class="input-group-text">± Mvar</span>
     </div>

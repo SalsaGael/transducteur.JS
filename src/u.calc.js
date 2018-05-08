@@ -22,10 +22,12 @@ const calcTens = () => {
     let smaMinU = document.getElementById("smaMinU");
     let smaMaxU = document.getElementById("smaMaxU");
 
+    KU.value = data.KU;
+    fuHTS.value = data.fuHTS;
+    uMin.value = data.uMin;
+    uMax.value = data.uMax;
     smaMinU.value = data.smaMinU;
     smaMaxU.value = data.smaMaxU;
-    fuHTS.value = data.fuHTS;
-    KU.value = data.KU;
 
     // Calcul des constantes //
 
@@ -89,8 +91,6 @@ const calcTens = () => {
         vBT.value = ``;
         writeData();
     }
-
-    razAff();
 
     // Evenements //
 

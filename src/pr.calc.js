@@ -26,12 +26,13 @@ const calcPuisReact = () => {
     const smaMin = document.getElementById("smaMin");
     const smaMax = document.getElementById("smaMax");
 
-    smaMin.value = data.smaMin;
-    smaMax.value = data.smaMax;
     KU.value = data.KU;
+    pTC.value = data.pTC;
     sTC.value = data.sTC;
     prMaxHTS.value = data.prMaxHTS;
-    console.log( data.prMaxHTS);
+    prMaxHT.value = data.prMaxHT;
+    smaMin.value = data.smaMin;
+    smaMax.value = data.smaMax;
     
     // Calcul des constantes //
 

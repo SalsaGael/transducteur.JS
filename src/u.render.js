@@ -75,8 +75,8 @@ const renderTens = ()=> {
     </div>
     <select class="custom-select" id='fuHTS'>
         <option id="fuHT0" value="0">Plage réglée</option>
-        <option id="fuHT1" value="1">U1 : de 0 à 124 V BT</option>
-        <option id="fuHT2" value="2">U2 : de 78 à 121,25 V BT</option>
+        <option id="fuHT1" value="1">U1 : de 0 à 124√3 V BT</option>
+        <option id="fuHT2" value="2">U2 : de 78√3 à 121,25√3 V BT</option>
     </select>
 </div>
 
@@ -84,10 +84,10 @@ const renderTens = ()=> {
     <div class="input-group-prepend">
         <label class="input-group-text" for="uMin">Plage HT réglée</label>
     </div>
-    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='uMin' type="number" value="${data.uMin}"
+    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='uMin' type="number" value=""
     />
     <span class="input-group-text" for="uMax">à</span>
-    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='uMax' type="number" value="${data.uMax}"
+    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='uMax' type="number" value=""
     />
     <div class="input-group-append">
         <span class="input-group-text">kV</span>
