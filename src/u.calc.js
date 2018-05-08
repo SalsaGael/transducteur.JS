@@ -1,6 +1,5 @@
 import {
     writeData,
-    readData,
     data,
 } from './data.js'
 
@@ -94,7 +93,7 @@ const calcTens = () => {
     // Changement de Famille //
 
     fuHT.addEventListener('change', function () {
-        data.fuHT = fuHT.value;
+        data.fuHT = parseFloat(fuHT.value);
         razAff()
     });
 

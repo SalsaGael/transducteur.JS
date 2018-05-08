@@ -4,14 +4,14 @@ import {
 	data,
 } from './data.js'
 
-readData();
-
 import renderPuisAct from './pa.render.js';
 import calcPuisAct from './pa.calc.js';
 import renderPuisReact from './pr.render.js';
 import calcPuisReact from './pr.calc.js';
 import renderTens from './u.render.js';
 import calcTens from './u.calc.js';
+
+readData();
 
 // Affichage a cibler //
 
@@ -80,6 +80,8 @@ switch (data.start) {
 		tabCalcTens.classList.add("active");
 		break;
 };
+
+// Ajout Share API pour les navigateurs compatibles //
 
 const footer = document.querySelector('#footer');
 

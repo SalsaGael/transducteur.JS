@@ -23,8 +23,6 @@ const calcPuisReact = () => {
     prMaxHT.value = Math.round(data.prMaxHT * 100) / 100;
     smaMin.value = data.smaMin;
     smaMax.value = data.smaMax;
-    console.log(data.fprHT);
-    console.log(fprHT.value);
     
     // Calcul des constantes //
 
@@ -118,7 +116,7 @@ const calcPuisReact = () => {
     smaMax.addEventListener('change', razAff);
 
     fprHT.addEventListener('change', function () {
-        data.fprHT = fprHT.value;
+        data.fprHT = parseFloat(fprHT.value);
         razAff();
     });
 
@@ -166,7 +164,6 @@ const calcPuisReact = () => {
         irBT.placeholder = Math.round(data.irBT * 1000) / 1000;
         irBT.value = Math.round(data.irBT * 1000) / 1000;
     });
-    console.log(fprHT.value)
-};
+ };
 
 export default calcPuisReact;

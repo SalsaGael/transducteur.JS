@@ -2,9 +2,7 @@ import renderPuisAct from './pa.render.js';
 import calcPuisAct from './pa.calc.js';
 
 let data_json;
-let data = {
-
-};
+let data;
 
 const writeData = () => {
     data_json = JSON.stringify(data);
@@ -18,7 +16,7 @@ const readData = () => {
         data_json = localStorage.getItem("donnees");
         data = JSON.parse(data_json);
     } else {
-        fetch('./data.json')
+        fetch('https://piconcely.fr/transducteur/data.json')
             .then((resp) => {return resp.json()})
             .then((data_import) => {
                 data = data_import;

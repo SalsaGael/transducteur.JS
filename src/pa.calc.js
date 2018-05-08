@@ -4,7 +4,7 @@ import {
 } from './data.js';
 
 const calcPuisAct = () => {
-
+    
     const paHT = document.getElementById("paHT");
     const iaBT = document.getElementById("iaBT");
     const sma = document.getElementById("sma");
@@ -15,7 +15,7 @@ const calcPuisAct = () => {
     const fpaHT = document.getElementById("fpaHT");
     const smaMin = document.getElementById("smaMin");
     const smaMax = document.getElementById("smaMax");
-
+    
     KU.value = data.KU;
     pTC.value = data.pTC;
     sTC.value = data.sTC;
@@ -114,7 +114,7 @@ const calcPuisAct = () => {
     smaMax.addEventListener('change', razAff);
 
     fpaHT.addEventListener('change', function () {
-        data.fpaHT = fpaHT.value;
+        data.fpaHT = parseFloat(fpaHT.value);
         razAff();
     });
 
