@@ -75,8 +75,8 @@ const renderTens = ()=> {
     </div>
     <select class="custom-select" id='fuHTS'>
         <option id="fuHT0" value="0">Plage réglée</option>
-        <option id="fuHT1" value="1">U1 : de 0 à 124√3 V BT</option>
-        <option id="fuHT2" value="2">U2 : de 78√3 à 121,25√3 V BT</option>
+        <option id="fuHT1" value="1">U1 : 0 à 124√3 V BT</option>
+        <option id="fuHT2" value="2">U2 : 78√3 à 121,25√3 V BT</option>
     </select>
 </div>
 
