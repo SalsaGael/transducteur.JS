@@ -45,7 +45,7 @@ const renderPuisAct = ()=> {
     <div class="input-group-prepend">
         <label for "KU" class="input-group-text">Tension HT / BT</label>
     </div>
-    <select id='KU' class="custom-select" value="" />
+    <select id='KU' class="custom-select" value="">
     <option value="200">20 kV / 100 V</option>
     <option value="450">45 kV / 100 V</option>
     <option value="600">60 kV / 100V</option>
@@ -79,18 +79,18 @@ const renderPuisAct = ()=> {
 
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label class="input-group-text" for="paMaxHTS">Famille BT</label>
+        <label class="input-group-text" for="fpaHTS">Famille BT</label>
     </div>
-    <select class="custom-select" id='paMaxHTS' value="" >
-        <option id="paMaxHT0" value="0">Plage réglée</option>
-        <option id="paMaxHT1" value="1">P1 602,2</option>
-        <option id="paMaxHT2" value="2">P2 744,8</option>
-        <option id="paMaxHT3" value="3">P3 866</option>
-        <option id="paMaxHT4" value="4">P4 1039</option>
-        <option id="paMaxHT5" value="5">P5 1212</option>
-        <option id="paMaxHT6" value="6">P6 1464</option>
-        <option id="paMaxHT8" value="8">P8 1732</option>
-        <option id="paMaxHT9" value="9">P9 2148</option>
+    <select id="fpaHTS" class="custom-select" value="">
+        <option value="0">Plage réglée</option>
+        <option value="1">P1 602,2</option>
+        <option value="2">P2 744,8</option>
+        <option value="3">P3 866</option>
+        <option value="4">P4 1039</option>
+        <option value="5">P5 1212</option>
+        <option value="6">P6 1464</option>
+        <option value="8">P8 1732</option>
+        <option value="9">P9 2148</option>
     </select>
     <div class="input-group-apppend">
         <span class="input-group-text">± W</span>
@@ -110,7 +110,7 @@ const renderPuisAct = ()=> {
     <div class="input-group-prepend">
         <label for "smaMin" class="input-group-text">Sortie procédé</label>
     </div>
-    <select id='smaMin' class="custom-select" value="" />
+    <select id='smaMin' class="custom-select" value="">
     <option value="-20">-20</option>
     <option value="-10">-10</option>
     <option value="-5">-5</option>
@@ -118,7 +118,7 @@ const renderPuisAct = ()=> {
     <option value="4">4</option>
     </select>
     <span class="input-group-text">à</span>
-    <select id='smaMax' class="custom-select" value="" />
+    <select id='smaMax' class="custom-select" value="">
     <option value="5">5</option>
     <option value="10">10</option>
     <option value="20">20</option>

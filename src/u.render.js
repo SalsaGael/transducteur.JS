@@ -54,7 +54,7 @@ const renderTens = ()=> {
     <div class="input-group-prepend">
         <label for "KU" class="input-group-text">HT / BT</label>
     </div>
-    <select id='KU' class="custom-select" value="" />
+    <select id="KU" class="custom-select" value="">
     <option value="200">20 kV / 100 V</option>
     <option value="450">45 kV / 100 V</option>
     <option value="600">60 kV / 100V</option>
@@ -73,10 +73,10 @@ const renderTens = ()=> {
     <div class="input-group-prepend">
         <label class="input-group-text" for="fuHTS">Famille BT</label>
     </div>
-    <select class="custom-select" id='fuHTS'>
-        <option id="fuHT0" value="0">Plage réglée</option>
-        <option id="fuHT1" value="1">U1 : 0 à 124√3 V BT</option>
-        <option id="fuHT2" value="2">U2 : 78√3 à 121,25√3 V BT</option>
+    <select id="fuHTS" class="custom-select" value="">
+        <option value="0">Plage réglée</option>
+        <option value="1">U1 : 0 à 124 √3 V</option>
+        <option value="2">U2 : 78 √3 à 121,25 √3 V</option>
     </select>
 </div>
 
@@ -84,11 +84,9 @@ const renderTens = ()=> {
     <div class="input-group-prepend">
         <label class="input-group-text" for="uMin">Plage HT réglée</label>
     </div>
-    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='uMin' type="number" value=""
-    />
+    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="uMin" type="number" value=""/>
     <span class="input-group-text" for="uMax">à</span>
-    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='uMax' type="number" value=""
-    />
+    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="uMax" type="number" value=""/>
     <div class="input-group-append">
         <span class="input-group-text">kV</span>
     </div>
@@ -98,12 +96,12 @@ const renderTens = ()=> {
     <div class="input-group-prepend">
         <label for "smaMinU" class="input-group-text">Sortie procédé</label>
     </div>
-    <select id='smaMinU' class="custom-select" value="" />
+    <select id='smaMinU' class="custom-select" value="">
     <option value="0">0</option>
     <option value="4">4</option>
     </select>
     <span for "smaMaxU" class="input-group-text">à</span>
-    <select id='smaMaxU' class="custom-select" value="" />
+    <select id='smaMaxU' class="custom-select" value="">
     <option value="5">5</option>
     <option value="10">10</option>
     <option value="20">20</option>

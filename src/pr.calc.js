@@ -12,25 +12,15 @@ const calcPuisReact = () => {
     const pTC = document.getElementById("pTC");
     const sTC = document.getElementById("sTC");
     const prMaxHT = document.getElementById("prMaxHT");
-    const prMaxHTS = document.getElementById("prMaxHTS");
-    const prMaxHT0 = document.getElementById("prMaxHT0");
-    const prMaxHT1 = document.getElementById("prMaxHT1");
-    const prMaxHT2 = document.getElementById("prMaxHT2");
-    const prMaxHT3 = document.getElementById("prMaxHT3");
-    const prMaxHT4 = document.getElementById("prMaxHT4");
-    const prMaxHT5 = document.getElementById("prMaxHT5");
-    const prMaxHT6 = document.getElementById("prMaxHT6");
-    const prMaxHT7 = document.getElementById("prMaxHT7");
-    const prMaxHT8 = document.getElementById("prMaxHT8");
-    const prMaxHT9 = document.getElementById("prMaxHT9");
+    const fprHTS = document.getElementById("fprHTS");
     const smaMin = document.getElementById("smaMin");
     const smaMax = document.getElementById("smaMax");
 
     KU.value = data.KU;
     pTC.value = data.pTC;
     sTC.value = data.sTC;
-    prMaxHTS.value = data.prMaxHTS;
-    prMaxHT.value = data.prMaxHT;
+    fprHTS.value = data.fprHTS;
+    prMaxHT.value = Math.round(data.prMaxHT * 100) / 100;
     smaMin.value = data.smaMin;
     smaMax.value = data.smaMax;
     
@@ -63,42 +53,40 @@ const calcPuisReact = () => {
         data.prMaxHT8 = 866 * KP / 1000000;
         data.prMaxHT9 = 1074 * KP / 1000000;
 
-        if (data.prMaxHTS == 0) {
+        if (data.fprHTS == 0) {
             data.prMaxHT = prMaxHT.value;
-            prMaxHTS.value = 0;
-        } else if (data.prMaxHTS == 1) {
+            fprHTS.value = 0;
+        } else if (data.fprHTS == 1) {
             data.prMaxHT = data.prMaxHT1;
-            prMaxHTS.value = 1;
-        } else if (data.prMaxHTS == 2) {
+            fprHTS.value = 1;
+        } else if (data.fprHTS == 2) {
             data.prMaxHT = data.prMaxHT2;
-            prMaxHTS.value = 2;
-        } else if (data.prMaxHTS == 3) {
+            fprHTS.value = 2;
+        } else if (data.fprHTS == 3) {
             data.prMaxHT = data.prMaxHT3;
-            prMaxHTS.value = 3;
-        } else if (data.prMaxHTS == 4) {
+            fprHTS.value = 3;
+        } else if (data.fprHTS == 4) {
             data.prMaxHT = data.prMaxHT4;
-            prMaxHTS.value = 4;
-        } else if (data.prMaxHTS == 5) {
+            fprHTS.value = 4;
+        } else if (data.fprHTS == 5) {
             data.prMaxHT = data.prMaxHT5;
-            prMaxHTS.value = 5;
-        } else if (data.prMaxHTS == 6) {
+            fprHTS.value = 5;
+        } else if (data.fprHTS == 6) {
             data.prMaxHT = data.prMaxHT6;
-            prMaxHTS.value = 6;
-        } else if (data.prMaxHTS == 7) {
+            fprHTS.value = 6;
+        } else if (data.fprHTS == 7) {
             data.prMaxHT = data.prMaxHT7;
-            prMaxHTS.value = 7;
-        } else if (data.prMaxHTS == 8) {
+            fprHTS.value = 7;
+        } else if (data.fprHTS == 8) {
             data.prMaxHT = data.prMaxHT8;
-            prMaxHTS.value = 8;
-        } else if (data.prMaxHTS == 9) {
+            fprHTS.value = 8;
+        } else if (data.fprHTS == 9) {
             data.prMaxHT = data.prMaxHT9;
-            prMaxHTS.value = 9;
+            fprHTS.value = 9;
         };
         writeData();
 
     }
-
-    calcConst();
 
     // Actualisation du DOM sur changement de valeurs paramétres //
 
@@ -127,16 +115,15 @@ const calcPuisReact = () => {
 
     smaMax.addEventListener('change', razAff);
 
-    prMaxHTS.addEventListener('change', function () {
-        data.prMaxHTS = parseFloat(prMaxHTS.value);
+    fprHTS.addEventListener('change', function () {
+        data.fprHTS = fprHTS.value;
         razAff();
     });
 
     // Changement de plage réglée //
 
     prMaxHT.addEventListener('change', function () {
-        prMaxHTS.value = 0;
-        data.prMaxHTS = 0;
+        data.fprHTS = 0;
         razAff();
     });
 
@@ -152,7 +139,6 @@ const calcPuisReact = () => {
         irBT.value = Math.round(data.irBT * 1000) / 1000;
         sma.placeholder = Math.round(data.sma * 100) / 100;
         sma.value = Math.round(data.sma * 100) / 100;
-        writeData();
     });
     
     irBT.addEventListener('change', function () {
@@ -165,7 +151,6 @@ const calcPuisReact = () => {
         prHT.value = Math.round(data.prHT / 10000) / 100;
         sma.placeholder = Math.round(data.sma * 100) / 100;
         sma.value = Math.round(data.sma * 100) / 100;
-        writeData();
     });
 
     sma.addEventListener('change', function () {
@@ -178,7 +163,6 @@ const calcPuisReact = () => {
         prHT.value = Math.round(data.prHT / 10000) / 100;
         irBT.placeholder = Math.round(data.irBT * 1000) / 1000;
         irBT.value = Math.round(data.irBT * 1000) / 1000;
-        writeData();
     });
 };
 

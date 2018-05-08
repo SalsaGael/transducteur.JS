@@ -13,9 +13,6 @@ const calcTens = () => {
     let vBT = document.getElementById("vBT");
     let vsma = document.getElementById("vsma");
     let fuHTS = document.getElementById("fuHTS");
-    let fuHT0 = document.getElementById("fuHT0");
-    let fuHT1 = document.getElementById("fuHT1");
-    let fuHT2 = document.getElementById("fuHT2");
     let KU = document.getElementById("KU");
     let uMin = document.getElementById("uMin");
     let uMax = document.getElementById("uMax");
@@ -145,8 +142,6 @@ const calcTens = () => {
         vBT.value = Math.round(data.vBT * 100) / 100;
         vsma.placeholder = Math.round((data.sma + data.smaMinU) * 100) / 100;
         vsma.value = Math.round((data.sma + data.smaMinU) * 100) / 100;
-
-        writeData();
     });
 
     vHT.addEventListener('change', function () {
@@ -163,8 +158,6 @@ const calcTens = () => {
         vBT.value = Math.round(data.vBT * 100) / 100;
         vsma.placeholder = Math.round((data.sma + data.smaMinU) * 100) / 100;
         vsma.value = Math.round((data.sma + data.smaMinU) * 100) / 100;
-
-        writeData();
     });
 
     vBT.addEventListener('change', function () {
@@ -181,13 +174,10 @@ const calcTens = () => {
         uHT.value = Math.round(data.uHT / 10) / 100;
         vsma.placeholder = Math.round((data.sma + data.smaMinU) * 100) / 100;
         vsma.value = Math.round((data.sma + data.smaMinU) * 100) / 100;
-
-        writeData();
     });
 
     vsma.addEventListener('change', function () {
         calcConst();
-
 
         data.sma = parseFloat(vsma.value) - data.smaMinU;
         data.vHT = Math.sqrt((data.sma - data.faMin) / data.faMax) * data.KU;
@@ -200,8 +190,6 @@ const calcTens = () => {
         uHT.value = Math.round(data.uHT / 10) / 100;
         vBT.placeholder = Math.round(data.vBT * 100) / 100;
         vBT.value = Math.round(data.vBT * 100) / 100;
-
-        writeData();
     });
 };
 

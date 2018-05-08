@@ -12,24 +12,15 @@ const calcPuisAct = () => {
     const pTC = document.getElementById("pTC");
     const sTC = document.getElementById("sTC");
     const paMaxHT = document.getElementById("paMaxHT");
-    const paMaxHTS = document.getElementById("paMaxHTS");
-    const paMaxHT0 = document.getElementById("paMaxHT0");
-    const paMaxHT1 = document.getElementById("paMaxHT1");
-    const paMaxHT2 = document.getElementById("paMaxHT2");
-    const paMaxHT3 = document.getElementById("paMaxHT3");
-    const paMaxHT4 = document.getElementById("paMaxHT4");
-    const paMaxHT5 = document.getElementById("paMaxHT5");
-    const paMaxHT6 = document.getElementById("paMaxHT6");
-    const paMaxHT8 = document.getElementById("paMaxHT8");
-    const paMaxHT9 = document.getElementById("paMaxHT9");
+    const fpaHTS = document.getElementById("fpaHTS");
     const smaMin = document.getElementById("smaMin");
     const smaMax = document.getElementById("smaMax");
 
     KU.value = data.KU;
     pTC.value = data.pTC;
     sTC.value = data.sTC;
-    paMaxHTS.value = data.paMaxHTS;
-    paMaxHT.value = data.paMaxHT;
+    fpaHTS.value = data.fpaHTS;
+    paMaxHT.value = Math.round(data.paMaxHT * 100) / 100;
     smaMin.value = data.smaMin;
     smaMax.value = data.smaMax;
     
@@ -61,41 +52,39 @@ const calcPuisAct = () => {
         data.paMaxHT8 = 1732 * KP / 1000000;
         data.paMaxHT9 = 2148 * KP / 1000000;
 
-        if (data.paMaxHTS == 0) {
+        if (data.fpaHTS == 0) {
             data.paMaxHT = paMaxHT.value;
-            paMaxHTS.value = 0;
-        } else if (data.paMaxHTS == 1) {
+            fpaHTS.value = 0;
+        } else if (data.fpaHTS == 1) {
             data.paMaxHT = data.paMaxHT1;
-            paMaxHTS.value = 1;
-        } else if (data.paMaxHTS == 2) {
+            fpaHTS.value = 1;
+        } else if (data.fpaHTS == 2) {
             data.paMaxHT = data.paMaxHT2;
-            paMaxHTS.value = 2;
-        } else if (data.paMaxHTS == 3) {
+            fpaHTS.value = 2;
+        } else if (data.fpaHTS == 3) {
             data.paMaxHT = data.paMaxHT3;
-            paMaxHTS.value = 3;
-        } else if (data.paMaxHTS == 4) {
+            fpaHTS.value = 3;
+        } else if (data.fpaHTS == 4) {
             data.paMaxHT = data.paMaxHT4;
-            paMaxHTS.value = 4;
-        } else if (data.paMaxHTS == 5) {
+            fpaHTS.value = 4;
+        } else if (data.fpaHTS == 5) {
             data.paMaxHT = data.paMaxHT5;
-            dpaMaxHTS.value = 5;
-        } else if (data.paMaxHTS == 6) {
+            dfpaHTS.value = 5;
+        } else if (data.fpaHTS == 6) {
             data.paMaxHT = data.paMaxHT6;
-            paMaxHTS.value = 6;
-        } else if (data.paMaxHTS == 7) {
+            fpaHTS.value = 6;
+        } else if (data.fpaHTS == 7) {
             data.paMaxHT = data.paMaxHT7;
-            paMaxHTS.value = 7;
-        } else if (data.paMaxHTS == 8) {
+            fpaHTS.value = 7;
+        } else if (data.fpaHTS == 8) {
             data.paMaxHT = data.paMaxHT8;
-            paMaxHTS.value = 8;
-        } else if (data.paMaxHTS == 9) {
+            fpaHTS.value = 8;
+        } else if (data.fpaHTS == 9) {
             data.paMaxHT = data.paMaxHT9;
-            paMaxHTS.value = 9;
+            fpaHTS.value = 9;
         };
         writeData();
     }
-
-    calcConst();
 
     // Actualisation du DOM sur changement de valeurs paramétres //
 
@@ -124,16 +113,15 @@ const calcPuisAct = () => {
 
     smaMax.addEventListener('change', razAff);
 
-    paMaxHTS.addEventListener('change', function () {
-        data.paMaxHTS = parseFloat(paMaxHTS.value);
+    fpaHTS.addEventListener('change', function () {
+        data.fpaHTS = fpaHTS.value;
         razAff();
     });
 
     // Changement de plage réglée //
 
     paMaxHT.addEventListener('change', function () {
-        paMaxHTS.value = 0;
-        data.paMaxHTS = 0;
+        data.fpaHTS = 0;
         razAff();
     });
 
@@ -149,7 +137,6 @@ const calcPuisAct = () => {
         iaBT.value = Math.round(data.iaBT * 1000) / 1000;
         sma.placeholder = Math.round(data.sma * 100) / 100;
         sma.value = Math.round(data.sma * 100) / 100;
-        writeData();
     });
 
     iaBT.addEventListener('change', function () {
@@ -162,7 +149,6 @@ const calcPuisAct = () => {
         paHT.value = Math.round(data.paHT / 10000) / 100;
         sma.placeholder = Math.round(data.sma * 100) / 100;
         sma.value = Math.round(data.sma * 100) / 100;
-        writeData();
     });
 
     sma.addEventListener('change', function () {
@@ -175,7 +161,6 @@ const calcPuisAct = () => {
         paHT.value = Math.round(data.paHT / 10000) / 100;
         iaBT.placeholder = Math.round(data.iaBT * 1000) / 1000;
         iaBT.value = Math.round(data.iaBT * 1000) / 1000;
-        writeData();
     });
 };
 
