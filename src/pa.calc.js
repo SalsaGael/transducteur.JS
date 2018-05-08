@@ -12,14 +12,14 @@ const calcPuisAct = () => {
     const pTC = document.getElementById("pTC");
     const sTC = document.getElementById("sTC");
     const paMaxHT = document.getElementById("paMaxHT");
-    const fpaHTS = document.getElementById("fpaHTS");
+    const fpaHT = document.getElementById("fpaHT");
     const smaMin = document.getElementById("smaMin");
     const smaMax = document.getElementById("smaMax");
 
     KU.value = data.KU;
     pTC.value = data.pTC;
     sTC.value = data.sTC;
-    fpaHTS.value = data.fpaHTS;
+    fpaHT.value = data.fpaHT;
     paMaxHT.value = Math.round(data.paMaxHT * 100) / 100;
     smaMin.value = data.smaMin;
     smaMax.value = data.smaMax;
@@ -52,36 +52,36 @@ const calcPuisAct = () => {
         data.paMaxHT8 = 1732 * KP / 1000000;
         data.paMaxHT9 = 2148 * KP / 1000000;
 
-        if (data.fpaHTS == 0) {
+        if (data.fpaHT == 0) {
             data.paMaxHT = paMaxHT.value;
-            fpaHTS.value = 0;
-        } else if (data.fpaHTS == 1) {
+            fpaHT.value = 0;
+        } else if (data.fpaHT == 1) {
             data.paMaxHT = data.paMaxHT1;
-            fpaHTS.value = 1;
-        } else if (data.fpaHTS == 2) {
+            fpaHT.value = 1;
+        } else if (data.fpaHT == 2) {
             data.paMaxHT = data.paMaxHT2;
-            fpaHTS.value = 2;
-        } else if (data.fpaHTS == 3) {
+            fpaHT.value = 2;
+        } else if (data.fpaHT == 3) {
             data.paMaxHT = data.paMaxHT3;
-            fpaHTS.value = 3;
-        } else if (data.fpaHTS == 4) {
+            fpaHT.value = 3;
+        } else if (data.fpaHT == 4) {
             data.paMaxHT = data.paMaxHT4;
-            fpaHTS.value = 4;
-        } else if (data.fpaHTS == 5) {
+            fpaHT.value = 4;
+        } else if (data.fpaHT == 5) {
             data.paMaxHT = data.paMaxHT5;
-            dfpaHTS.value = 5;
-        } else if (data.fpaHTS == 6) {
+            dfpaHT.value = 5;
+        } else if (data.fpaHT == 6) {
             data.paMaxHT = data.paMaxHT6;
-            fpaHTS.value = 6;
-        } else if (data.fpaHTS == 7) {
+            fpaHT.value = 6;
+        } else if (data.fpaHT == 7) {
             data.paMaxHT = data.paMaxHT7;
-            fpaHTS.value = 7;
-        } else if (data.fpaHTS == 8) {
+            fpaHT.value = 7;
+        } else if (data.fpaHT == 8) {
             data.paMaxHT = data.paMaxHT8;
-            fpaHTS.value = 8;
-        } else if (data.fpaHTS == 9) {
+            fpaHT.value = 8;
+        } else if (data.fpaHT == 9) {
             data.paMaxHT = data.paMaxHT9;
-            fpaHTS.value = 9;
+            fpaHT.value = 9;
         };
         writeData();
     }
@@ -113,15 +113,15 @@ const calcPuisAct = () => {
 
     smaMax.addEventListener('change', razAff);
 
-    fpaHTS.addEventListener('change', function () {
-        data.fpaHTS = fpaHTS.value;
+    fpaHT.addEventListener('change', function () {
+        data.fpaHT = fpaHT.value;
         razAff();
     });
 
     // Changement de plage réglée //
 
     paMaxHT.addEventListener('change', function () {
-        data.fpaHTS = 0;
+        data.fpaHT = 0;
         razAff();
     });
 

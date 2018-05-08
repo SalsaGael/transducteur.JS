@@ -12,17 +12,19 @@ const calcPuisReact = () => {
     const pTC = document.getElementById("pTC");
     const sTC = document.getElementById("sTC");
     const prMaxHT = document.getElementById("prMaxHT");
-    const fprHTS = document.getElementById("fprHTS");
+    const fprHT = document.getElementById("fprHT");
     const smaMin = document.getElementById("smaMin");
     const smaMax = document.getElementById("smaMax");
 
     KU.value = data.KU;
     pTC.value = data.pTC;
     sTC.value = data.sTC;
-    fprHTS.value = data.fprHTS;
+    fprHT.value = data.fprHT;
     prMaxHT.value = Math.round(data.prMaxHT * 100) / 100;
     smaMin.value = data.smaMin;
     smaMax.value = data.smaMax;
+    console.log(data.fprHT);
+    console.log(fprHT.value);
     
     // Calcul des constantes //
 
@@ -53,36 +55,36 @@ const calcPuisReact = () => {
         data.prMaxHT8 = 866 * KP / 1000000;
         data.prMaxHT9 = 1074 * KP / 1000000;
 
-        if (data.fprHTS == 0) {
+        if (data.fprHT == 0) {
             data.prMaxHT = prMaxHT.value;
-            fprHTS.value = 0;
-        } else if (data.fprHTS == 1) {
+            fprHT.value = 0;
+        } else if (data.fprHT == 1) {
             data.prMaxHT = data.prMaxHT1;
-            fprHTS.value = 1;
-        } else if (data.fprHTS == 2) {
+            fprHT.value = 1;
+        } else if (data.fprHT == 2) {
             data.prMaxHT = data.prMaxHT2;
-            fprHTS.value = 2;
-        } else if (data.fprHTS == 3) {
+            fprHT.value = 2;
+        } else if (data.fprHT == 3) {
             data.prMaxHT = data.prMaxHT3;
-            fprHTS.value = 3;
-        } else if (data.fprHTS == 4) {
+            fprHT.value = 3;
+        } else if (data.fprHT == 4) {
             data.prMaxHT = data.prMaxHT4;
-            fprHTS.value = 4;
-        } else if (data.fprHTS == 5) {
+            fprHT.value = 4;
+        } else if (data.fprHT == 5) {
             data.prMaxHT = data.prMaxHT5;
-            fprHTS.value = 5;
-        } else if (data.fprHTS == 6) {
+            fprHT.value = 5;
+        } else if (data.fprHT == 6) {
             data.prMaxHT = data.prMaxHT6;
-            fprHTS.value = 6;
-        } else if (data.fprHTS == 7) {
+            fprHT.value = 6;
+        } else if (data.fprHT == 7) {
             data.prMaxHT = data.prMaxHT7;
-            fprHTS.value = 7;
-        } else if (data.fprHTS == 8) {
+            fprHT.value = 7;
+        } else if (data.fprHT == 8) {
             data.prMaxHT = data.prMaxHT8;
-            fprHTS.value = 8;
-        } else if (data.fprHTS == 9) {
+            fprHT.value = 8;
+        } else if (data.fprHT == 9) {
             data.prMaxHT = data.prMaxHT9;
-            fprHTS.value = 9;
+            fprHT.value = 9;
         };
         writeData();
 
@@ -115,15 +117,15 @@ const calcPuisReact = () => {
 
     smaMax.addEventListener('change', razAff);
 
-    fprHTS.addEventListener('change', function () {
-        data.fprHTS = fprHTS.value;
+    fprHT.addEventListener('change', function () {
+        data.fprHT = fprHT.value;
         razAff();
     });
 
     // Changement de plage réglée //
 
     prMaxHT.addEventListener('change', function () {
-        data.fprHTS = 0;
+        data.fprHT = 0;
         razAff();
     });
 
@@ -164,6 +166,7 @@ const calcPuisReact = () => {
         irBT.placeholder = Math.round(data.irBT * 1000) / 1000;
         irBT.value = Math.round(data.irBT * 1000) / 1000;
     });
+    console.log(fprHT.value)
 };
 
 export default calcPuisReact;

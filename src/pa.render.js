@@ -79,9 +79,9 @@ const renderPuisAct = ()=> {
 
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label class="input-group-text" for="fpaHTS">Famille BT</label>
+        <label class="input-group-text" for="fpaHT">Famille BT</label>
     </div>
-    <select id="fpaHTS" class="custom-select" value="">
+    <select id="fpaHT" class="custom-select" value="">
         <option value="0">Plage réglée</option>
         <option value="1">P1 602,2</option>
         <option value="2">P2 744,8</option>

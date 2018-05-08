@@ -12,7 +12,7 @@ const calcTens = () => {
     let uHT = document.getElementById("uHT");
     let vBT = document.getElementById("vBT");
     let vsma = document.getElementById("vsma");
-    let fuHTS = document.getElementById("fuHTS");
+    let fuHT = document.getElementById("fuHT");
     let KU = document.getElementById("KU");
     let uMin = document.getElementById("uMin");
     let uMax = document.getElementById("uMax");
@@ -20,7 +20,7 @@ const calcTens = () => {
     let smaMaxU = document.getElementById("smaMaxU");
 
     KU.value = data.KU;
-    fuHTS.value = data.fuHTS;
+    fuHT.value = data.fuHT;
     uMin.value = data.uMin;
     uMax.value = data.uMax;
     smaMinU.value = data.smaMinU;
@@ -61,18 +61,18 @@ const calcTens = () => {
 
     const razAff = () => {
         calcConst();
-        if (data.fuHTS == 0) {
-            fuHTS.value = 0;
+        if (data.fuHT == 0) {
+            fuHT.value = 0;
             data.uMin = parseFloat(uMin.value);
             data.uMax = parseFloat(uMax.value);
-        } else if (data.fuHTS == 1) {
-            fuHTS.value = 1;
+        } else if (data.fuHT == 1) {
+            fuHT.value = 1;
             uMin.value = 0;
             uMax.value = Math.round(data.KU * 124 / 10) / 100;
             data.uMin = parseFloat(uMin.value);
             data.uMax = parseFloat(uMax.value);
-        } else if (data.fuHTS == 2) {
-            fuHTS.value = 2;
+        } else if (data.fuHT == 2) {
+            fuHT.value = 2;
             uMin.value = Math.round(data.KU * 78 / 10) / 100;
             uMax.value = Math.round(data.KU * 121.25 / 10) / 100;
             data.uMin = parseFloat(uMin.value);
@@ -93,20 +93,20 @@ const calcTens = () => {
 
     // Changement de Famille //
 
-    fuHTS.addEventListener('change', function () {
-        data.fuHTS = fuHTS.value;
+    fuHT.addEventListener('change', function () {
+        data.fuHT = fuHT.value;
         razAff()
     });
 
     // Changement de plage réglée //
 
     uMin.addEventListener('change', function () {
-        data.fuHTS = 0;
+        data.fuHT = 0;
         razAff()
     });
 
     uMax.addEventListener('change', function () {
-        data.fuHTS = 0;
+        data.fuHT = 0;
         razAff()
     });
 

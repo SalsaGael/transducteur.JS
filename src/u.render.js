@@ -71,9 +71,9 @@ const renderTens = ()=> {
 
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label class="input-group-text" for="fuHTS">Famille BT</label>
+        <label class="input-group-text" for="fuHT">Famille BT</label>
     </div>
-    <select id="fuHTS" class="custom-select" value="">
+    <select id="fuHT" class="custom-select" value="">
         <option value="0">Plage réglée</option>
         <option value="1">U1 : 0 à 124 √3 V</option>
         <option value="2">U2 : 78 √3 à 121,25 √3 V</option>

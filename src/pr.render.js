@@ -79,9 +79,9 @@ const renderPuisReact = ()=> {
 
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label class="input-group-text" for="fprHTS">Famille BT</label>
+        <label class="input-group-text" for="fprHT">Famille BT</label>
     </div>
-    <select id="fprHTS" class="custom-select" value="">
+    <select id="fprHT" class="custom-select" value="">
         <option value="0">Plage réglée</option>
         <option value="1">Q1 303,1</option>
         <option value="2">Q2 372,4</option>
