@@ -148,10 +148,121 @@ let themeWindows = checkForDarkTheme();
 const nav = document.querySelector('#nav');
 const body = document.querySelector('#body');
 
-	if (themeWindows == "dark") {
-		body.classList.add("darkmodebg");
-		nav.classList.add("darkmodecolor");
-	} else {
-		body.classList.remove("darkmodebg");
-		nav.classList.remove("darkmodecolor");
+if (themeWindows == "dark") {
+	body.classList.add("darkmodebg");
+	nav.classList.add("darkmodecolor");
+} else {
+	body.classList.remove("darkmodebg");
+	nav.classList.remove("darkmodecolor");
+}
+
+
+// TitleBar Color W10 //
+
+function changeAppTitleBarColor(backgroundColor, foregroundColor, buttonBackgroundColor, buttonForegroundColor,
+	buttonHoverBackgroundColor, buttonHoverForegroundColor, buttonPressedBackgroundColor,
+	buttonPressedForegroundColor, inactiveBackgroundColor, inactiveForegroundColor,
+	buttonInactiveBackgroundColor, buttonInactiveForegroundColor) {
+
+	if (window.Windows && Windows.UI.ViewManagement.ApplicationView) {
+		var customColors = {
+			backgroundColor: backgroundColor,
+			foregroundColor: foregroundColor,
+			buttonBackgroundColor: buttonBackgroundColor,
+			buttonForegroundColor: buttonForegroundColor,
+			buttonHoverBackgroundColor: buttonHoverBackgroundColor,
+			buttonHoverForegroundColor: buttonHoverForegroundColor,
+			buttonPressedBackgroundColor: buttonPressedBackgroundColor,
+			buttonPressedForegroundColor: buttonPressedForegroundColor,
+			inactiveBackgroundColor: inactiveBackgroundColor,
+			inactiveForegroundColor: inactiveForegroundColor,
+			buttonInactiveBackgroundColor: buttonInactiveBackgroundColor,
+			buttonInactiveForegroundColor: buttonInactiveForegroundColor
+		};
+
+		var titleBar = Windows.UI.ViewManagement.ApplicationView.getForCurrentView().titleBar;
+		titleBar.backgroundColor = customColors.backgroundColor;
+		titleBar.foregroundColor = customColors.foregroundColor;
+		titleBar.inactiveBackgroundColor = customColors.inactiveBackgroundColor;
+		titleBar.inactiveForegroundColor = customColors.inactiveForegroundColor;
 	}
+}
+
+var backgroundColor = {
+	a: 255,
+	r: 23,
+	g: 162,
+	b: 184
+};
+var foregroundColor = {
+	a: 255,
+	r: 0,
+	g: 0,
+	b: 0
+};
+var inactiveBackgroundColor = {
+	a: 255,
+	r: 23,
+	g: 162,
+	b: 184
+};
+var inactiveForegroundColor = {
+	a: 255,
+	r: 100,
+	g: 100,
+	b: 100
+};
+
+
+var buttonBackgroundColor = {
+	a: 255,
+	r: 23,
+	g: 162,
+	b: 184
+};
+var buttonForegroundColor = {
+	a: 255,
+	r: 0,
+	g: 0,
+	b: 0
+};
+var buttonHoverBackgroundColor = {
+	a: 255,
+	r: 23,
+	g: 162,
+	b: 184
+};
+var buttonHoverForegroundColor = {
+	a: 255,
+	r: 255,
+	g: 255,
+	b: 255
+};
+
+var buttonPressedBackgroundColor = {
+	a: 255,
+	r: 23,
+	g: 162,
+	b: 184
+};
+var buttonPressedForegroundColor = {
+	a: 255,
+	r: 0,
+	g: 0,
+	b: 0
+};
+
+var buttonInactiveBackgroundColor = {
+	a: 255,
+	r: 23,
+	g: 162,
+	b: 184
+};
+var buttonInactiveForegroundColor = {
+	a: 255,
+	r: 100,
+	g: 100,
+	b: 100
+};
+
+changeAppTitleBarColor(backgroundColor, foregroundColor, buttonBackgroundColor, buttonForegroundColor, buttonHoverBackgroundColor, buttonHoverForegroundColor, buttonPressedBackgroundColor, buttonPressedForegroundColor, inactiveBackgroundColor, inactiveForegroundColor, buttonInactiveBackgroundColor, buttonInactiveForegroundColor);
