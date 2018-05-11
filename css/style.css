@@ -1,5 +1,5 @@
 nav {
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.85);
 }
  
 .body {
@@ -18,8 +18,16 @@ nav {
     padding-bottom: 1vh;
 }
 
+.darkmodecolor {
+    background-color: rgba(23, 162, 184, 0.8) !important;
+}
+
+.darkmodebg {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
 #footer {
-    border-top: 2px solid gray;
+    border-top: 2px solid rgba(0, 0, 0, 0.85);
 }
 
 /* Extra small devices (portrait phones, less than 576px) */

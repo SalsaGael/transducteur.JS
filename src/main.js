@@ -121,3 +121,37 @@ if (navigator.share) {
 } else {
 	console.log('Share API not supported');
 }
+
+
+
+// Dark mode //
+
+// Découverte du theme Windows 10 //
+
+const checkForDarkTheme = () => {
+	if (window.Windows) {
+
+		var uiSettings = new Windows.UI.ViewManagement.UISettings();
+		var color = uiSettings.getColorValue(Windows.UI.ViewManagement.UIColorType.background)
+		if (color.b === 0) {
+			return "dark"
+		} else {
+			return "light"
+		}
+	}
+}
+
+let themeWindows = checkForDarkTheme();
+
+// Passage en theme Dark //
+
+const nav = document.querySelector('#nav');
+const body = document.querySelector('#body');
+
+	if (themeWindows == "dark") {
+		body.classList.add("darkmodebg");
+		nav.classList.add("darkmodecolor");
+	} else {
+		body.classList.remove("darkmodebg");
+		nav.classList.remove("darkmodecolor");
+	}
