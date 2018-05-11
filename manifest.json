@@ -1,8 +1,8 @@
 {
     "name": "Calculette Transducteur",
     "short_name": "Transducteur",
-    "start_url": "./index.html",
-    "scope": ".",
+    "start_url": "https://piconcely.fr/transducteur/",
+    "scope": "/",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "dedede",

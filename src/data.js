@@ -16,7 +16,7 @@ const readData = () => {
         data_json = localStorage.getItem("donnees");
         data = JSON.parse(data_json);
     } else {
-        fetch('../data.json')
+        fetch('data.json')
             .then((resp) => {return resp.json()})
             .then((data_import) => {
                 data = data_import;
