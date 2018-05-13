@@ -1,16 +1,24 @@
-nav {
-    border-bottom: 2px solid rgba(0, 0, 0, 0.85);
-}
- 
-.body {
-    overflow: hidden;
+body {
     min-height: 100vh;
 }
 
+nav {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.85);
+}
+ 
 #container {
-    height: calc(100vh - 105px);
+    height: calc(100vh - 103px);
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+.bg-primary, .bg-secondary, .bg-success, .bg-danger, {
+    border: 0px;
+}
+
+.form-control {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .intercal {
@@ -18,16 +26,16 @@ nav {
     padding-bottom: 1vh;
 }
 
-.darkmodecolor {
-    background-color: rgba(23, 162, 184, 1) !important;
+.darkmodenav {
+    background-color: rgba(23, 162, 184, 0.85) !important;
 }
 
-.darkmodebg {
+.darkmodecontainer {
     background-color: rgba(0, 0, 0, 0.85);
 }
 
 #footer {
-    border-top: 2px solid rgba(0, 0, 0, 0.85);
+    border-top: 1px solid rgba(0, 0, 0, 0.85);
 }
 
 /* Extra small devices (portrait phones, less than 576px) */

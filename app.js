@@ -13,6 +13,7 @@ if (location.origin == 'http://192.168.1.10:5500') {
 
 
 //This is the service worker with the Cache-first network
+
 if (navigator.serviceWorker) {
   //Add this below content to your HTML page, or add the js file to your page at the very top to register sercie worker
   if (navigator.serviceWorker.controller) {
