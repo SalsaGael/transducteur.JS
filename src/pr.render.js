@@ -3,7 +3,7 @@ import {data} from './data.js';
 const renderPuisReact = ()=> {
     container.innerHTML = `
     <p class="intercal mb-2">
-    <a>Calcul des valeurs pour 57.7/100V 90°</a>
+    <a>Calcul des valeurs pour 100√3 V 90°</a>
 </p>
 
 <div class="input-group mb-2">
