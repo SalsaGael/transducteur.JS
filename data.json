@@ -1,6 +1,7 @@
 {
     "start": "calcpa",
     "theme": "light",
+    "themeselect": "light",
     "KU": 2200,
     "KI": 300,
     "KP": 660000,

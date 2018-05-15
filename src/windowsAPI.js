@@ -1,3 +1,7 @@
+import {
+	data,
+} from './data.js'
+
 // Theme Windows10 //
 
 const windowsTheme = ()=> {
@@ -16,17 +20,7 @@ const windowsTheme = ()=> {
         }
     }
 
-    let theme = checkTheme();
-
-    // Passage en theme Dark si necessaire //
-
-    const nav = document.querySelector('#nav');
-    const body = document.querySelector('#body');
-
-    if (theme == "dark") {
-        body.classList.add("darkmodecontainer");
-        nav.classList.add("darkmodenav");
-    }
+    data.theme = checkTheme();
 }
 
 export default windowsTheme;
