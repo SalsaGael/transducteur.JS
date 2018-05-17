@@ -38,7 +38,7 @@ const renderPuisAct = ()=> {
 </div>
 
 <p class="intercal mb-2">
-    <a>Paramétres</a>
+    <a>Paramètres</a>
 </p>
 
 <div class="input-group mb-2">
@@ -49,9 +49,11 @@ const renderPuisAct = ()=> {
     <option value="200">20 kV / 100 V</option>
     <option value="450">45 kV / 100 V</option>
     <option value="600">60 kV / 100V</option>
+    <option value="630">63 kV / 100V</option>
     <option value="900">90 kV / 100 V</option>
     <option value="1500">150 kV / 100V</option>
     <option value="2200">220 kV / 100V</option>
+    <option value="2250">225 kV / 100V</option>
     <option value="4000">400 kV / 100V</option>
     </select>
 </div>

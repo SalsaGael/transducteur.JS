@@ -28,6 +28,7 @@ const tabCalcPuisReact = document.getElementById("tabCalcPuisReact");
 const tabCalcTens = document.getElementById("tabCalcTens");
 const container = document.querySelector("#container");
 const menu = document.querySelector('#menu');
+const menulist = document.querySelector('#menulist');
 const theme = document.querySelector('#theme');
 const footer = document.querySelector('#footer');
 const tabCalcPuisActReduct = document.getElementById("tabCalcPuisActReduct");
@@ -125,14 +126,10 @@ switch (data.start) {
 
 menubtn.onclick = () => {
 	menu.classList.toggle("show");
-	burger.classList.toggle("fa fa-bars");
-	burger.classList.toggle("fa fa-arrow-alt-square-left");
 };
 
 container.onclick = () => {
 	menu.classList.remove("show");
-	burger.classList.add("fa fa-bars");
-	burger.classList.remove("fa fa-arrow-alt-square-left");
 };
 
 // Ajout de Share API si disponible //
@@ -147,11 +144,14 @@ if (window.Windows) {
 	<option value="dark">Sombre</option>
 	<option value="system">Système</option>
 	`
-	windowsTheme();
+	if (data.themeselect == "system") {
+		windowsTheme();
+	}
 }
 
+theme.value = data.themeselect;
+
 const themeApply = () => {
-	theme.value = data.themeselect;
 	if (data.theme == "dark") {
 		body.classList.add("darkmodecontainer");
 		nav.classList.add("darkmodenav");
@@ -168,16 +168,15 @@ const themeApply = () => {
 themeApply();
 
 theme.addEventListener('change', function () {
-			data.themeselect = theme.value;
-			if (theme.value == "light") {
-				data.theme = theme.value;
-			} else if (theme.value == "dark") {
-				data.theme = theme.value;
-			} else if (theme.value == "system") {
-			// Vérification du  Theme Windows 10 //
-			windowsTheme();
-			};
-			writeData();
-			themeApply();
+	data.themeselect = theme.value;
+	if (data.themeselect == "light") {
+		data.theme = "light";
+	} else if (data.themeselect == "dark") {
+		data.theme = "dark";
+	} else if (data.themeselect == "system") {
+		// Vérification du  Theme Windows 10 //
+		windowsTheme();
+	};
+	writeData();
+	themeApply();
 })
-
