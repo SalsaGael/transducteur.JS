@@ -13,6 +13,8 @@ nav {
     height: calc(100vh - 110px);
     overflow-y: auto;
     overflow-x: hidden;
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 .bg-primary, .bg-secondary, .bg-success, .bg-danger, .bg-dark {
@@ -22,11 +24,6 @@ nav {
 .form-control {
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.intercal {
-    padding-top: 6vh !important;
-    padding-bottom: 1vh;
 }
 
 .darkmodenav {
@@ -82,8 +79,13 @@ nav {
 /* Small devices (landscape phones, 576px and up) */
 
 @media (max-width: 374px) {
+    #container {
+        padding-top: 0vh;
+        padding-bottom: 0vh;
+    }
     .intercal {
-        padding-top: 0.5vh !important;
+        margin-top: 2vh !important;
+        margin-bottom: 2vh !important;
     }
     .input-group-text,
     .form-control,
@@ -110,13 +112,19 @@ nav {
     .btn-reduct {
         display: block;
     }
+
 }
 
 /* Medium devices (medium phone, 374px and up) */
 
 @media (min-width: 374px) {
+    #container {
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+    }
     .intercal {
-        padding-top: 2vh !important;
+        margin-top: 2vh !important;
+        margin-bottom: 2vh !important;
     }
     #titleAppShort {
         display: block;
@@ -133,13 +141,18 @@ nav {
     .btn-reduct {
         display: block;
     }
-}
+ }
 
 /* Medium devices (large phone, 400px and up) */
 
 @media (min-width: 400px) {
+    #container {
+        padding-top: 2vh;
+        padding-bottom: 3vh;
+    }
     .intercal {
-        padding-top: 3vh !important;
+       margin-top: 3vh !important;
+       margin-bottom: 4vh !important;
     }
     #titleAppShort {
         display: none;
@@ -161,8 +174,13 @@ nav {
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 720px) {
+    #container {
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+    }
     .intercal {
-        padding-top: 4vh !important;
+       margin-top: 4vh !important;
+       margin-bottom: 4vh !important;
     }
     #titleAppShort {
         display: none;
@@ -184,6 +202,14 @@ nav {
 /* Large devices (desktops, 992px and up) */
 
 @media (min-width: 992px) {
+    #container {
+        padding-top: 4vh;
+        padding-bottom: 4vh;
+    }
+    .intercal {
+        margin-top: 5vh !important;
+        margin-bottom: 5vh !important;
+    }
     #titleAppShort {
         display: none;
     }
@@ -204,6 +230,14 @@ nav {
 /* Extra large devices (large desktops, 1200px and up) */
 
 @media (min-width: 1200px) {
+    #container {
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
+    .intercal {
+        margin-top: 5vh !important;
+        margin-bottom: 5vh !important;
+    }
     #titleAppShort {
         display: none;
     }

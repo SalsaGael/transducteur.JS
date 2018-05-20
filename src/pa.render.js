@@ -2,42 +2,44 @@ import {data} from './data.js';
 
 const renderPuisAct = ()=> {
     container.innerHTML = `
-    <p class="intercal mb-2">
-    <a>Calcul des valeurs pour 100√3 V 0°</a>
-</p>
-
-<div class="input-group mb-2">
-    <div class="input-group-prepend">
-        <label class="input-group-text text-light bg-secondary">Puissance HT</label>
-    </div>
-    <input type="number" id="paHT" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-    <div class="input-group-apppend">
+<div class="intercal">
+    <p class="mb-1">
+        <a>Calcul des valeurs pour 100√3 V 0°</a>
+    </p>
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <label class="input-group-text text-light bg-secondary">Puissance HT</label>
+        </div>
+        <input type="number" id="paHT" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        <div class="input-group-apppend">
         <span class="input-group-text text-light bg-secondary">MW</span>
+        </div>
     </div>
-</div>
 
-<div class="input-group mb-2">
-    <div class="input-group-prepend">
-        <label class="input-group-text text-light bg-primary">Courant BT</label>
-    </div>
-    <input type="number" id="iaBT" placeholder="Entrez la valeur" class="form-control" aria-label="Small"
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+           <label class="input-group-text text-light bg-primary">Courant BT</label>
+        </div>
+            <input type="number" id="iaBT" placeholder="Entrez la valeur" class="form-control" aria-label="Small"
         aria-describedby="inputGroup-sizing-sm">
-    <div class="input-group-apppend">
-        <span class="input-group-text text-light bg-primary">A</span>
+        <div class="input-group-apppend">
+           <span class="input-group-text text-light bg-primary">A</span>
+        </div>
     </div>
-</div>
 
-<div class="input-group mb-2">
-    <div class="input-group-prepend">
-        <label class="input-group-text text-light bg-success">Sortie procédé</label>
-    </div>
-    <input type="number" id="sma" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-    <div class="input-group-apppend">
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <label class="input-group-text text-light bg-success">Sortie procédé</label>
+        </div>
+            <input type="number" id="sma" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        <div class="input-group-apppend">
         <span class="input-group-text text-light bg-success">mA</span>
+        </div>
     </div>
 </div>
 
-<p class="intercal mb-2">
+<div class="intercal">
+<p class="mb-1">
     <a>Paramètres</a>
 </p>
 
@@ -127,6 +129,7 @@ const renderPuisAct = ()=> {
     </select>
     <div class="input-group-apppend">
     <span class="input-group-text">mA</span>
+</div>
 </div>
 </div>
  `

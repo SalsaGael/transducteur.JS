@@ -124,12 +124,29 @@ switch (data.start) {
 
 // Gestion Panneau Menu //
 
-menubtn.onclick = () => {
-	menu.classList.toggle("show");
+data.timer = false;
+
+menubtn.onclick = (e) => {
+	e.stopPropagation();
+	e.preventDefault();
+	if (data.timer == false) {
+	data.timer = true;
+	menu.classList.add("show");
+	setTimeout(function () {
+		data.timer = false;
+		menu.classList.remove("show");
+	}, 5000)} else {
+	menu.classList.toggle("show");	
+	}
 };
 
-container.onclick = () => {
+body.onclick = () => {
 	menu.classList.remove("show");
+};
+
+menu.onclick = (e) => {
+	e.stopPropagation();
+	e.preventDefault();
 };
 
 // Ajout de Share API si disponible //

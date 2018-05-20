@@ -2,7 +2,8 @@ import {data} from './data.js';
 
 const renderTens = ()=> {
     container.innerHTML = `
-    <p class="intercal mb-2">
+    <div class="intercal">
+    <p class="mb-1">
     <a>Calcul des valeurs</a>
 </p>
 
@@ -45,8 +46,10 @@ const renderTens = ()=> {
         <span class="input-group-text text-light bg-success">mA</span>
     </div>
 </div>
+</div>
 
-<p class="intercal mb-2">
+<div class="intercal">
+<p class="mb-1">
     <a>Transformateur de tension</a>
 </p>
 
@@ -67,7 +70,7 @@ const renderTens = ()=> {
     </select>
 </div>
 
-<p class="intercal mb-2">
+<p class="mb-1">
     <a>Paramètres du capteur</a>
 </p>
 
@@ -110,6 +113,7 @@ const renderTens = ()=> {
     </select>
     <div class="input-group-append">
     <span class="input-group-text">mA</span>
+</div>
 </div>
 </div>
 `

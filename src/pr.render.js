@@ -2,7 +2,8 @@ import {data} from './data.js';
 
 const renderPuisReact = ()=> {
     container.innerHTML = `
-    <p class="intercal mb-2">
+    <div class="intercal">
+    <p class="mb-1">
     <a>Calcul des valeurs pour 100√3 V 90°</a>
 </p>
 
@@ -36,8 +37,9 @@ const renderPuisReact = ()=> {
         <span class="input-group-text text-light bg-success">mA</span>
     </div>
 </div>
-
-<p class="intercal mb-2">
+</div>
+<div class="intercal">
+<p class="mb-1">
     <a>Paramètres</a>
 </p>
 
@@ -128,6 +130,7 @@ const renderPuisReact = ()=> {
 </select>
 <div class="input-group-apppend">
 <span class="input-group-text">mA</span>
+</div>
 </div>
 </div>
  `}
