@@ -12,6 +12,7 @@ import renderTens from './u.render.js';
 import calcTens from './u.calc.js';
 import windowsTheme from './windowsAPI.js';
 import shareAPI from './shareAPI.js';
+import Hammer from './hammer.js';
 
 // Import des données antérieure ou de base //
 
@@ -19,7 +20,7 @@ readData();
 
 // Applicationq //
 
-// Affichage a cibler //
+// Elements affichage a cibler //
 
 const body = document.querySelector('#body');
 const nav = document.querySelector('#nav');
@@ -40,85 +41,84 @@ const burger = document.querySelector('#burger');
 // RAZ Bandeau //
 
 const removeActive = () => {
-	menu.classList.remove("show");
 	writeData();
 	tabCalcPuisAct.classList.remove("active");
 	tabCalcPuisReact.classList.remove("active");
 	tabCalcTens.classList.remove("active");
+	tabCalcPuisActReduct.classList.remove("active");
+	tabCalcPuisReactReduct.classList.remove("active");
+	tabCalcTensReduct.classList.remove("active");
 }
 
 // Bascule Calculette Puissance Active //
 
-tabCalcPuisAct.onclick = () => {
+const bascCalcPussAct = () => {
 	data.start = "calcpa";
 	renderPuisAct();
 	calcPuisAct();
 	removeActive();
 	tabCalcPuisAct.classList.add("active");
+	tabCalcPuisActReduct.classList.add("active");
+}
+
+tabCalcPuisAct.onclick = () => {
+	bascCalcPussAct();
 };
 
 tabCalcPuisActReduct.onclick = () => {
-	data.start = "calcpa";
-	renderPuisAct();
-	calcPuisAct();
-	removeActive();
-	tabCalcPuisAct.classList.add("active");
+	bascCalcPussAct();
 };
 
 // Bascule Calculette Puissance Reactive //
 
-tabCalcPuisReact.onclick = () => {
+const bascCalcPussReact = () => {
 	data.start = "calcpr";
 	renderPuisReact();
 	calcPuisReact();
 	removeActive();
 	tabCalcPuisReact.classList.add("active");
+	tabCalcPuisReactReduct.classList.add("active");
+}
+
+tabCalcPuisReact.onclick = () => {
+	bascCalcPussReact();
 };
 
 tabCalcPuisReactReduct.onclick = () => {
-	data.start = "calcpr";
-	renderPuisReact();
-	calcPuisReact();
-	removeActive();
-	tabCalcPuisReact.classList.add("active");
+	bascCalcPussReact();
 };
 
 
 // Bascule Calculette Tension //
 
-tabCalcTens.onclick = () => {
+const bascCalcTens = () => {
 	data.start = "calctens";
 	renderTens();
 	calcTens();
 	removeActive();
 	tabCalcTens.classList.add("active");
+	tabCalcTensReduct.classList.add("active");
+}
+
+tabCalcTens.onclick = () => {
+	bascCalcTens();
 };
 
 tabCalcTensReduct.onclick = () => {
-	data.start = "calctens";
-	renderTens();
-	calcTens();
-	removeActive();
-	tabCalcTens.classList.add("active");
+	bascCalcTens();
 };
 
 // Lancement par défaut //
 
 switch (data.start) {
 	case "calcpa":
-		renderPuisAct();
-		calcPuisAct();
-		tabCalcPuisAct.classList.add("active");
+		bascCalcPussAct();
 		break;
 	case "calcpr":
-		renderPuisReact();
-		calcPuisReact();
-		tabCalcPuisReact.classList.add("active");
+		bascCalcPussReact();
 		break;
 	case "calctens":
-		renderTens();
-		calcTens();
-		tabCalcTens.classList.add("active");
+		bascCalcTens();
 		break;
 };
 
@@ -126,22 +126,44 @@ switch (data.start) {
 
 data.timer = false;
 
+const showMenu = () => {
+	if (data.timer == false) {
+		data.timer = true;
+		menu.classList.add("show");
+		menubtn.classList.add("active");
+		setTimeout(function () {
+			data.timer = false;
+			menu.classList.remove("show");
+			menubtn.classList.remove("active");
+		}, 10000)
+	} else {
+		menu.classList.add("show");
+		menubtn.classList.add("active");
+	}
+};
+
+const toggleMenu = () => {
+	menu.classList.toggle("show");
+	menubtn.classList.toggle("active");
+};
+
+const hideMenu = () => {
+	menu.classList.remove("show");
+	menubtn.classList.remove("active");
+};
+
 menubtn.onclick = (e) => {
 	e.stopPropagation();
 	e.preventDefault();
 	if (data.timer == false) {
-	data.timer = true;
-	menu.classList.add("show");
-	setTimeout(function () {
-		data.timer = false;
-		menu.classList.remove("show");
-	}, 5000)} else {
-	menu.classList.toggle("show");	
+		showMenu();
+	} else {
+		toggleMenu();
 	}
 };
 
 body.onclick = () => {
-	menu.classList.remove("show");
+	hideMenu();
 };
 
 menu.onclick = (e) => {
@@ -149,11 +171,21 @@ menu.onclick = (e) => {
 	e.preventDefault();
 };
 
-// Ajout de Share API si disponible //
+// Gestion du tactile //
 
-shareAPI();
+var hammertime = new Hammer(container);
+
+hammertime.on('swiperight', function (e) {
+	showMenu();
+});
+
+hammertime.on('swipeleft', function (e) {
+	hideMenu();
+});
 
 // Passage en theme Dark si necessaire //
+
+// Si W10 ajout de la selection "système" //"
 
 if (window.Windows) {
 	theme.innerHTML = `
@@ -166,7 +198,7 @@ if (window.Windows) {
 	}
 }
 
-theme.value = data.themeselect;
+// Application du thème //
 
 const themeApply = () => {
 	if (data.theme == "dark") {
@@ -182,7 +214,12 @@ const themeApply = () => {
 	}
 };
 
+// Theme enregistré au lancement //
+
 themeApply();
+theme.value = data.themeselect;
+
+// Selection du thème //
 
 theme.addEventListener('change', function () {
 	data.themeselect = theme.value;
@@ -197,3 +234,7 @@ theme.addEventListener('change', function () {
 	writeData();
 	themeApply();
 })
+
+// Ajout de Share API si disponible (Androïd) //
+
+shareAPI();
