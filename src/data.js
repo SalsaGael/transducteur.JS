@@ -1,5 +1,13 @@
 import renderPuisAct from './pa.render.js';
 import calcPuisAct from './pa.calc.js';
+import 'whatwg-fetch';
+
+import Promise from 'promise-polyfill';
+
+// To add to window
+if (!window.Promise) {
+  window.Promise = Promise;
+}
 
 let data_json;
 let data;
