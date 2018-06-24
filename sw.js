@@ -28,7 +28,6 @@ var precacheFiles = [
   './win-tiles/small.png',
   './win-tiles/wide.png',
   './AppImages/ios/ios-appicon-180-180.png',
-  './app.js',
   './dist/bundle.js'
 ];
 
