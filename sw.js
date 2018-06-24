@@ -1,15 +1,14 @@
 // This is the service worker with the Cache-first network //
-var version = "1.18.05.04"
+var version = "1.18.06.24"
 var CACHE = 'sw-precache';
 var precacheFiles = [
   './',
-  './manifest.json',
   './index.html',
   './css/reset.css',
   'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
   'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css',
   './css/style.css',
-  './data.json',  
+  './data.json',
   './images/logo.png',
   './images/android-chrome-192x192.png',
   './images/android-chrome-512x512.png',
@@ -39,7 +38,6 @@ function precache() {
   });
 }
 
-
 function fromCache(request) {
   // we pull files from the cache first thing so we can show them fast //
   return caches.open(CACHE).then(function (cache) {
@@ -49,6 +47,12 @@ function fromCache(request) {
   });
 }
 
+function fromServer(request) {
+  // this is the fallback if it is not in the cache to go to the server and get it //
+  return fetch(request).then(function (response) {
+    return response
+  });
+}
 
 function update(request) {
   // this is where we call the server to get the newest version of the file to use the next time we show view //
@@ -59,12 +63,7 @@ function update(request) {
   });
 }
 
-function fromServer(request) {
-  // this is the fallback if it is not in the cache to go to the server and get it //
-  return fetch(request).then(function (response) {
-    return response
-  })
-}
+
 
 
 // Install stage sets up the cache-array to configure pre-cache content //

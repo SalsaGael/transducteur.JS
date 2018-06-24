@@ -44,6 +44,9 @@ nav {
 }
 
 #menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     width: 245px;
     top: 62px;
@@ -54,11 +57,6 @@ nav {
     transform: translateX(-250px);
     transition: 1s;
     z-index: 10;
-}
-
-#menulist {
-   margin-top: 50vh;
-  transform: translateY(-75%);
 }
 
 .show {
