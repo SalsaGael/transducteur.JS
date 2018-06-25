@@ -90,7 +90,7 @@ const renderTens = ()=> {
         <label class="input-group-text" for="uMin">Plage HT réglée</label>
     </div>
     <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="uMin" type="number" value=""/>
-    <span class="input-group-text" for="uMax">à</span>
+    <span class="input-group-text input-group-middle">à</span>
     <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="uMax" type="number" value=""/>
     <div class="input-group-append">
         <span class="input-group-text">kV</span>
@@ -105,7 +105,9 @@ const renderTens = ()=> {
     <option value="0">0</option>
     <option value="4">4</option>
     </select>
-    <span for "smaMaxU" class="input-group-text">à</span>
+
+    <span class="input-group-text input-group-middle">à</span>
+
     <select id='smaMaxU' class="custom-select" value="">
     <option value="5">5</option>
     <option value="10">10</option>

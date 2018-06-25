@@ -4,15 +4,16 @@ const renderPuisAct = ()=> {
     container.innerHTML = `
 <div class="intercal">
     <p class="mb-1">
-        <a>Calcul des valeurs pour 100√3 V 0°</a>
+        <a>Calcul des valeurs pour 100√3 V φ=0°</a>
     </p>
+    
     <div class="input-group mb-2">
         <div class="input-group-prepend">
             <label class="input-group-text text-light bg-secondary">Puissance HT</label>
         </div>
         <input type="number" id="paHT" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-        <div class="input-group-apppend">
-        <span class="input-group-text text-light bg-secondary">MW</span>
+        <div class="input-group-append">
+    <span class="input-group-text text-light bg-secondary">MW</span>
         </div>
     </div>
 
@@ -22,7 +23,7 @@ const renderPuisAct = ()=> {
         </div>
             <input type="number" id="iaBT" placeholder="Entrez la valeur" class="form-control" aria-label="Small"
         aria-describedby="inputGroup-sizing-sm">
-        <div class="input-group-apppend">
+        <div class="input-group-append">
            <span class="input-group-text text-light bg-primary">A</span>
         </div>
     </div>
@@ -32,7 +33,7 @@ const renderPuisAct = ()=> {
             <label class="input-group-text text-light bg-success">Sortie procédé</label>
         </div>
             <input type="number" id="sma" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-        <div class="input-group-apppend">
+        <div class="input-group-append">
         <span class="input-group-text text-light bg-success">mA</span>
         </div>
     </div>
@@ -64,9 +65,8 @@ const renderPuisAct = ()=> {
     <div class="input-group-prepend">
         <label class="input-group-text" for="pTC">Courant primaire TC</label>
     </div>
-    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='pTC' type="number" value=""
-    />
-    <div class="input-group-apppend">
+    <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='pTC' type="number" value="" />
+    <div class="input-group-append">
         <label class="input-group-text" for="pTC">A</label>
     </div>
 </div>
@@ -96,7 +96,7 @@ const renderPuisAct = ()=> {
         <option value="8">P8 1732</option>
         <option value="9">P9 2148</option>
     </select>
-    <div class="input-group-apppend">
+    <div class="input-group-append">
         <span class="input-group-text">± W</span>
     </div>
 </div>
@@ -105,7 +105,7 @@ const renderPuisAct = ()=> {
         <label class="input-group-text" for="paMaxHT">Plage HT réglée</label>
     </div>
     <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='paMaxHT' type="number" value="" />
-    <div class="input-group-apppend">
+    <div class="input-group-append">
         <span class="input-group-text">± MW</span>
     </div>
 </div>
@@ -121,13 +121,13 @@ const renderPuisAct = ()=> {
     <option value="0">0</option>
     <option value="4">4</option>
     </select>
-    <span class="input-group-text">à</span>
+    <span class="input-group-text input-group-middle">à</span>
     <select id='smaMax' class="custom-select" value="">
     <option value="5">5</option>
     <option value="10">10</option>
     <option value="20">20</option>
     </select>
-    <div class="input-group-apppend">
+    <div class="input-group-append">
     <span class="input-group-text">mA</span>
 </div>
 </div>

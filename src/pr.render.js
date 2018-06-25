@@ -4,7 +4,7 @@ const renderPuisReact = ()=> {
     container.innerHTML = `
     <div class="intercal">
     <p class="mb-1">
-    <a>Calcul des valeurs pour 100√3 V 90°</a>
+    <a>Calcul des valeurs pour 100√3 V φ=90°</a>
 </p>
 
 <div class="input-group mb-2">
@@ -12,7 +12,7 @@ const renderPuisReact = ()=> {
         <label class="input-group-text text-light bg-secondary">Puissance HT</label>
     </div>
     <input type="number" id="prHT" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-    <div class="input-group-apppend">
+    <div class="input-group-append">
         <span class="input-group-text text-light bg-secondary">Mvar</span>
     </div>
 </div>
@@ -23,7 +23,7 @@ const renderPuisReact = ()=> {
     </div>
     <input type="number" id="irBT" placeholder="Entrez la valeur" class="form-control" aria-label="Small"
         aria-describedby="inputGroup-sizing-sm">
-    <div class="input-group-apppend">
+    <div class="input-group-append">
         <span class="input-group-text text-light bg-primary">A</span>
     </div>
 </div>
@@ -33,7 +33,7 @@ const renderPuisReact = ()=> {
         <label class="input-group-text text-light bg-success">Sortie procédé</label>
     </div>
     <input type="number" id="sma" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-    <div class="input-group-apppend">
+    <div class="input-group-append">
         <span class="input-group-text text-light bg-success">mA</span>
     </div>
 </div>
@@ -66,7 +66,7 @@ const renderPuisReact = ()=> {
     </div>
     <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="pTC" type="number" value=""
     />
-    <div class="input-group-apppend">
+    <div class="input-group-append">
         <label class="input-group-text" for="pTC">A</label>
     </div>
 </div>
@@ -97,7 +97,7 @@ const renderPuisReact = ()=> {
         <option value="8">Q8 866</option>
         <option value="9">Q9 1074</option>
     </select>
-    <div class="input-group-apppend">
+    <div class="input-group-append">
         <span class="input-group-text">± var</span>
     </div>
 </div>
@@ -106,7 +106,7 @@ const renderPuisReact = ()=> {
         <label class="input-group-text" for="prMaxHT">Plage HT réglée</label>
     </div>
     <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='prMaxHT' type="number" value="" />
-    <div class="input-group-apppend">
+    <div class="input-group-append">
         <span class="input-group-text">± Mvar</span>
     </div>
 </div>
@@ -122,13 +122,13 @@ const renderPuisReact = ()=> {
 <option value="0">0</option>
 <option value="4">4</option>
 </select>
-<span class="input-group-text">à</span>
+<span class="input-group-text input-group-middle">à</span>
 <select id='smaMax' class="custom-select" value="">
 <option value="5">5</option>
 <option value="10">10</option>
 <option value="20">20</option>
 </select>
-<div class="input-group-apppend">
+<div class="input-group-append">
 <span class="input-group-text">mA</span>
 </div>
 </div>

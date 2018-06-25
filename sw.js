@@ -1,5 +1,5 @@
 // This is the service worker with the Cache-first network //
-var version = "1.18.06.24"
+
 var CACHE = 'sw-precache';
 var precacheFiles = [
   './',

@@ -1,5 +1,6 @@
 body {
     min-height: 100vh;
+    font-family: sans-serif;
 }
 
 nav {
@@ -8,8 +9,11 @@ nav {
     color: black;
     z-index: 20;
 }
- 
+
 #container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     height: calc(100vh - 110px);
     overflow-y: auto;
     overflow-x: hidden;
@@ -17,13 +21,29 @@ nav {
     padding-bottom: 0px;
 }
 
-.bg-primary, .bg-secondary, .bg-success, .bg-danger, .bg-dark {
-    border: 0px;
+.form-control,
+.custom-select,
+.input-group-text,
+.input-group-middle {
+    border: 1px solid gainsboro;
+    height: 42px;
 }
 
-.form-control {
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+.bg-primary,
+.bg-secondary,
+.bg-success,
+.bg-danger,
+.bg-dark {
+    border: 0;
+}
+
+.input-group-middle {
+    border-left: 0;
+    border-right: 0;
+}
+
+.input-group-middle {
+    border-radius: 0;
 }
 
 .darkmodenav {
@@ -31,7 +51,7 @@ nav {
 }
 
 .darkmodecontainer {
-    background-color: rgba(0, 0, 0, 0.85)!important;
+    background-color: rgba(0, 0, 0, 0.85) !important;
     color: white;
 }
 
@@ -51,8 +71,6 @@ nav {
     width: 245px;
     top: 62px;
     bottom: 47px;
-    margin: 0;
-    padding: 5px;
     background-color: rgba(240, 240, 240, 0.95);
     transform: translateX(-250px);
     transition: 1s;
@@ -60,7 +78,7 @@ nav {
 }
 
 .show {
-    transform: translateX(0px)!important;
+    transform: translateX(0px) !important;
     transition: all 1s ease-in-out;
 }
 
@@ -81,15 +99,13 @@ nav {
         padding-top: 0vh;
         padding-bottom: 0vh;
     }
-    .intercal {
-        margin-top: 2vh !important;
-        margin-bottom: 2vh !important;
-    }
     .input-group-text,
+    .input-group-middle,
     .form-control,
     .custom-select {
         padding: 4px;
         height: 32px;
+        line-height: 32px;
         font-size: auto;
     }
     .custom-select {
@@ -103,14 +119,13 @@ nav {
     }
     #titleApp {
         display: none;
-    } 
+    }
     .btn-origin {
         display: none;
     }
     .btn-reduct {
         display: block;
     }
-
 }
 
 /* Medium devices (medium phone, 374px and up) */
@@ -120,16 +135,12 @@ nav {
         padding-top: 1vh;
         padding-bottom: 1vh;
     }
-    .intercal {
-        margin-top: 2vh !important;
-        margin-bottom: 2vh !important;
-    }
     #titleAppShort {
         display: block;
     }
     #titleAppMedium {
         display: none;
-    }    
+    }
     #titleApp {
         display: none;
     }
@@ -139,7 +150,7 @@ nav {
     .btn-reduct {
         display: block;
     }
- }
+}
 
 /* Medium devices (large phone, 400px and up) */
 
@@ -148,16 +159,12 @@ nav {
         padding-top: 2vh;
         padding-bottom: 3vh;
     }
-    .intercal {
-       margin-top: 3vh !important;
-       margin-bottom: 4vh !important;
-    }
     #titleAppShort {
         display: none;
     }
     #titleAppMedium {
         display: block;
-    }    
+    }
     #titleApp {
         display: none;
     }
@@ -175,10 +182,6 @@ nav {
     #container {
         padding-top: 3vh;
         padding-bottom: 3vh;
-    }
-    .intercal {
-       margin-top: 4vh !important;
-       margin-bottom: 4vh !important;
     }
     #titleAppShort {
         display: none;
@@ -204,10 +207,6 @@ nav {
         padding-top: 4vh;
         padding-bottom: 4vh;
     }
-    .intercal {
-        margin-top: 5vh !important;
-        margin-bottom: 5vh !important;
-    }
     #titleAppShort {
         display: none;
     }
@@ -232,10 +231,6 @@ nav {
         padding-top: 5vh;
         padding-bottom: 5vh;
     }
-    .intercal {
-        margin-top: 5vh !important;
-        margin-bottom: 5vh !important;
-    }
     #titleAppShort {
         display: none;
     }
@@ -250,5 +245,11 @@ nav {
     }
     .btn-reduct {
         display: none;
+    }
+    .form-control,
+    .custom-select,
+    .input-group-text,
+    .input-group-middle {
+        height: 45px;
     }
 }

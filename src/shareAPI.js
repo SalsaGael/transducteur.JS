@@ -2,6 +2,8 @@
 
 const shareAPI = () => {
 
+    const menulist = document.querySelector('#menulist');
+    
     if (navigator.share) {
 
         let li = document.createElement('li');

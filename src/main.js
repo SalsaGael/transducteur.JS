@@ -10,24 +10,21 @@ import renderPuisReact from './pr.render.js';
 import calcPuisReact from './pr.calc.js';
 import renderTens from './u.render.js';
 import calcTens from './u.calc.js';
-import {
-	windowsTheme,
-	timeLine,
-} from './windowsAPI.js';
+import windowsTheme from './windowsAPI.js';
 import shareAPI from './shareAPI.js';
 import Hammer from './hammer.js';
 
 // Force HTTPS pour Service Worker //
 if (navigator.serviceWorker) {
 	if (location.origin == 'http://192.168.1.10:5500') {
-	  console.log('Réseau local, https non requis, mais SW non activable');
+		console.log('Réseau local, https non requis, mais SW non activable');
 	} else if (location.origin == 'http://127.0.0.1:5500') {
-	  console.log('Machine locale, https non requis, et SW activable');
+		console.log('Machine locale, https non requis, et SW activable');
 	} else if (location.protocol == 'https:') {
-	  console.log('https déja activé');
+		console.log('https déja activé');
 	} else {
-	  console.log('Passage en https nécessaire');
-	  location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+		console.log('Passage en https nécessaire');
+		location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
 	}
 }
 
@@ -46,15 +43,13 @@ const tabCalcPuisReact = document.getElementById("tabCalcPuisReact");
 const tabCalcTens = document.getElementById("tabCalcTens");
 const container = document.querySelector("#container");
 const menu = document.querySelector('#menu');
-const menulist = document.querySelector('#menulist');
 const theme = document.querySelector('#theme');
 const footer = document.querySelector('#footer');
 const tabCalcPuisActReduct = document.getElementById("tabCalcPuisActReduct");
 const tabCalcPuisReactReduct = document.getElementById("tabCalcPuisReactReduct");
 const tabCalcTensReduct = document.getElementById("tabCalcTensReduct");
-const menubtn = document.querySelector('#menubtn');
 const burger = document.querySelector('#burger');
-
+const menubtn = document.querySelector('#menubtn');
 // RAZ Bandeau //
 
 const removeActive = () => {
@@ -200,12 +195,6 @@ hammertime.on('swipeleft', function (e) {
 	hideMenu();
 });
 
-// Ajout a la Timeline W10 //
-
-if (window.Windows) {
-timeLine();
-}
-
 // Passage en theme Dark si necessaire //
 
 // Si W10 ajout de la selection "système" //"
@@ -264,20 +253,20 @@ shareAPI();
 
 //This is the service worker with the Cache-first network
 
-if (navigator.serviceWorker) {  
+if (navigator.serviceWorker) {
 	//Add this below content to your HTML page, or add the js file to your page at the very top to register sercie worker
 	if (navigator.serviceWorker.controller) {
-	  console.log("SW déja présent, inutile de l'enregister")
+		console.log("SW déja présent, inutile de l'enregister")
 	} else {
-	  //Register the ServiceWorker
-	  window.addEventListener('load', () => {
-		navigator.serviceWorker.register('./sw.js', {
-		  scope: './'
-		}).then(function (reg) {
-		  console.log('SW enregistré pour ce scope :' + reg.scope)
+		//Register the ServiceWorker
+		window.addEventListener('load', () => {
+			navigator.serviceWorker.register('./sw.js', {
+				scope: './'
+			}).then(function (reg) {
+				console.log('SW enregistré pour ce scope :' + reg.scope)
+			})
 		})
-	  })
 	}
-  } else {
+} else {
 	console.log("SW indisponible avec ce Navigateur")
-  }
+}
