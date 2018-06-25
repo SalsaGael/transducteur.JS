@@ -4,7 +4,7 @@ const renderPuisReact = ()=> {
     container.innerHTML = `
     <div class="intercal">
     <p class="mb-1">
-    <a>Calcul des valeurs pour 100√3 V φ=90°</a>
+    <a>Calcul des valeurs pour 100/√3 V φ=90°</a>
 </p>
 
 <div class="input-group mb-2">

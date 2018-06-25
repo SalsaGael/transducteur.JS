@@ -26,7 +26,6 @@ nav {
 .input-group-text,
 .input-group-middle {
     border: 1px solid gainsboro;
-    height: 42px;
 }
 
 .bg-primary,
@@ -47,7 +46,7 @@ nav {
 }
 
 .darkmodenav {
-    background-color: rgba(23, 162, 184, 0.9) !important;
+    background-color: rgba(23, 162, 184, 1) !important;
 }
 
 .darkmodecontainer {
@@ -94,7 +93,7 @@ nav {
 
 /* Small devices (landscape phones, 576px and up) */
 
-@media (max-width: 374px) {
+@media (max-width: 350px) {
     #container {
         padding-top: 0vh;
         padding-bottom: 0vh;
@@ -103,10 +102,9 @@ nav {
     .input-group-middle,
     .form-control,
     .custom-select {
-        padding: 4px;
-        height: 32px;
-        line-height: 32px;
+        height: 2em;
         font-size: auto;
+        padding: 4px;
     }
     .custom-select {
         padding: 0px 0px 4px 4px;
@@ -130,7 +128,15 @@ nav {
 
 /* Medium devices (medium phone, 374px and up) */
 
-@media (min-width: 374px) {
+@media (min-width: 350px) {
+    .form-control,
+    .custom-select,
+    .input-group-text,
+    .input-group-middle {
+        padding: 6px;
+        height: 2.5em;
+        font-size: auto;
+    }
     #container {
         padding-top: 1vh;
         padding-bottom: 1vh;
@@ -155,6 +161,14 @@ nav {
 /* Medium devices (large phone, 400px and up) */
 
 @media (min-width: 400px) {
+    .form-control,
+    .custom-select,
+    .input-group-text,
+    .input-group-middle {
+        height: 3em;
+        font-size: auto;
+        padding: 10px;
+    }
     #container {
         padding-top: 2vh;
         padding-bottom: 3vh;
@@ -198,6 +212,13 @@ nav {
     .btn-reduct {
         display: none;
     }
+    .form-control,
+    .custom-select,
+    .input-group-text,
+    .input-group-middle {
+        height: 3.2em;
+        font-size: auto;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -221,6 +242,13 @@ nav {
     }
     .btn-reduct {
         display: none;
+    }
+    .form-control,
+    .custom-select,
+    .input-group-text,
+    .input-group-middle {
+        height: 3.2em;
+        font-size: auto;
     }
 }
 
@@ -250,6 +278,7 @@ nav {
     .custom-select,
     .input-group-text,
     .input-group-middle {
-        height: 45px;
+        height: 3.2em;
+        font-size: auto;
     }
 }
