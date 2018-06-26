@@ -17,8 +17,6 @@ nav {
     height: calc(100vh - 110px);
     overflow-y: auto;
     overflow-x: hidden;
-    padding-top: 0px;
-    padding-bottom: 0px;
 }
 
 .form-control,
@@ -26,6 +24,15 @@ nav {
 .input-group-text,
 .input-group-middle {
     border: 1px solid gainsboro;
+    font-size: auto;
+    color: #000;
+}
+
+.form-control,
+.input-group-text,
+.input-group-middle {
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .bg-primary,
@@ -46,7 +53,7 @@ nav {
 }
 
 .darkmodenav {
-    background-color: rgba(23, 162, 184, 1) !important;
+    background-color: rgba(23, 162, 184, 0.9) !important;
 }
 
 .darkmodecontainer {
@@ -94,20 +101,12 @@ nav {
 /* Small devices (landscape phones, 576px and up) */
 
 @media (max-width: 350px) {
-    #container {
-        padding-top: 0vh;
-        padding-bottom: 0vh;
-    }
     .input-group-text,
     .input-group-middle,
     .form-control,
     .custom-select {
         height: 2em;
-        font-size: auto;
-        padding: 4px;
-    }
-    .custom-select {
-        padding: 0px 0px 4px 4px;
+        padding: 0px 8px 0px 8px;
     }
     #titleAppShort {
         display: block;
@@ -129,17 +128,12 @@ nav {
 /* Medium devices (medium phone, 374px and up) */
 
 @media (min-width: 350px) {
-    .form-control,
-    .custom-select,
     .input-group-text,
-    .input-group-middle {
-        padding: 6px;
+    .input-group-middle,
+    .form-control,
+    .custom-select {
         height: 2.5em;
-        font-size: auto;
-    }
-    #container {
-        padding-top: 1vh;
-        padding-bottom: 1vh;
+        padding: 0px 12px 0px 12px;
     }
     #titleAppShort {
         display: block;
@@ -165,13 +159,7 @@ nav {
     .custom-select,
     .input-group-text,
     .input-group-middle {
-        height: 3em;
-        font-size: auto;
-        padding: 10px;
-    }
-    #container {
-        padding-top: 2vh;
-        padding-bottom: 3vh;
+        height: 2.8em;
     }
     #titleAppShort {
         display: none;
@@ -193,9 +181,11 @@ nav {
 /* Medium devices (tablets, 768px and up) */
 
 @media (min-width: 720px) {
-    #container {
-        padding-top: 3vh;
-        padding-bottom: 3vh;
+    .form-control,
+    .custom-select,
+    .input-group-text,
+    .input-group-middle {
+        height: 3.2em;
     }
     #titleAppShort {
         display: none;
@@ -211,22 +201,17 @@ nav {
     }
     .btn-reduct {
         display: none;
-    }
-    .form-control,
-    .custom-select,
-    .input-group-text,
-    .input-group-middle {
-        height: 3.2em;
-        font-size: auto;
     }
 }
 
 /* Large devices (desktops, 992px and up) */
 
 @media (min-width: 992px) {
-    #container {
-        padding-top: 4vh;
-        padding-bottom: 4vh;
+    .form-control,
+    .custom-select,
+    .input-group-text,
+    .input-group-middle {
+        height: 3.2em;
     }
     #titleAppShort {
         display: none;
@@ -242,22 +227,17 @@ nav {
     }
     .btn-reduct {
         display: none;
-    }
-    .form-control,
-    .custom-select,
-    .input-group-text,
-    .input-group-middle {
-        height: 3.2em;
-        font-size: auto;
     }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 
 @media (min-width: 1200px) {
-    #container {
-        padding-top: 5vh;
-        padding-bottom: 5vh;
+    .form-control,
+    .custom-select,
+    .input-group-text,
+    .input-group-middle {
+        height: 3.4em;
     }
     #titleAppShort {
         display: none;
@@ -273,12 +253,5 @@ nav {
     }
     .btn-reduct {
         display: none;
-    }
-    .form-control,
-    .custom-select,
-    .input-group-text,
-    .input-group-middle {
-        height: 3.2em;
-        font-size: auto;
     }
 }

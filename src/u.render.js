@@ -99,7 +99,7 @@ const renderTens = ()=> {
 
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label for "smaMinU" class="input-group-text">Sortie procédé</label>
+        <label for "smaMinU" class="input-group-text">Sortie</label>
     </div>
     <select id='smaMinU' class="custom-select" value="">
     <option value="0">0</option>

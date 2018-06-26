@@ -113,7 +113,7 @@ const renderPuisReact = ()=> {
 
 <div class="input-group mb-2">
 <div class="input-group-prepend">
-    <label for "smaMin" class="input-group-text">Sortie procédé</label>
+    <label for "smaMin" class="input-group-text">Sortie</label>
 </div>
 <select id='smaMin' class="custom-select" value="">
 <option value="-20">-20</option>
