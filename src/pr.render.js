@@ -88,15 +88,15 @@ const renderPuisReact = ()=> {
     </div>
     <select id="fprHT" class="custom-select" value="">
         <option value="0">Plage réglée</option>
-        <option value="1">Q1 303,1</option>
-        <option value="2">Q2 372,4</option>
-        <option value="3">Q3 433</option>
-        <option value="4">Q4 519,6</option>
-        <option value="5">Q5 602,2</option>
-        <option value="6">Q6 848,7</option>
-        <option value="7">Q7 731,8</option>
-        <option value="8">Q8 866</option>
-        <option value="9">Q9 1074</option>
+        <option value="1">Q1  303,1</option>
+        <option value="2">Q2  372,4</option>
+        <option value="3">Q3  433</option>
+        <option value="4">Q4  519,6</option>
+        <option value="5">Q5  602,2</option>
+        <option value="6">Q6  848,7</option>
+        <option value="7">Q7  731,8</option>
+        <option value="8">Q8  866</option>
+        <option value="9">Q9  1074</option>
     </select>
     <div class="input-group-append">
         <span class="input-group-text">± var</span>

@@ -1,7 +1,9 @@
 body {
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100vw;
     height: 100vh;
     font-family: sans-serif;
     overflow-y: hidden;
@@ -124,7 +126,7 @@ nav {
     .input-group-middle,
     .form-control,
     .custom-select {
-        height: 2em;
+        height: 1.9em;
         padding: 0px 5px 0px 5px;
     }
     #titleAppShort {

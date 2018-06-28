@@ -75,8 +75,8 @@ const renderTens = ()=> {
         </div>
            <select id="fuHT" class="custom-select" value="">
             <option value="0">Plage réglée</option>
-            <option value="1">U1 : 0 à 124/√3 V</option>
-            <option value="2">U2: 78/√3 à 121,25/√3 V</option>
+            <option value="1"><B>U1  0 à 124/√3 V</option>
+            <option value="2">U2  78/√3 à 121,25/√3 V</option>
         </select>
     </div>
     <div class="input-group mb-2">
