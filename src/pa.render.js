@@ -49,6 +49,7 @@ const renderPuisAct = ()=> {
         <label for "KU" class="input-group-text">Tension HT / BT</label>
     </div>
     <select id='KU' class="custom-select" value="">
+    <option value="150">15 kV / 100 V</option>
     <option value="200">20 kV / 100 V</option>
     <option value="450">45 kV / 100 V</option>
     <option value="600">60 kV / 100V</option>
