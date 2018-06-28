@@ -2,7 +2,7 @@ import {data} from './data.js';
 
 const renderPuisReact = ()=> {
     container.innerHTML = `
-    <div class="intercal">
+    <div class="bloccalc">
     <p class="mb-1">
     <a>Calcul des valeurs pour 100/√3 V φ=90°</a>
 </p>
@@ -38,7 +38,7 @@ const renderPuisReact = ()=> {
     </div>
 </div>
 </div>
-<div class="intercal">
+<div class="blocset">
 <p class="mb-1">
     <a>Paramètres</a>
 </p>

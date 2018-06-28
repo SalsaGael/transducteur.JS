@@ -22,9 +22,13 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.blocset {
     overflow-y: auto;
     overflow-x: hidden;
-
 }
 
 
