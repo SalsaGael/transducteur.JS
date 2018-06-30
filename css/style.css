@@ -32,7 +32,6 @@ nav {
     touch-action: pan-y;
 }
 
-
 #footer {
     background-color: rgba(240, 240, 240, 0.95);
     border-top: 1px solid rgba(0, 0, 0, 0.85);
@@ -100,8 +99,6 @@ nav {
     color: white;
 }
 
-
-
 .show {
     transform: translateX(0px) !important;
     transition: all 1s ease-in-out;
@@ -119,7 +116,7 @@ nav {
 
 /* Small devices (landscape phones, 576px and up) */
 
-@media (max-width: 350px) {
+@media (min-width: 200px) {
     .input-group-text,
     .input-group-middle,
     .form-control,
@@ -142,16 +139,22 @@ nav {
     .btn-reduct {
         display: block;
     }
+    .input-ant {
+        width: 7.5em;
+    }
+    .input-post {
+        width: 2.8em;
+    }
 }
 
-/* Medium devices (medium phone, 374px and up) */
+/* Medium devices (medium phone, 360px and up) */
 
-@media (min-width: 350px) {
+@media (min-width: 360px) {
     .input-group-text,
     .input-group-middle,
     .form-control,
     .custom-select {
-        height: 2.8em;
+        height: 2.5em;
         padding: 0px 10px 0px 10px;
     }
     #titleAppShort {
@@ -169,16 +172,22 @@ nav {
     .btn-reduct {
         display: block;
     }
+    .input-ant {
+        width: 8.2em;
+    }
+    .input-post {
+        width: 3.5em;
+    }
 }
 
-/* Medium devices (large phone, 400px and up) */
+/* Medium devices (large phone, 375px and up) */
 
-@media (min-width: 400px) {
+@media (min-width: 375px) {
     .form-control,
     .custom-select,
     .input-group-text,
     .input-group-middle {
-        height: 3em;
+        height: 2.7em;
     }
     #titleAppShort {
         display: none;
@@ -197,9 +206,9 @@ nav {
     }
 }
 
-/* Medium devices (tablets, 768px and up) */
+/* Medium devices (tablets, 400px and up) */
 
-@media (min-width: 720px) {
+@media (min-width: 400px) {
     .form-control,
     .custom-select,
     .input-group-text,
@@ -216,10 +225,10 @@ nav {
         display: none;
     }
     .btn-origin {
-        display: block;
+        display: none;
     }
     .btn-reduct {
-        display: none;
+        display: block;
     }
 }
 
@@ -230,7 +239,7 @@ nav {
     .custom-select,
     .input-group-text,
     .input-group-middle {
-        height: 3.4em;
+        height: 3.2em;
     }
     #titleAppShort {
         display: none;
@@ -276,5 +285,5 @@ nav {
 }
 
 .theme-height {
-    height: 40px;
+    height: 37.5px;
 }

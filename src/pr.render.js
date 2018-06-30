@@ -9,32 +9,32 @@ const renderPuisReact = ()=> {
 
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label class="input-group-text text-light bg-secondary">Puissance HT</label>
+        <label class="input-group-text text-light bg-secondary input-ant">Puissance HT</label>
     </div>
     <input type="number" id="prHT" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
     <div class="input-group-append">
-        <span class="input-group-text text-light bg-secondary">Mvar</span>
+        <span class="input-group-text text-light bg-secondary input-post">Mvar</span>
     </div>
 </div>
 
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label class="input-group-text text-light bg-primary">Courant BT</label>
+        <label class="input-group-text text-light bg-primary input-ant">Courant BT</label>
     </div>
     <input type="number" id="irBT" placeholder="Entrez la valeur" class="form-control" aria-label="Small"
         aria-describedby="inputGroup-sizing-sm">
     <div class="input-group-append">
-        <span class="input-group-text text-light bg-primary">A</span>
+        <span class="input-group-text text-light bg-primary input-post">A</span>
     </div>
 </div>
 
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label class="input-group-text text-light bg-success">Sortie procédé</label>
+        <label class="input-group-text text-light bg-success input-ant">Sortie procédé</label>
     </div>
     <input type="number" id="sma" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
     <div class="input-group-append">
-        <span class="input-group-text text-light bg-success">mA</span>
+        <span class="input-group-text text-light bg-success input-post">mA</span>
     </div>
 </div>
 </div>
@@ -104,7 +104,7 @@ const renderPuisReact = ()=> {
 </div>
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label class="input-group-text" for="prMaxHT">Plage HT réglée</label>
+        <label class="input-group-text" for="prMaxHT">Plage HT</label>
     </div>
     <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='prMaxHT' type="number" value="" />
     <div class="input-group-append">

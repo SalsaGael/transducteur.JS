@@ -8,38 +8,38 @@ const renderTens = ()=> {
     </p>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-            <label class="input-group-text text-light bg-secondary">HT Triphasé</label>
+            <label class="input-group-text text-light bg-secondary input-ant">HT Triphasé</label>
         </div>
         <input type="number" id="uHT" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         <div class="input-group-append">
-        <span class="input-group-text text-light bg-secondary">kV</span>
+        <span class="input-group-text text-light bg-secondary input-post">kV</span>
         </div>
     </div>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-            <label class="input-group-text text-light bg-primary">HT Monophasé</label>
+            <label class="input-group-text text-light bg-primary input-ant">HT Monophasé</label>
         </div>
         <input type="number" id="vHT" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         <div class="input-group-append">
-            <span class="input-group-text text-light bg-primary">kV</span>
+            <span class="input-group-text text-light bg-primary input-post">kV</span>
         </div>
     </div>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-            <label class="input-group-text text-light bg-danger">BT Monophasé</label>
+            <label class="input-group-text text-light bg-danger input-ant">BT Monophasé</label>
         </div>
         <input type="number" id="vBT" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         <div class="input-group-append">
-            <span class="input-group-text text-light bg-danger">V</span>
+            <span class="input-group-text text-light bg-danger input-post">V</span>
         </div>
     </div>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-            <label class="input-group-text text-light bg-success">Sortie procédé</label>
+            <label class="input-group-text text-light bg-success input-ant">Sortie procédé</label>
         </div>
             <input type="number" id="vsma" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         <div class="input-group-append">
-            <span class="input-group-text text-light bg-success">mA</span>
+            <span class="input-group-text text-light bg-success input-post">mA</span>
         </div>
     </div>
 </div>
@@ -81,7 +81,7 @@ const renderTens = ()=> {
     </div>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-            <label class="input-group-text" for="uMin">Plage HT réglée</label>
+            <label class="input-group-text" for="uMin">Plage HT</label>
         </div>
         <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="uMin" type="number" value=""/>
         <span class="input-group-text input-group-middle">à</span>
