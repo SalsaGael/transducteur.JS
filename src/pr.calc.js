@@ -23,10 +23,10 @@ const calcPuisReact = () => {
     prMaxHT.value = Math.round(data.prMaxHT * 100) / 100;
     smaMin.value = data.smaMin;
     smaMax.value = data.smaMax;
-    
+
     // Calcul des constantes //
 
-   const calcConst = ()=> {
+    const calcConst = () => {
 
         // Calculer les constantes //
 
@@ -43,18 +43,18 @@ const calcPuisReact = () => {
         data.smaMin = parseFloat(smaMin.value);
         data.smaMax = parseFloat(smaMax.value);
         data.smaPlage = (data.smaMax - data.smaMin) / 2;
-        data.prMaxHT1 = 303.1 * KP / 1000000;
-        data.prMaxHT2 = 372.4 * KP / 1000000;
-        data.prMaxHT3 = 433 * KP / 1000000;
-        data.prMaxHT4 = 519.6 * KP / 1000000;
-        data.prMaxHT5 = 606.2 * KP / 1000000;
-        data.prMaxHT6 = 848.7 * KP / 1000000;
-        data.prMaxHT7 = 731.8 * KP / 1000000;
-        data.prMaxHT8 = 866 * KP / 1000000;
-        data.prMaxHT9 = 1074 * KP / 1000000;
+        data.prMaxHT1 = 303.1 * KP;
+        data.prMaxHT2 = 372.4 * KP;
+        data.prMaxHT3 = 433 * KP;
+        data.prMaxHT4 = 519.6 * KP;
+        data.prMaxHT5 = 606.2 * KP;
+        data.prMaxHT6 = 848.7 * KP;
+        data.prMaxHT7 = 731.8 * KP;
+        data.prMaxHT8 = 866 * KP;
+        data.prMaxHT9 = 1074 * KP;
 
         if (data.fprHT == 0) {
-            data.prMaxHT = prMaxHT.value;
+            data.prMaxHT = prMaxHT.value * 1000;
             fprHT.value = 0;
         } else if (data.fprHT == 1) {
             data.prMaxHT = data.prMaxHT1;
@@ -84,8 +84,10 @@ const calcPuisReact = () => {
             data.prMaxHT = data.prMaxHT9;
             fprHT.value = 9;
         };
-        writeData();
 
+        data.irMaxBT = Math.round(data.prMaxHT / (data.KU * 100 * Math.sqrt(3)) / data.KI * 100) / 100;
+
+        writeData();
     }
 
     // Actualisation du DOM sur changement de valeurs paramétres //
@@ -100,8 +102,11 @@ const calcPuisReact = () => {
         sma.placeholder = `Entrez la valeur`;
         sma.value = ``;
         calcConst();
-        prMaxHT.value = Math.round(data.prMaxHT * 100) / 100;
+        prMaxHT.value = Math.round(data.prMaxHT / 1000) / 1000;
+        prMaxHT.placeholder = Math.round(data.prMaxHT /1000) / 1000;
     }
+
+    razAff();
 
     // DOM Actualisation //
 
@@ -128,42 +133,70 @@ const calcPuisReact = () => {
     });
 
     // Calcul et affichage des valeurs de sorties //
+    // Entrée hors limite //
+    const horsLimite = () => {
+        prHT.placeholder = "Hors limite";
+        prHT.value = "Hors limite";
+        irBT.placeholder = "Hors limite";
+        irBT.value = "Hors limite";
+        sma.placeholder = "Hors limite";
+        sma.value = "Hors limite";
+    }
 
-    prHT.addEventListener('change', function () {
-        calcConst();
-        data.prHT = prHT.value * 1000000;
-        data.irBT = data.prHT / (data.KU * 100 * Math.sqrt(3)) / data.KI;
-        data.sma = (data.prHT / ((data.prMaxHT * 1000000) / data.smaPlage)) + ((data.smaMin + data.smaMax) / 2);
-
+    // Affichage des résultats //
+    const affResult = () => {
+        prHT.placeholder = Math.round(data.prHT / 1000) / 1000;
+        prHT.value = Math.round(data.prHT / 1000) / 1000;
         irBT.placeholder = Math.round(data.irBT * 1000) / 1000;
         irBT.value = Math.round(data.irBT * 1000) / 1000;
         sma.placeholder = Math.round(data.sma * 100) / 100;
         sma.value = Math.round(data.sma * 100) / 100;
+        writeData();
+    }
+
+    prHT.addEventListener('change', function () {
+        calcConst();
+        if (prHT.value > data.prMaxHT) {
+            horsLimite();
+        } else if (prHT.value < -data.prMaxHT) {
+            horsLimite();
+        } else {
+            data.prHT = prHT.value * 1000000;
+            data.irBT = data.prHT / (data.KU * 100 * Math.sqrt(3)) / data.KI;
+            data.sma = (data.prHT / ((data.prMaxHT) / data.smaPlage)) + ((data.smaMin + data.smaMax) / 2);
+            affResult();
+        }
     });
-    
+
     irBT.addEventListener('change', function () {
         calcConst();
-        data.irBT = irBT.value;
-        data.prHT = data.irBT * data.KI * (data.KU * 100) * Math.sqrt(3);
-        data.sma = (data.prHT / ((data.prMaxHT * 1000000) / data.smaPlage)) + ((data.smaMin + data.smaMax) / 2);
+        if (irBT.value > data.irMaxBT) {
+            horsLimite();
+        } else if (irBT.value < -data.irMaxBT) {
+            horsLimite();
+        } else {
+            data.irBT = irBT.value;
+            data.prHT = data.irBT * data.KI * (data.KU * 100) * Math.sqrt(3);
+            data.sma = (data.prHT / (data.prMaxHT / data.smaPlage)) + ((data.smaMin + data.smaMax) / 2);
 
-        prHT.placeholder = Math.round(data.prHT / 10000) / 100;
-        prHT.value = Math.round(data.prHT / 10000) / 100;
-        sma.placeholder = Math.round(data.sma * 100) / 100;
-        sma.value = Math.round(data.sma * 100) / 100;
+            affResult();
+        }
     });
 
     sma.addEventListener('change', function () {
         calcConst();
-        data.sma = sma.value - ((data.smaMin + data.smaMax) / 2);
-        data.prHT = (data.sma) * (data.prMaxHT * 1000000 / data.smaPlage);
-        data.irBT = (data.sma) * (data.prMaxHT * 1000000 / data.smaPlage) / (data.KU * 100 * Math.sqrt(3)) / data.KI;
+        if (sma.value > data.smaMax) {
+            horsLimite();
+        } else if (sma.value < data.smaMin) {
+            horsLimite();
+        } else {
+            data.sma = sma.value - ((data.smaMin + data.smaMax) / 2);
+            data.prHT = (data.sma) * (data.prMaxHT / data.smaPlage);
+            data.irBT = (data.sma) * (data.prMaxHT / data.smaPlage) / (data.KU * 100 * Math.sqrt(3)) / data.KI;
 
-        prHT.placeholder = Math.round(data.prHT / 10000) / 100;
-        prHT.value = Math.round(data.prHT / 10000) / 100;
-        irBT.placeholder = Math.round(data.irBT * 1000) / 1000;
-        irBT.value = Math.round(data.irBT * 1000) / 1000;
+            affResult();
+        }
     });
- };
+};
 
 export default calcPuisReact;

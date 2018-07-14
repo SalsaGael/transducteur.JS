@@ -20,7 +20,7 @@ const calcPuisAct = () => {
     pTC.value = data.pTC;
     sTC.value = data.sTC;
     fpaHT.value = data.fpaHT;
-    paMaxHT.value = Math.round(data.paMaxHT * 100) / 100;
+    paMaxHT.value = Math.round(data.paMaxHT * 100) / 100000000;
     smaMin.value = data.smaMin;
     smaMax.value = data.smaMax;
     
@@ -43,17 +43,17 @@ const calcPuisAct = () => {
         data.smaMin = parseFloat(smaMin.value);
         data.smaMax = parseFloat(smaMax.value);
         data.smaPlage = (data.smaMax - data.smaMin) / 2;
-        data.paMaxHT1 = 606.2 * KP / 1000000;
-        data.paMaxHT2 = 744.8 * KP / 1000000;
-        data.paMaxHT3 = 866 * KP / 1000000;
-        data.paMaxHT4 = 1039 * KP / 1000000;
-        data.paMaxHT5 = 1212 * KP / 1000000;
-        data.paMaxHT6 = 1464 * KP / 1000000;
-        data.paMaxHT8 = 1732 * KP / 1000000;
-        data.paMaxHT9 = 2148 * KP / 1000000;
+        data.paMaxHT1 = 606.2 * KP;
+        data.paMaxHT2 = 744.8 * KP;
+        data.paMaxHT3 = 866 * KP;
+        data.paMaxHT4 = 1039 * KP;
+        data.paMaxHT5 = 1212 * KP;
+        data.paMaxHT6 = 1464 * KP;
+        data.paMaxHT8 = 1732 * KP;
+        data.paMaxHT9 = 2148 * KP;
 
         if (data.fpaHT == 0) {
-            data.paMaxHT = paMaxHT.value;
+            data.paMaxHT = paMaxHT.value * 1000;
             fpaHT.value = 0;
         } else if (data.fpaHT == 1) {
             data.paMaxHT = data.paMaxHT1;
@@ -83,6 +83,9 @@ const calcPuisAct = () => {
             data.paMaxHT = data.paMaxHT9;
             fpaHT.value = 9;
         };
+
+        data.iaMaxBT = Math.round(data.paMaxHT / (data.KU * 100 * Math.sqrt(3)) / data.KI * 100) / 100;
+
         writeData();
     }
 
@@ -98,8 +101,11 @@ const calcPuisAct = () => {
         sma.placeholder = `Entrez la valeur`;
         sma.value = ``;
         calcConst();
-        paMaxHT.value = Math.round(data.paMaxHT * 100) / 100;
+        paMaxHT.value = Math.round(data.paMaxHT / 1000) / 1000;
+        paMaxHT.placeholder = Math.round(data.paMaxHT / 1000) / 1000;
     }
+
+   razAff();
 
     // DOM Actualisation //
 
@@ -126,41 +132,70 @@ const calcPuisAct = () => {
     });
 
     // Calcul et affichage des valeurs de sorties //
+    // Entrée hors limite //
+    const horsLimite = () => {
+        paHT.placeholder = "Hors limite";
+        paHT.value = "Hors limite";
+        iaBT.placeholder = "Hors limite";
+        iaBT.value = "Hors limite";
+        sma.placeholder = "Hors limite";
+        sma.value = "Hors limite";
+    }
 
-    paHT.addEventListener('change', function () {
-        calcConst();
-        data.paHT = paHT.value * 1000000;
-        data.iaBT = data.paHT / (data.KU * 100 * Math.sqrt(3)) / data.KI;
-        data.sma = (data.paHT / ((data.paMaxHT * 1000000) / data.smaPlage)) + ((data.smaMin + data.smaMax) / 2);
-
+    // Affichage des résultats //
+    const affResult = () => {
+        paHT.placeholder = Math.round(data.paHT / 1000) / 1000;
+        paHT.value = Math.round(data.paHT / 1000) / 1000;
         iaBT.placeholder = Math.round(data.iaBT * 1000) / 1000;
         iaBT.value = Math.round(data.iaBT * 1000) / 1000;
         sma.placeholder = Math.round(data.sma * 100) / 100;
         sma.value = Math.round(data.sma * 100) / 100;
+        writeData();
+    }
+
+    paHT.addEventListener('change', function () {
+        calcConst();
+        if (paHT.value * 1000 > data.paMaxHT) {
+            horsLimite();
+        } else if (paHT.value * 1000 < -data.paMaxHT) {
+            horsLimite();
+        } else {
+            data.paHT = paHT.value * 1000000;
+            data.iaBT = data.paHT / (data.KU * 100 * Math.sqrt(3)) / data.KI;
+            data.sma = (data.paHT / ((data.paMaxHT) / data.smaPlage)) + ((data.smaMin + data.smaMax) / 2);
+
+            affResult();
+        }
     });
 
     iaBT.addEventListener('change', function () {
         calcConst();
-        data.iaBT = iaBT.value;
-        data.paHT = data.iaBT * data.KI * (data.KU * 100) * Math.sqrt(3);
-        data.sma = (data.paHT / ((data.paMaxHT * 1000000) / data.smaPlage)) + ((data.smaMin + data.smaMax) / 2);
+        if (iaBT.value > data.iaMaxBT) {
+            horsLimite();
+        } else if (iaBT.value < -data.iaMaxBT) {
+            horsLimite();
+        } else {
+            data.iaBT = iaBT.value;
+            data.paHT = (data.iaBT * data.KI) * (data.KU * 100) * Math.sqrt(3);
+            data.sma = (data.paHT / (data.paMaxHT / data.smaPlage)) + ((data.smaMin + data.smaMax) / 2);
 
-        paHT.placeholder = Math.round(data.paHT / 10000) / 100;
-        paHT.value = Math.round(data.paHT / 10000) / 100;
-        sma.placeholder = Math.round(data.sma * 100) / 100;
-        sma.value = Math.round(data.sma * 100) / 100;
+            affResult();
+        }
     });
 
     sma.addEventListener('change', function () {
         calcConst();
-        data.sma = sma.value - ((data.smaMin + data.smaMax) / 2);
-        data.paHT = (data.sma) * (data.paMaxHT * 1000000 / data.smaPlage);
-        data.iaBT = (data.sma) * (data.paMaxHT * 1000000 / data.smaPlage) / (data.KU * 100 * Math.sqrt(3)) / data.KI;
+        if (sma.value > data.smaMax) {
+            horsLimite();
+        } else if (sma.value < data.smaMin) {
+            horsLimite();
+        } else {
+            data.sma = sma.value - ((data.smaMin + data.smaMax) / 2);
+            data.paHT = (data.sma) * (data.paMaxHT / data.smaPlage);
+            data.iaBT = (data.sma) * (data.paMaxHT / data.smaPlage) / (data.KU * 100 * Math.sqrt(3)) / data.KI;
 
-        paHT.placeholder = Math.round(data.paHT / 10000) / 100;
-        paHT.value = Math.round(data.paHT / 10000) / 100;
-        iaBT.placeholder = Math.round(data.iaBT * 1000) / 1000;
-        iaBT.value = Math.round(data.iaBT * 1000) / 1000;
+            affResult();
+        }
     });
 };
 
