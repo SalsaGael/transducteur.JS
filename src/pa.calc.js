@@ -20,7 +20,6 @@ const calcPuisAct = () => {
     pTC.value = data.pTC;
     sTC.value = data.sTC;
     fpaHT.value = data.fpaHT;
-    paMaxHT.value = Math.round(data.paMaxHT * 100) / 100000000;
     smaMin.value = data.smaMin;
     smaMax.value = data.smaMax;
     
@@ -53,7 +52,7 @@ const calcPuisAct = () => {
         data.paMaxHT9 = 2148 * KP;
 
         if (data.fpaHT == 0) {
-            data.paMaxHT = paMaxHT.value * 1000;
+            data.paMaxHT = paMaxHT.value * 1000000;
             fpaHT.value = 0;
         } else if (data.fpaHT == 1) {
             data.paMaxHT = data.paMaxHT1;
@@ -155,9 +154,9 @@ const calcPuisAct = () => {
 
     paHT.addEventListener('change', function () {
         calcConst();
-        if (paHT.value * 1000 > data.paMaxHT) {
+        if (paHT.value * 1000000 > data.paMaxHT) {
             horsLimite();
-        } else if (paHT.value * 1000 < -data.paMaxHT) {
+        } else if (paHT.value * 10000000 < -data.paMaxHT) {
             horsLimite();
         } else {
             data.paHT = paHT.value * 1000000;

@@ -20,7 +20,6 @@ const calcPuisReact = () => {
     pTC.value = data.pTC;
     sTC.value = data.sTC;
     fprHT.value = data.fprHT;
-    prMaxHT.value = Math.round(data.prMaxHT * 100) / 100;
     smaMin.value = data.smaMin;
     smaMax.value = data.smaMax;
 
@@ -54,7 +53,7 @@ const calcPuisReact = () => {
         data.prMaxHT9 = 1074 * KP;
 
         if (data.fprHT == 0) {
-            data.prMaxHT = prMaxHT.value * 1000;
+            data.prMaxHT = prMaxHT.value * 1000000;
             fprHT.value = 0;
         } else if (data.fprHT == 1) {
             data.prMaxHT = data.prMaxHT1;
@@ -103,7 +102,7 @@ const calcPuisReact = () => {
         sma.value = ``;
         calcConst();
         prMaxHT.value = Math.round(data.prMaxHT / 1000) / 1000;
-        prMaxHT.placeholder = Math.round(data.prMaxHT /1000) / 1000;
+        prMaxHT.placeholder = Math.round(data.prMaxHT / 1000) / 1000;
     }
 
     razAff();
@@ -121,7 +120,7 @@ const calcPuisReact = () => {
     smaMax.addEventListener('change', razAff);
 
     fprHT.addEventListener('change', function () {
-        data.fprHT = parseFloat(fprHT.value);
+        data.fprHT = fprHT.value;
         razAff();
     });
 
@@ -156,9 +155,9 @@ const calcPuisReact = () => {
 
     prHT.addEventListener('change', function () {
         calcConst();
-        if (prHT.value > data.prMaxHT) {
+        if (prHT.value * 1000000 > data.prMaxHT) {
             horsLimite();
-        } else if (prHT.value < -data.prMaxHT) {
+        } else if (prHT.value * 1000000 < -data.prMaxHT) {
             horsLimite();
         } else {
             data.prHT = prHT.value * 1000000;

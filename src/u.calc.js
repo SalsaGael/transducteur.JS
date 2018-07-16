@@ -1,7 +1,6 @@
 import {
     writeData,
-    readData,
-    data,
+    data
 } from './data.js'
 
 const calcTens = () => {
@@ -23,8 +22,6 @@ const calcTens = () => {
 
     KU.value = data.KU;
     fuHT.value = data.fuHT;
-    uMin.value = data.uMin;
-    uMax.value = data.uMax;
     smaMinU.value = data.smaMinU;
     smaMaxU.value = data.smaMaxU;
 
@@ -35,8 +32,6 @@ const calcTens = () => {
         // Calculer les constantes //
 
         let smaPlageU = smaMaxU.value - smaMinU.value;
-        let vMin = uMin.value / Math.sqrt(3);
-        let vMax = uMax.value / Math.sqrt(3);
         let bvMin = uMin.value * 1000 / KU.value / Math.sqrt(3);
         let bvMax = uMax.value * 1000 / KU.value / Math.sqrt(3);
         let buMin = uMin.value * 1000 / KU.value;
@@ -49,10 +44,6 @@ const calcTens = () => {
         // Stocker les datas constantes //
         data.smaPlageU = Number.parseFloat(smaPlageU);
         data.KU = Number.parseFloat(KU.value);
-        data.uMin = Number.parseFloat(uMin.value);
-        data.uMax = Number.parseFloat(uMax.value);
-        data.vMin = Number.parseFloat(vMin);
-        data.vMax = Number.parseFloat(vMax);
         data.bvMin = Number.parseFloat(bvMin);
         data.bvMax = Number.parseFloat(bvMax);
         data.faMin = Number.parseFloat(faMin);
@@ -68,20 +59,22 @@ const calcTens = () => {
     const calcFam = () => {
         calcConst();
         if (data.fuHT == 0) {
-            data.uMin = uMin.value;
-            data.uMax = uMax.value;
+            data.uMin = uMin.value * 1000;
+            data.uMax = uMax.value * 1000;
         } else if (data.fuHT == 1) {
             uMin.value = 0;
             uMax.value = Math.round(data.KU * 124 / 10) / 100;
-            data.uMin = Number.parseFloat(uMin.value);
-            data.uMax = Number.parseFloat(uMax.value);
+            data.uMin = 0;
+            data.uMax = data.KU * 124;
         } else if (data.fuHT == 2) {
             data.fuHT = 2;
             uMin.value = Math.round(data.KU * 78 / 10) / 100;
             uMax.value = Math.round(data.KU * 121.25 / 10) / 100;
-            data.uMin = Number.parseFloat(uMin.value);
-            data.uMax = Number.parseFloat(uMax.value);
+            data.uMin = data.KU * 78;
+            data.uMax = data.KU * 121.25;
         }
+        data.vMin = data.uMin / Math.sqrt(3);
+        data.vMax = data.uMax / Math.sqrt(3);
         writeData();
     }
 
@@ -114,8 +107,6 @@ const calcTens = () => {
 
     document.getElementById("KU").addEventListener('change', function () {
         calcFam();
-        fuHT1.innerText = `U1 : de 0 à 124 V BT = de 0 à ${Math.round(data.KU * 124 / 10) / 100} kV`;
-        fuHT2.innerText = `U2 : de 78 à 121,25 V BT = de ${Math.round(data.KU * 78 / 10) / 100} à ${Math.round(data.KU * 121.25 / 10) / 100} kV`;
         vHT.placeholder = `Entrez la valeur`;
         vHT.value = ``;
         uHT.placeholder = `Entrez la valeur`;
@@ -142,7 +133,7 @@ const calcTens = () => {
 
     // Affichage des résultats //
     const affResult = () => {
-        uHT.placeholder = Math.round(data.uHT * 1000) / 1000;
+        uHT.placeholder = Math.round(data.uHT / 10) / 100;
         uHT.value = Math.round(data.uHT / 10) / 100;
         vHT.placeholder = Math.round(data.vHT / 10) / 100;
         vHT.value = Math.round(data.vHT / 10) / 100;
@@ -155,13 +146,13 @@ const calcTens = () => {
 
     document.getElementById("uHT").addEventListener('change', function () {
         calcConst();
-        if (uHT.value < data.uMin) {
+        if (uHT.value * 1000 < data.uMin) {
             horsLimite();
-        } else if (uHT.value > data.uMax) {
+        } else if (uHT.value * 1000 > data.uMax) {
             horsLimite();
         } else {
 
-            data.uHT = Number.parseFloat(uHT.value * 1000);
+            data.uHT = uHT.value * 1000;
             data.vHT = data.uHT / Math.sqrt(3);
             data.vBT = data.uHT / Math.sqrt(3) / data.KU;
             data.sma = ((data.vBT * data.vBT * data.faMax) + data.faMin);
@@ -172,13 +163,13 @@ const calcTens = () => {
 
     document.getElementById("vHT").addEventListener('change', function () {
         calcConst();
-        if (vHT.value < data.vMin) {
+        if (vHT.value * 1000 < data.vMin) {
             horsLimite();
-        } else if (vHT.value > data.vMax) {
+        } else if (vHT.value * 1000 > data.vMax) {
             horsLimite();
         } else {
 
-            data.vHT = Number.parseFloat(vHT.value * 1000);
+            data.vHT = vHT.value * 1000;
             data.uHT = data.vHT * Math.sqrt(3);
             data.vBT = data.vHT / data.KU;
             data.sma = ((data.vBT * data.vBT * data.faMax) + data.faMin);
@@ -195,7 +186,7 @@ const calcTens = () => {
             horsLimite();
         } else {
 
-            data.vBT = Number.parseFloat(vBT.value);
+            data.vBT = vBT.value;
             data.vHT = data.vBT * data.KU;
             data.uHT = data.vBT * data.KU * Math.sqrt(3);
             data.sma = ((data.vBT * data.vBT * data.faMax) + data.faMin);
@@ -212,7 +203,7 @@ const calcTens = () => {
             horsLimite();
         } else {
 
-            data.sma = Number.parseFloat(vsma.value) - data.smaMinU;
+            data.sma = vsma.value - data.smaMinU;
             data.vHT = Math.sqrt((data.sma - data.faMin) / data.faMax) * data.KU;
             data.uHT = Math.sqrt((data.sma - data.faMin) / data.faMax) * data.KU * Math.sqrt(3);
             data.vBT = Math.sqrt((data.sma - data.faMin) / data.faMax);
