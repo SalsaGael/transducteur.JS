@@ -25,7 +25,7 @@ const calcPuisReact = () => {
 
     // Calcul des constantes //
 
-    const calcConst = () => {
+    const calcConst = ()=> {
 
         // Calculer les constantes //
 
@@ -177,7 +177,6 @@ const calcPuisReact = () => {
             data.irBT = irBT.value;
             data.prHT = data.irBT * data.KI * (data.KU * 100) * Math.sqrt(3);
             data.sma = (data.prHT / (data.prMaxHT / data.smaPlage)) + ((data.smaMin + data.smaMax) / 2);
-
             affResult();
         }
     });
@@ -189,10 +188,9 @@ const calcPuisReact = () => {
         } else if (sma.value < data.smaMin) {
             horsLimite();
         } else {
-            data.sma = sma.value - ((data.smaMin + data.smaMax) / 2);
-            data.prHT = (data.sma) * (data.prMaxHT / data.smaPlage);
-            data.irBT = (data.sma) * (data.prMaxHT / data.smaPlage) / (data.KU * 100 * Math.sqrt(3)) / data.KI;
-
+            data.sma = sma.value;
+            data.prHT = (data.sma - ((data.smaMin + data.smaMax) / 2)) * (data.prMaxHT / data.smaPlage);
+            data.irBT = (data.sma - ((data.smaMin + data.smaMax) / 2)) * (data.prMaxHT / data.smaPlage) / (data.KU * 100 * Math.sqrt(3)) / data.KI;
             affResult();
         }
     });

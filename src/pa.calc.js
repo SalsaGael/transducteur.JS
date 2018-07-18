@@ -4,7 +4,7 @@ import {
 } from './data.js';
 
 const calcPuisAct = () => {
-    
+
     const paHT = document.getElementById("paHT");
     const iaBT = document.getElementById("iaBT");
     const sma = document.getElementById("sma");
@@ -15,17 +15,17 @@ const calcPuisAct = () => {
     const fpaHT = document.getElementById("fpaHT");
     const smaMin = document.getElementById("smaMin");
     const smaMax = document.getElementById("smaMax");
-    
+
     KU.value = data.KU;
     pTC.value = data.pTC;
     sTC.value = data.sTC;
     fpaHT.value = data.fpaHT;
     smaMin.value = data.smaMin;
     smaMax.value = data.smaMax;
-    
+
     // Calcul des constantes //
 
-    const calcConst = ()=> {
+    const calcConst = () => {
 
         // Calculer les constantes //
 
@@ -104,7 +104,7 @@ const calcPuisAct = () => {
         paMaxHT.placeholder = Math.round(data.paMaxHT / 1000) / 1000;
     }
 
-   razAff();
+    razAff();
 
     // DOM Actualisation //
 
@@ -156,13 +156,12 @@ const calcPuisAct = () => {
         calcConst();
         if (paHT.value * 1000000 > data.paMaxHT) {
             horsLimite();
-        } else if (paHT.value * 10000000 < -data.paMaxHT) {
+        } else if (paHT.value * 1000000 < -data.paMaxHT) {
             horsLimite();
         } else {
             data.paHT = paHT.value * 1000000;
             data.iaBT = data.paHT / (data.KU * 100 * Math.sqrt(3)) / data.KI;
             data.sma = (data.paHT / ((data.paMaxHT) / data.smaPlage)) + ((data.smaMin + data.smaMax) / 2);
-
             affResult();
         }
     });
@@ -177,7 +176,6 @@ const calcPuisAct = () => {
             data.iaBT = iaBT.value;
             data.paHT = (data.iaBT * data.KI) * (data.KU * 100) * Math.sqrt(3);
             data.sma = (data.paHT / (data.paMaxHT / data.smaPlage)) + ((data.smaMin + data.smaMax) / 2);
-
             affResult();
         }
     });
@@ -189,10 +187,9 @@ const calcPuisAct = () => {
         } else if (sma.value < data.smaMin) {
             horsLimite();
         } else {
-            data.sma = sma.value - ((data.smaMin + data.smaMax) / 2);
-            data.paHT = (data.sma) * (data.paMaxHT / data.smaPlage);
-            data.iaBT = (data.sma) * (data.paMaxHT / data.smaPlage) / (data.KU * 100 * Math.sqrt(3)) / data.KI;
-
+            data.sma = sma.value;
+            data.paHT = (data.sma - ((data.smaMin + data.smaMax) / 2)) * (data.paMaxHT / data.smaPlage);
+            data.iaBT = (data.sma - ((data.smaMin + data.smaMax) / 2)) * (data.paMaxHT / data.smaPlage) / (data.KU * 100 * Math.sqrt(3)) / data.KI;
             affResult();
         }
     });
