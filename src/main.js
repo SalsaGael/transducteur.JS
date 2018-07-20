@@ -1,4 +1,3 @@
-
 	import {
 		writeData,
 		readData,
@@ -14,7 +13,7 @@
 	import windowsTheme from './windowsAPI.js';
 	import shareAPI from './shareAPI.js';
 	import Hammer from './hammer.js';
-	
+
 document.addEventListener('DOMContentLoaded', function () {
 
 	// Force HTTPS pour Service Worker //
