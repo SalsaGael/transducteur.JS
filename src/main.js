@@ -2,17 +2,21 @@
 		writeData,
 		readData,
 		data,
-	} from './data.js'
+	} from './js/data.js'
 
-	import renderPuisAct from './pa.render.js';
-	import calcPuisAct from './pa.calc.js';
-	import renderPuisReact from './pr.render.js';
-	import calcPuisReact from './pr.calc.js';
-	import renderTens from './u.render.js';
-	import calcTens from './u.calc.js';
-	import windowsTheme from './windowsAPI.js';
-	import shareAPI from './shareAPI.js';
-	import Hammer from './hammer.js';
+	import renderPuisAct from './js/pa.render.js';
+	import calcPuisAct from './js/pa.calc.js';
+	import renderPuisReact from './js/pr.render.js';
+	import calcPuisReact from './js/pr.calc.js';
+	import renderTens from './js/u.render.js';
+	import calcTens from './js/u.calc.js';
+	import windowsTheme from './js/windowsAPI.js';
+	import shareAPI from './js/shareAPI.js';
+	import Hammer from './js/hammer.js';
+
+	import cssreset from './css/reset.css';
+	import cssbootstrap from './css/bootstrap.min.css';
+	import css from './css/main.css';
 
 document.addEventListener('DOMContentLoaded', function () {
 

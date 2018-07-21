@@ -44,7 +44,7 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve('./dist'),   
+    path: path.resolve('./dist'),
     filename: './bundle.js'
   },
 
@@ -60,17 +60,20 @@ module.exports = {
     }, {
       test: /\.css$/,
 
-      use: ExtractTextPlugin.extract({ 
-                      use: [{
-                        loader: "css-loader",
-                        options: {
-                          sourceMap: true
-                        }
-                      }],
-                      fallback: "style-loader"
-                     })
+      use: ExtractTextPlugin.extract({
+        use: [{
+          loader: "css-loader",
+          options: {
+            sourceMap: true
+          }
+        }],
+        fallback: "style-loader"
+      })
     }]
   },
 
-  plugins: [new UglifyJSPlugin(), new ExtractTextPlugin('style.css.[contentHash].css')]
+  plugins: [
+    new UglifyJSPlugin(),
+    new ExtractTextPlugin('./css/style.css')
+  ]
 }
