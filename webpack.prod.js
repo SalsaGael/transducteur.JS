@@ -74,6 +74,6 @@ module.exports = {
 
   plugins: [
     new UglifyJSPlugin(),
-    new ExtractTextPlugin('./css/style.css')
+    new ExtractTextPlugin('./style.css')
   ]
 }

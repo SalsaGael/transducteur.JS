@@ -4,10 +4,8 @@ var CACHE = 'sw-precache';
 var precacheFiles = [
   './',
   './index.html',
-  './css/reset.css',
   'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
-  'https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css',
-  './css/style.css',
+  './dist/style.css',
   './data.json',
   './images/logo.png',
   './images/android-chrome-192x192.png',

@@ -74,5 +74,5 @@ module.exports = {
 plugins: [
   new UglifyJSPlugin({
     exclude: /\/excludes/
-  }), new ExtractTextPlugin('./css/style.css')
+  }), new ExtractTextPlugin('./style.css')
 ]}
