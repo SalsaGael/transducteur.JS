@@ -30,9 +30,6 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-
-
-
 module.exports = {
   mode: 'development',
   watch: true,
@@ -72,7 +69,6 @@ module.exports = {
   },
 
 plugins: [
-  new UglifyJSPlugin({
-    exclude: /\/excludes/
-  }), new ExtractTextPlugin('./style.css')
+  new UglifyJSPlugin({exclude: /\/excludes/}),
+  new ExtractTextPlugin('./style.css')
 ]}

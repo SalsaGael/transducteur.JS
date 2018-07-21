@@ -15,7 +15,7 @@
 	import Hammer from './js/hammer.js';
 
 	import cssreset from './css/reset.css';
-	import cssbootstrap from './css/bootstrap.min.css';
+	import cssbootstrap from './css/bootstrap.css';
 	import css from './css/main.css';
 
 document.addEventListener('DOMContentLoaded', function () {

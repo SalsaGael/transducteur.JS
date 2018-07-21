@@ -11,9 +11,6 @@ const path = require('path')
 
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
-
-
-
 /*
  * We've enabled commonsChunkPlugin for you. This allows your app to
  * load faster and it splits the modules you provided as entries across
@@ -33,9 +30,6 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
  */
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-
-
 
 module.exports = {
   mode: 'production',
@@ -64,7 +58,8 @@ module.exports = {
         use: [{
           loader: "css-loader",
           options: {
-            sourceMap: true
+            sourceMap: true,
+            minimize: true,
           }
         }],
         fallback: "style-loader"
