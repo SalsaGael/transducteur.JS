@@ -1,10 +1,11 @@
-const webpack = require('webpack')
-
-const path = require('path')
-
+const webpack = require('webpack');
+const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const postcss = require('postcss');
+const precss = require('precss');
+const fs = require('fs');
 
 module.exports = {
   mode: 'production',
@@ -38,6 +39,7 @@ module.exports = {
                 require('autoprefixer')({
                   browsers: ['last 2 versions', 'ie > 9']
                 }),
+                require('precss'),
               ]
             }
           }
@@ -61,6 +63,7 @@ module.exports = {
                 require('autoprefixer')({
                   browsers: ['last 2 versions', 'ie > 9']
                 }),
+                require('precss'),
               ]
             }
           },

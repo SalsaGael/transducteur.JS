@@ -1,6 +1,6 @@
-import {data} from './data.js';
+import data from './data.js';
 
-const renderTens = ()=> {
+const renderTens = () => {
     container.innerHTML = `
 <div class="bloccalc">
     <p class="mb-1">

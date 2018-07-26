@@ -1,10 +1,10 @@
 import {
-	data,
+    data,
 } from './data.js'
 
 // Theme Windows10 //
 
-const windowsTheme = ()=> {
+const windowsTheme = () => {
     // Découverte du theme Windows 10 //
 
     const checkTheme = () => {
