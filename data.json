@@ -1,7 +1,7 @@
 {
     "start": "calcpa",
     "theme": "light",
-    "timer": false,
+    "timer": 0,
     "themeselect": "light",
     "KU": 2200,
     "KI": 300,

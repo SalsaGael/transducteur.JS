@@ -127,12 +127,13 @@
 		// Gestion Panneau Menu //
 
 		const showMenu = () => {
-			if (data.timer == false) {
-				data.timer = true;
+			console.log(data.timer);
+			if (data.timer == 0) {
+				data.timer = 1;
 				menu.classList.add("show");
 				menubtn.classList.add("active");
 				setTimeout(function () {
-					data.timer = false;
+					data.timer = 0;
 					menu.classList.remove("show");
 					menubtn.classList.remove("active");
 				}, 10000)
@@ -155,7 +156,7 @@
 		menubtn.onclick = (e) => {
 			e.stopPropagation();
 			e.preventDefault();
-			if (data.timer == false) {
+			if (data.timer == 0) {
 				showMenu();
 			} else {
 				toggleMenu();
