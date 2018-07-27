@@ -2,7 +2,7 @@ import data from './data.js';
 
 const renderTens = () => {
     container.innerHTML = `
-<div class="bloccalc">
+<div class="bloccalc" id="bloccalc">
     <p class="mb-1">
         <a>Calcul des valeurs</a>
     </p>
@@ -44,7 +44,7 @@ const renderTens = () => {
     </div>
 </div>
 
-<div class="blocset">
+<div class="blocset" id="blocset">
     <p class="mb-1">
         <a>Transformateur de tension</a>
     </p>

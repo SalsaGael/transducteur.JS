@@ -38,7 +38,6 @@
 		}
 
 		// Elements affichage a cibler //
-		const root = document.querySelector(':root');
 		const body = document.querySelector('#body');
 		const nav = document.querySelector('#nav');
 		const tabCalcPuisAct = document.getElementById("tabCalcPuisAct");
@@ -51,7 +50,6 @@
 		const tabCalcPuisActReduct = document.getElementById("tabCalcPuisActReduct");
 		const tabCalcPuisReactReduct = document.getElementById("tabCalcPuisReactReduct");
 		const tabCalcTensReduct = document.getElementById("tabCalcTensReduct");
-		const burger = document.querySelector('#burger');
 		const menubtn = document.querySelector('#menubtn');
 
 		// RAZ Bandeau //
@@ -64,6 +62,7 @@
 			tabCalcPuisActReduct.classList.remove("active");
 			tabCalcPuisReactReduct.classList.remove("active");
 			tabCalcTensReduct.classList.remove("active");
+			themeApply();
 		}
 
 		// Bascule Calculette Puissance Active //
@@ -127,7 +126,6 @@
 		// Gestion Panneau Menu //
 
 		const showMenu = () => {
-			console.log(data.timer);
 			if (data.timer == 0) {
 				data.timer = 1;
 				menu.classList.add("show");
@@ -189,14 +187,28 @@
 		// Application du thème //
 
 		const themeApply = () => {
+			const bloccalc = document.querySelector('#bloccalc');
+			const blocset = document.querySelector('#blocset');
 			if (data.theme == "dark") {
 				body.style.setProperty("background-color", "rgba(0, 0, 0, 0.85)");
+				bloccalc.style.setProperty("color", "grey");
+				blocset.style.setProperty("color", "grey");
 				nav.style.setProperty("background-color", "rgba(23, 162, 184, 0.9)");
 				footer.style.setProperty("background-color", "rgba(23, 162, 184, 0.9)");
 				menu.style.setProperty("background-color", "rgba(23, 162, 184, 0.9)");
 				menu.style.setProperty("color", "white");
+			}else if (data.theme == "orange") {
+				body.style.setProperty("background-color", "rgba(0, 0, 0, 0.8)");
+				bloccalc.style.setProperty("color", "grey");
+				blocset.style.setProperty("color", "grey");
+				nav.style.setProperty("background-color", "rgba(255, 145, 0, 0.9)");
+				footer.style.setProperty("background-color", "rgba(255, 145, 0, 0.9)");
+				menu.style.setProperty("background-color", "rgba(255, 145, 0, 0.9)");
+				menu.style.setProperty("color", "dark");
 			} else {
 				body.style.setProperty("background-color", "initial");
+				bloccalc.style.setProperty("color", "initial");
+				blocset.style.setProperty("color", "initial");
 				nav.style.setProperty("background-color", "rgba(240, 240, 240, 0.95)");
 				footer.style.setProperty("background-color", "rgba(240, 240, 240, 0.95)");
 				menu.style.setProperty("background-color", "rgba(240, 240, 240, 0.95)");
@@ -208,13 +220,11 @@
 
 		theme.addEventListener('change', function () {
 			data.themeselect = theme.value;
-			if (data.themeselect == "light") {
-				data.theme = "light";
-			} else if (data.themeselect == "dark") {
-				data.theme = "dark";
-			} else if (data.themeselect == "system") {
+			if (data.themeselect == "system") {
 				// Vérification du  Theme Windows 10 //
 				windowsTheme();
+			} else {
+				data.theme = theme.value;
 			};
 			writeData();
 			themeApply();

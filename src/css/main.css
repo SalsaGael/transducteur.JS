@@ -30,6 +30,7 @@ nav {
 }
 
 .blocset {
+    color: white;
     overflow-y: auto;
     touch-action: pan-y;
 }
@@ -104,9 +105,15 @@ nav {
     width: 50%;
 }
 
-.theme-height {
-    height: 40px !important;
+.theme-select {
+    height: 42px !important;
 }
+
+.theme-icon {
+    height: 42px !important;
+    width: 42px !important;
+}
+
 
 /* Extra small devices (portrait phones, less than 576px) */
 

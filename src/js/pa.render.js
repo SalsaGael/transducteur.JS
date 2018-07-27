@@ -2,7 +2,7 @@ import data from './data.js';
 
 const renderPuisAct = ()=> {
     container.innerHTML = `
-<div class="bloccalc">
+<div class="bloccalc" id="bloccalc">
     <p class="mb-1">
         <a>Calcul des valeurs pour 100/√3 V φ=0°</a>
     </p>
@@ -39,7 +39,7 @@ const renderPuisAct = ()=> {
     </div>
 </div>
 
-<div class="blocset">
+<div class="blocset" id="blocset">
 <p class="mb-1">
     <a>Paramètres</a>
 </p>

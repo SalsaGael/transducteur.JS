@@ -8,20 +8,14 @@ const shareAPI = () => {
 
         let li = document.createElement('li');
         li.classList.add("m-4");
-        li.innerHTML = `<button class="btn btn-dark theme-height" onClick="" type="button" id="sharebtn">
+        li.innerHTML = `<button class="btn btn-dark theme-icon" onClick="" type="button" id="sharebtn">
         <i class="fa fa-share" aria-hidden="true"></i>
     </button>
     <a>Partager</a>
     `
         menulist.append(li);
  
-        const renderShare = `<li><button class="btn btn-dark" onClick="" type="button" id="shareBtn">
-        <i class="fa fa-share" aria-hidden="true"></i>
-    </button>
-    <a>Partager l'application</a>
-    </li>`
-	    
-        const shareButton = document.querySelector('#sharebtn');
+    const shareButton = document.querySelector('#sharebtn');
             
         shareButton.onclick = (e) => {
             e.preventDefault();
