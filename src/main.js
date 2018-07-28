@@ -237,7 +237,7 @@
 		// Lancement par défaut //
 
 		const defStart = async () => {
-			
+
 			// Chargement des données Sauv ou par défaut //
 
 			await readData();
@@ -295,5 +295,26 @@
 		} else {
 			console.log("SW indisponible avec ce Navigateur")
 		}
+
+		function toggleCompactOverlayMode(forceCompactOverlay = false) {
+			if(!window.Windows) return Promise.resolve("unsupported");
+		
+			var applicationView = Windows.UI.ViewManagement.ApplicationView;
+			var currentMode = applicationView.getForCurrentView().viewMode;
+		
+			var newMode = (currentMode == Windows.UI.ViewManagement.ApplicationViewMode.default) || forceCompactOverlay
+				? Windows.UI.ViewManagement.ApplicationViewMode.compactOverlay
+				: Windows.UI.ViewManagement.ApplicationViewMode.default;
+		
+			return applicationView.getForCurrentView()
+				.tryEnterViewModeAsync(newMode)
+				.then(() => newMode);
+		}
+
+		const minime = document.querySelector('#minime');
+
+		minime.onclick = () => {
+			toggleCompactOverlayMode(forceCompactOverlay = false);
+		};
 
 	})
