@@ -314,7 +314,7 @@
 		const minime = document.querySelector('#minime');
 
 		minime.onclick = () => {
-			toggleCompactOverlayMode();
+			toggleCompactOverlayMode(forceCompactOverlay);
 		};
 
 	})
