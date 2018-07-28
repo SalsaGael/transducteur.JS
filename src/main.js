@@ -197,7 +197,7 @@
 				footer.style.setProperty("background-color", "rgba(23, 162, 184, 0.9)");
 				menu.style.setProperty("background-color", "rgba(23, 162, 184, 0.9)");
 				menu.style.setProperty("color", "white");
-			}else if (data.theme == "orange") {
+			} else if (data.theme == "orange") {
 				body.style.setProperty("background-color", "rgba(0, 0, 0, 0.8)");
 				bloccalc.style.setProperty("color", "grey");
 				blocset.style.setProperty("color", "grey");
@@ -234,29 +234,10 @@
 
 		shareAPI();
 
-		//This is the service worker with the Cache-first network
-
-		if (navigator.serviceWorker) {
-			//Add this below content to your HTML page, or add the js file to your page at the very top to register sercie worker
-			if (navigator.serviceWorker.controller) {
-				console.log("SW déja présent, inutile de l'enregister")
-			} else {
-				//Register the ServiceWorker
-				window.addEventListener('load', () => {
-					navigator.serviceWorker.register('./sw.js', {
-						scope: './'
-					}).then(function (reg) {
-						console.log('SW enregistré pour ce scope :' + reg.scope)
-					})
-				})
-			}
-		} else {
-			console.log("SW indisponible avec ce Navigateur")
-		}
-
 		// Lancement par défaut //
 
 		const defStart = async () => {
+			
 			// Chargement des données Sauv ou par défaut //
 
 			await readData();
@@ -277,9 +258,10 @@
 
 			if (window.Windows) {
 				theme.innerHTML = `
+				<option value="system">Système</option>
 				<option value="light">Clair</option>
 				<option value="dark">Sombre</option>
-				<option value="system">Système</option>
+				<option value="orange">Orange</option>
 			`
 				if (data.themeselect == "system") {
 					windowsTheme();
@@ -293,5 +275,25 @@
 		}
 
 		defStart();
+
+		//This is the service worker with the Cache-first network
+
+		if (navigator.serviceWorker) {
+			//Add this below content to your HTML page, or add the js file to your page at the very top to register sercie worker
+			if (navigator.serviceWorker.controller) {
+				console.log("SW déja présent, inutile de l'enregister")
+			} else {
+				//Register the ServiceWorker
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('./sw.js', {
+						scope: './'
+					}).then(function (reg) {
+						console.log('SW enregistré pour ce scope :' + reg.scope)
+					})
+				})
+			}
+		} else {
+			console.log("SW indisponible avec ce Navigateur")
+		}
 
 	})
