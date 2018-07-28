@@ -295,27 +295,42 @@
 		} else {
 			console.log("SW indisponible avec ce Navigateur")
 		}
+		// W10 Compact Mode //
 
-		function toggleCompactOverlayMode(forceCompactOverlay = false) {
-			if(!window.Windows) return Promise.resolve("unsupported");
-		
-			var applicationView = Windows.UI.ViewManagement.ApplicationView;
-			var currentMode = applicationView.getForCurrentView().viewMode;
-		
-			var newMode = (currentMode == Windows.UI.ViewManagement.ApplicationViewMode.default) || forceCompactOverlay
-				? Windows.UI.ViewManagement.ApplicationViewMode.compactOverlay
-				: Windows.UI.ViewManagement.ApplicationViewMode.default;
-		
-			return applicationView.getForCurrentView()
-				.tryEnterViewModeAsync(newMode)
-				.then(() => newMode);
+
+
+		if (window.Windows) {
+
+			let pin = document.createElement('li');
+			pin.classList.add("m-4");
+			pin.innerHTML = `<button class="btn btn-dark theme-icon" type="button" id="minime">
+				<a>
+				<i class="fa fa-window-restore" aria-hidden="true"></i>
+				</a>
+			</button><a>Epingler</a>
+			`
+			menulist.append(pin);
+
+			function toggleCompactOverlayMode(forceCompactOverlay = false) {
+				if (!window.Windows) return Promise.resolve("unsupported");
+
+				var applicationView = Windows.UI.ViewManagement.ApplicationView;
+				var currentMode = applicationView.getForCurrentView().viewMode;
+
+				var newMode = (currentMode == Windows.UI.ViewManagement.ApplicationViewMode.default) || forceCompactOverlay ?
+					Windows.UI.ViewManagement.ApplicationViewMode.compactOverlay :
+					Windows.UI.ViewManagement.ApplicationViewMode.default;
+
+				return applicationView.getForCurrentView()
+					.tryEnterViewModeAsync(newMode)
+					.then(() => newMode);
+			}
+
+			const minime = document.querySelector('#minime');
+			const forceCompactOverlay = false;
+
+			minime.onclick = () => {
+				toggleCompactOverlayMode(forceCompactOverlay);
+			};
 		}
-
-		const minime = document.querySelector('#minime');
-		const forceCompactOverlay = false;
-
-		minime.onclick = () => {
-			toggleCompactOverlayMode(forceCompactOverlay);
-		};
-
 	})
