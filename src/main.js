@@ -312,6 +312,7 @@
 		}
 
 		const minime = document.querySelector('#minime');
+		const forceCompactOverlay = false;
 
 		minime.onclick = () => {
 			toggleCompactOverlayMode(forceCompactOverlay);
