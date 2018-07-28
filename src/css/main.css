@@ -99,6 +99,10 @@ nav {
     transition: all 1s ease-in-out;
 }
 
+.disapear {
+    display: none !important;
+}
+
 #theme {
     text-decoration: none;
     border: 0px;

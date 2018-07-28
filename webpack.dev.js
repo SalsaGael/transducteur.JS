@@ -19,7 +19,7 @@ module.exports = {
   },
   output: {
     path: path.resolve('./dist'),
-    filename: 'bundle.js'
+    filename: 'app.js'
   },
   module: {
     rules: [{
@@ -81,6 +81,6 @@ module.exports = {
     new UglifyJSPlugin({
       exclude: /\/excludes/
     }),
-    new ExtractTextPlugin('./style.css')
+    new ExtractTextPlugin('style.css')
   ]
 }

@@ -295,42 +295,50 @@
 		} else {
 			console.log("SW indisponible avec ce Navigateur")
 		}
-		// W10 Compact Mode //
+
+		// // W10 Compact Mode //
+
+
+		// let pin = document.createElement('li');
+		// pin.classList.add("m-4");
+		// pin.innerHTML = `<button class="btn btn-dark theme-icon" type="button" id="minime">
+		// 	<a>
+		// 	<i class="fa fa-window-restore" aria-hidden="true"></i>
+		// 	</a>
+		// </button><a> Epingler</a>
+		// `
+		// menulist.append(pin);
 
 
 
-		if (window.Windows) {
+		// minime.onclick = () => {
+		// 	footer.classlist.toggle(disapear);
+		// };
 
-			let pin = document.createElement('li');
-			pin.classList.add("m-4");
-			pin.innerHTML = `<button class="btn btn-dark theme-icon" type="button" id="minime">
-				<a>
-				<i class="fa fa-window-restore" aria-hidden="true"></i>
-				</a>
-			</button><a>Epingler</a>
-			`
-			menulist.append(pin);
+		// if (window.Windows) {
 
-			function toggleCompactOverlayMode(forceCompactOverlay = false) {
-				if (!window.Windows) return Promise.resolve("unsupported");
 
-				var applicationView = Windows.UI.ViewManagement.ApplicationView;
-				var currentMode = applicationView.getForCurrentView().viewMode;
+		// 	function toggleCompactOverlayMode(forceCompactOverlay = false) {
+		// 		if (!window.Windows) return Promise.resolve("unsupported");
 
-				var newMode = (currentMode == Windows.UI.ViewManagement.ApplicationViewMode.default) || forceCompactOverlay ?
-					Windows.UI.ViewManagement.ApplicationViewMode.compactOverlay :
-					Windows.UI.ViewManagement.ApplicationViewMode.default;
+		// 		var applicationView = Windows.UI.ViewManagement.ApplicationView;
+		// 		var currentMode = applicationView.getForCurrentView().viewMode;
 
-				return applicationView.getForCurrentView()
-					.tryEnterViewModeAsync(newMode)
-					.then(() => newMode);
-			}
+		// 		var newMode = (currentMode == Windows.UI.ViewManagement.ApplicationViewMode.default) || forceCompactOverlay ?
+		// 			Windows.UI.ViewManagement.ApplicationViewMode.compactOverlay :
+		// 			Windows.UI.ViewManagement.ApplicationViewMode.default;
 
-			const minime = document.querySelector('#minime');
-			const forceCompactOverlay = false;
+		// 		return applicationView.getForCurrentView()
+		// 			.tryEnterViewModeAsync(newMode)
+		// 			.then(() => newMode);
+		// 	}
 
-			minime.onclick = () => {
-				toggleCompactOverlayMode(forceCompactOverlay);
-			};
-		}
+		// 	const minime = document.querySelector('#minime');
+		// 	const forceCompactOverlay = false;
+
+		// 	minime.onclick = () => {
+		// 		toggleCompactOverlayMode(forceCompactOverlay);
+		// 		blocset.classlist.toggle("disapear");
+		// 	};
+		// }
 	})
