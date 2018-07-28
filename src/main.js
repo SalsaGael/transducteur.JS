@@ -125,6 +125,11 @@
 
 		// Gestion Panneau Menu //
 
+		const toggleMenu = () => {
+			menu.classList.toggle("show");
+			menubtn.classList.toggle("active");
+		};
+
 		const showMenu = () => {
 			if (data.timer == 0) {
 				data.timer = 1;
@@ -139,11 +144,6 @@
 				menu.classList.add("show");
 				menubtn.classList.add("active");
 			}
-		};
-
-		const toggleMenu = () => {
-			menu.classList.toggle("show");
-			menubtn.classList.toggle("active");
 		};
 
 		const hideMenu = () => {
@@ -204,7 +204,7 @@
 				nav.style.setProperty("background-color", "rgba(255, 145, 0, 0.9)");
 				footer.style.setProperty("background-color", "rgba(255, 145, 0, 0.9)");
 				menu.style.setProperty("background-color", "rgba(255, 145, 0, 0.9)");
-				menu.style.setProperty("color", "dark");
+				menu.style.setProperty("color", "black");
 			} else {
 				body.style.setProperty("background-color", "initial");
 				bloccalc.style.setProperty("color", "initial");
