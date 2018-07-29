@@ -296,23 +296,23 @@
 			console.log("SW indisponible avec ce Navigateur")
 		}
 
-		// // W10 Compact Mode //
+		// W10 Compact Mode //
 
 
-		// let pin = document.createElement('li');
-		// pin.classList.add("m-4");
-		// pin.innerHTML = `<button class="btn btn-dark theme-icon" type="button" id="minime">
-		// 	<a>
-		// 	<i class="fa fa-window-restore" aria-hidden="true"></i>
-		// 	</a>
-		// </button><a> Epingler</a>
-		// `
-		// menulist.append(pin);
+		// let pin = document.createElement('button');
+		// pin.classList.add("btn btn-dark theme-icon");
+	
+		// pin.innerHTML = `<a>ola
+		// 					<i class="fa fa-window-restore" aria-hidden="true"></i>
+		// 				</a>`
 
+		// nav.append(pin);
 
+		// const minime = document.querySelector('#minime');
 
 		// minime.onclick = () => {
-		// 	footer.classlist.toggle(disapear);
+		// 	console.log("Polo est mort")
+		// 	footer.classList.toggle("disapear");
 		// };
 
 		// if (window.Windows) {
