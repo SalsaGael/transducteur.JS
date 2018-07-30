@@ -16,6 +16,7 @@ const readData = async () => {
         console.log("Données déja présente en local storage");
         data_json = localStorage.getItem("donnees");
         data = JSON.parse(data_json);
+        data.timer = 0;
     } else {
         data = await fetch('../data.json')
             .then(resp => resp.json())
