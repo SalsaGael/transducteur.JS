@@ -57,9 +57,6 @@ function update(request) {
   });
 }
 
-
-
-
 // Install stage sets up the cache-array to configure pre-cache content //
 self.addEventListener('install', function (evt) {
   console.log('The service worker is being installed.');
