@@ -1,10 +1,7 @@
-// This is the service worker with the Cache-first network //
-
 var CACHE = 'sw-precache';
 var precacheFiles = [
   './',
   './index.html',
-  'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
   './dist/style.css',
   './data.json',
   './images/logo.png',
@@ -26,7 +23,7 @@ var precacheFiles = [
   './win-tiles/small.png',
   './win-tiles/wide.png',
   './AppImages/ios/ios-appicon-180-180.png',
-  './dist/bundle.js'
+  './dist/app.js'
 ];
 
 function precache() {
