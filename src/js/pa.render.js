@@ -1,6 +1,6 @@
 import data from './data.js';
 
-const renderPuisAct = ()=> {
+const renderPuisAct = () => {
     container.innerHTML = `
 <div class="bloccalc" id="bloccalc">
     <p class="mb-1">
@@ -46,7 +46,7 @@ const renderPuisAct = ()=> {
 
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label for "KU" class="input-group-text">Tension HT / BT</label>
+        <label for="KU" class="input-group-text">Tension HT / BT</label>
     </div>
     <select id='KU' class="custom-select" value="">
     <option value="150">15 kV / 100 V</option>
@@ -113,7 +113,7 @@ const renderPuisAct = ()=> {
 
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label for "smaMin" class="input-group-text">Sortie</label>
+        <label for="smaMin" class="input-group-text">Sortie</label>
     </div>
     <select id='smaMin' class="custom-select" value="">
     <option value="-20">-20</option>
@@ -136,4 +136,4 @@ const renderPuisAct = ()=> {
  `
 };
 
-export default renderPuisAct; 
+export default renderPuisAct;

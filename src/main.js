@@ -301,7 +301,7 @@
 
 		// let pin = document.createElement('button');
 		// pin.classList.add("btn btn-dark theme-icon");
-	
+
 		// pin.innerHTML = `<a>ola
 		// 					<i class="fa fa-window-restore" aria-hidden="true"></i>
 		// 				</a>`
