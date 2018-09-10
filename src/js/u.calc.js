@@ -155,6 +155,7 @@ const calcTens = () => {
             data.uHT = uHT.value * 1000;
             data.vHT = data.uHT / Math.sqrt(3);
             data.vBT = data.uHT / Math.sqrt(3) / data.KU;
+            console.log(data.faMax, data.faMin, data.vBT);
             data.sma = ((data.vBT * data.vBT * data.faMax) + data.faMin);
 
             affResult();
@@ -172,7 +173,7 @@ const calcTens = () => {
             data.vHT = vHT.value * 1000;
             data.uHT = data.vHT * Math.sqrt(3);
             data.vBT = data.vHT / data.KU;
-            data.sma = ((data.vBT * data.vBT * data.faMax) + data.faMin);
+            data.sma = Math.pow(data.vBT, 2) * data.faMax + data.faMin;
 
             affResult();
         }
@@ -189,7 +190,7 @@ const calcTens = () => {
             data.vBT = vBT.value;
             data.vHT = data.vBT * data.KU;
             data.uHT = data.vBT * data.KU * Math.sqrt(3);
-            data.sma = ((data.vBT * data.vBT * data.faMax) + data.faMin);
+            data.sma = Math.pow(data.vBT, 2) * data.faMax + data.faMin;
 
             affResult();
         }
