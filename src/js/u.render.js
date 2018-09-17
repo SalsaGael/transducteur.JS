@@ -50,7 +50,7 @@ const renderTens = () => {
     </p>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-        <label for="KU" class="input-group-text">HT / BT</label>
+        <label for="KU" class="input-group-text">Rapport TT</label>
         </div>
         <select id="KU" class="custom-select" value="">
             <option value="150">15 kV / 100 V</option>
