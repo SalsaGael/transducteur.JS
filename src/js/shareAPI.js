@@ -54,6 +54,7 @@ const shareAPI = () => {
 
     shareButton.onclick = e => {
       e.preventDefault();
+      console.log(url);
       share(
         "Transducteur",
         "Calculette pour capteur de mesure",
