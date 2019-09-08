@@ -27,7 +27,7 @@ const shareAPI = () => {
           const data = ev.request.data;
 
           data.properties.title = title;
-          data.properties.url = url;
+          data.properties.url = "https://transducteur.netlify.com";
           data.setText(text);
         });
 
