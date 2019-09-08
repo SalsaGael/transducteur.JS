@@ -19,6 +19,7 @@ const shareAPI = () => {
 
     const share = async (title, text, url) => {
       if (window.Windows) {
+        console.log(url);
         const DataTransferManager =
           window.Windows.ApplicationModel.DataTransfer.DataTransferManager;
 
@@ -27,7 +28,7 @@ const shareAPI = () => {
           const data = ev.request.data;
 
           data.properties.title = title;
-          data.properties.url = "https://transducteur.netlify.com";
+          data.properties.url = url;
           data.setText(text);
         });
 
@@ -54,7 +55,6 @@ const shareAPI = () => {
 
     shareButton.onclick = e => {
       e.preventDefault();
-      console.log(url);
       share(
         "Transducteur",
         "Calculette pour capteur de mesure",
