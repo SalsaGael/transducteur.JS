@@ -9,11 +9,6 @@ const fs = require("fs");
 
 module.exports = {
   mode: "development",
-  watch: true,
-  watchOptions: {
-    aggregateTimeout: 300,
-    poll: 1000
-  },
   entry: {
     main: "./src/main.js"
   },
@@ -45,7 +40,7 @@ module.exports = {
               options: {
                 plugins: loader => [
                   require("autoprefixer")({
-                    browsers: ["last 2 versions", "ie > 9"]
+                    browsers: ["last 2 versions, > 1%"]
                   })
                 ]
               }
@@ -70,7 +65,7 @@ module.exports = {
               options: {
                 plugins: loader => [
                   require("autoprefixer")({
-                    browsers: ["last 2 versions", "ie > 9"]
+                    browsers: ["last 2 versions, > 1%"]
                   })
                 ]
               }
@@ -87,6 +82,11 @@ module.exports = {
     }),
     new ExtractTextPlugin("style.css")
   ],
+  watch: true,
+  watchOptions: {
+    aggregateTimeout: 300,
+    poll: 1000
+  },
   devServer: {
     host: "0.0.0.0"
   }

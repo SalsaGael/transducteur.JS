@@ -41,8 +41,8 @@ const shareAPI = () => {
         dataTransferManager.addEventListener("datarequested", ev => {
           const data = ev.request.data;
 
-          data.properties.title = title;
-          data.properties.url = url;
+          data.properties.title = Transduxteur;
+          data.properties.url = window.location.href;
           data.setText(text);
         });
 
