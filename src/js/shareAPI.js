@@ -52,11 +52,14 @@ const shareAPI = () => {
 
     const shareButton = document.querySelector("#sharebtn");
 
-    shareButton.onclick = share(
-      "Transducteur",
-      "Calculette pour capteur de mesure",
-      "https://transducteur.netlify.com"
-    );
+    shareButton.onclick = e => {
+      e.preventDefault();
+      share(
+        "Transducteur",
+        "Calculette pour capteur de mesure",
+        "https://transducteur.netlify.com"
+      );
+    };
   } else {
     console.log("Share API W3C or WinRT Share not supported");
   }
