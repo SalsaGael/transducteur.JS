@@ -17,23 +17,8 @@ const shareAPI = () => {
 
     // Partager //
 
-    const shareButton = document.querySelector("#sharebtn");
-    shareButton.onclick = e => {
-      if (navigator.share) {
-        e.preventDefault();
-        navigator
-          .share({
-            title: "Transducteur",
-            text: "Une calculette pratique pour les capteurs de mesure",
-            url: window.location.href
-          })
-          .then(() => {
-            console.log("Thanks for sharing!");
-          })
-          .catch(err => {
-            console.log(`Couldn't share because of`, err.message);
-          });
-      } else if (window.Windows) {
+    const share = async (title, text, url) => {
+      if (window.Windows) {
         const DataTransferManager =
           window.Windows.ApplicationModel.DataTransfer.DataTransferManager;
 
@@ -41,16 +26,37 @@ const shareAPI = () => {
         dataTransferManager.addEventListener("datarequested", ev => {
           const data = ev.request.data;
 
-          data.properties.title = Transduxteur;
-          data.properties.url = window.location.href;
+          data.properties.title = title;
+          data.properties.url = url;
           data.setText(text);
         });
 
         DataTransferManager.showShareUI();
 
         return true;
+      } else if (navigator.share) {
+        try {
+          await navigator.share({
+            title: title,
+            text: text,
+            url: url
+          });
+
+          return true;
+        } catch (err) {
+          console.error("There was an error trying to share this content");
+          return false;
+        }
       }
     };
+
+    const shareButton = document.querySelector("#sharebtn");
+
+    shareButton.onclick = share(
+      "Transducteur",
+      "Calculette pour capteur de mesure",
+      "https://transducteur.netlify.com"
+    );
   } else {
     console.log("Share API W3C or WinRT Share not supported");
   }
