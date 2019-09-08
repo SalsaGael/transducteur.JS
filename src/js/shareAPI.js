@@ -28,8 +28,8 @@ const shareAPI = () => {
           const data = ev.request.data;
 
           data.properties.title = title;
-          data.properties.url = url;
           data.setText(text);
+          data.properties.description = url;
         });
 
         DataTransferManager.showShareUI();
