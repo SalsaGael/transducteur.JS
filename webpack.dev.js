@@ -1,78 +1,82 @@
-const webpack = require('webpack');
-const path = require('path');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-const postcss = require('postcss');
-const precss = require('precss');
-const fs = require('fs');
+const webpack = require("webpack");
+const path = require("path");
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const autoprefixer = require("autoprefixer");
+const postcss = require("postcss");
+const precss = require("precss");
+const fs = require("fs");
 
 module.exports = {
-  mode: 'development',
+  mode: "development",
   watch: true,
   watchOptions: {
     aggregateTimeout: 300,
     poll: 1000
   },
   entry: {
-    main: './src/main.js'
+    main: "./src/main.js"
   },
   output: {
-    path: path.resolve('./dist'),
-    filename: 'app.js'
+    path: path.resolve("./dist"),
+    filename: "app.js"
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-      }, {
+        loader: "babel-loader"
+      },
+      {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          use: [{
+          use: [
+            {
               loader: "css-loader",
               options: {
                 importLoaders: 1,
                 sourceMap: false,
-                minimize: false,
+                minimize: false
               }
             },
             {
               loader: "postcss-loader",
               options: {
-                plugins: (loader) => [
-                  require('autoprefixer')({
-                    browsers: ['last 2 versions', 'ie > 9']
-                  }),
+                plugins: loader => [
+                  require("autoprefixer")({
+                    browsers: ["last 2 versions", "ie > 9"]
+                  })
                 ]
               }
             }
-          ],
+          ]
         })
       },
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          use: [{
+          use: [
+            {
               loader: "css-loader",
               options: {
                 importLoaders: 1,
                 sourceMap: false,
-                minimize: false,
+                minimize: false
               }
             },
             {
               loader: "postcss-loader",
               options: {
-                plugins: (loader) => [
-                  require('autoprefixer')({
-                    browsers: ['last 2 versions', 'ie > 9']
-                  }),
+                plugins: loader => [
+                  require("autoprefixer")({
+                    browsers: ["last 2 versions", "ie > 9"]
+                  })
                 ]
               }
             },
-            'sass-loader'
-          ],
+            "sass-loader"
+          ]
         })
       }
     ]
@@ -81,6 +85,9 @@ module.exports = {
     new UglifyJSPlugin({
       exclude: /\/excludes/
     }),
-    new ExtractTextPlugin('style.css')
-  ]
-}
+    new ExtractTextPlugin("style.css")
+  ],
+  devServer: {
+    host: "0.0.0.0"
+  }
+};
