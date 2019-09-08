@@ -28,8 +28,8 @@ const shareAPI = () => {
           const data = ev.request.data;
 
           data.properties.title = title;
-          data.setText(text);
-          data.properties.description = url;
+          data.properties.description = text;
+          data.setText(url);
         });
 
         DataTransferManager.showShareUI();
@@ -56,8 +56,8 @@ const shareAPI = () => {
     shareButton.onclick = e => {
       e.preventDefault();
       share(
-        "Transducteur",
-        "Calculette pour capteur de mesure",
+        "Transducteur PWA",
+        "Calculette pratique pour capteur de mesure",
         "https://transducteur.netlify.com"
       );
     };
