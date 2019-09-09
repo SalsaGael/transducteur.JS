@@ -1,6 +1,7 @@
 import { writeData, readData, data } from "./js/data.js";
 
 import shareAPI from "./js/shareAPI.js";
+import installPWA from "./js/installPWA.js";
 import renderPuisAct from "./js/pa.render.js";
 import calcPuisAct from "./js/pa.calc.js";
 import renderPuisReact from "./js/pr.render.js";
@@ -231,10 +232,6 @@ document.addEventListener("DOMContentLoaded", function() {
     themeApply();
   });
 
-  // Ajout de Share API si disponible Androïd / Windows 10 UWP //
-
-  shareAPI();
-
   // Lancement par défaut //
 
   const defStart = async () => {
@@ -276,6 +273,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   defStart();
 
+  // Ajout de Share API si disponible Androïd / Windows 10 UWP //
+
+  shareAPI();
+
+  // Ajout du bouton Insatll PWA si disponible //
+
+  installPWA();
+
   // This is the service worker with the Advanced caching
 
   // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
@@ -300,84 +305,4 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
   }
-
-  // Install PWA //
-
-  let deferredPrompt = null;
-
-  window.addEventListener("beforeinstallprompt", e => {
-    // Prevent Chrome 67 and earlier from automatically showing the prompt
-    e.preventDefault();
-    // Stash the event so it can be triggered later.
-    deferredPrompt = e;
-  });
-
-  const install = async () => {
-    console.log("Install 2");
-    if (deferredPrompt) {
-      deferredPrompt.prompt();
-      console.log(deferredPrompt);
-      deferredPrompt.userChoice.then(function(choiceResult) {
-        if (choiceResult.outcome === "accepted") {
-          console.log("Your PWA has been installed");
-        } else {
-          console.log("User chose to not install your PWA");
-        }
-
-        deferredPrompt = null;
-      });
-    }
-  };
-
-  const installButton = document.querySelector("#installButton");
-
-  installButton.onclick = e => {
-    e.preventDefault();
-    console.log("Install 1");
-    install();
-  };
-
-  // W10 Compact Mode //
-
-  // let pin = document.createElement('button');
-  // pin.classList.add("btn btn-dark theme-icon");
-
-  // pin.innerHTML = `<a>ola
-  // 					<i class="fa fa-window-restore" aria-hidden="true"></i>
-  // 				</a>`
-
-  // nav.append(pin);
-
-  // const minime = document.querySelector('#minime');
-
-  // minime.onclick = () => {
-  // 	console.log("Polo est mort")
-  // 	footer.classList.toggle("disapear");
-  // };
-
-  // if (window.Windows) {
-
-  // 	function toggleCompactOverlayMode(forceCompactOverlay = false) {
-  // 		if (!window.Windows) return Promise.resolve("unsupported");
-
-  // 		var applicationView = Windows.UI.ViewManagement.ApplicationView;
-  // 		var currentMode = applicationView.getForCurrentView().viewMode;
-
-  // 		var newMode = (currentMode == Windows.UI.ViewManagement.ApplicationViewMode.default) || forceCompactOverlay ?
-  // 			Windows.UI.ViewManagement.ApplicationViewMode.compactOverlay :
-  // 			Windows.UI.ViewManagement.ApplicationViewMode.default;
-
-  // 		return applicationView.getForCurrentView()
-  // 			.tryEnterViewModeAsync(newMode)
-  // 			.then(() => newMode);
-  // 	}
-
-  // 	const minime = document.querySelector('#minime');
-  // 	const forceCompactOverlay = false;
-
-  // 	minime.onclick = () => {
-  // 		toggleCompactOverlayMode(forceCompactOverlay);
-  // 		blocset.classlist.toggle("disapear");
-  // 	};
-  // }
 });
