@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       // Register the service worker
       navigator.serviceWorker
-        .register("pwabuilder-sw.js", {
+        .register("sw.js", {
           scope: "./"
         })
         .then(function(reg) {
@@ -313,6 +313,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   const install = async () => {
+    console.log("Install 2");
     if (deferredPrompt) {
       deferredPrompt.prompt();
       console.log(deferredPrompt);
@@ -331,6 +332,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const installButton = document.querySelector("#installButton");
 
   installButton.onclick = e => {
+    e.preventDefault();
+    console.log("Install 1");
     install();
   };
 
