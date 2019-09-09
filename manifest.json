@@ -10,7 +10,9 @@
   "dir": "ltr",
   "lang": "fr-FR",
   "description": "Calculette rapide de conversion pour tranducteur de mesure",
-  "icons": [{
+  "prefer_related_applications": true,
+  "icons": [
+    {
       "src": "./AppImages/windows10/Square71x71Logo.scale-400.png",
       "sizes": "284x284"
     },
