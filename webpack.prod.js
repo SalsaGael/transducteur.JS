@@ -32,7 +32,7 @@ module.exports = {
               options: {
                 importLoaders: 1,
                 sourceMap: false,
-                minimize: true
+                minimize: false
               }
             },
             {
@@ -57,7 +57,7 @@ module.exports = {
               options: {
                 importLoaders: 1,
                 sourceMap: false,
-                minimize: true
+                minimize: false
               }
             },
             {
