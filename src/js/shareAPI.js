@@ -11,7 +11,7 @@ const shareAPI = () => {
     li.innerHTML = `<button class="btn btn-dark theme-icon" type="button" id="sharebtn">
         <i class="fa fa-share" aria-hidden="true"></i>
     </button>
-    <a>Partager</a>
+    <a>Partager la PWA</a>
     `;
     menulist.append(li);
 
