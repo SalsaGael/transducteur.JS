@@ -301,7 +301,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  // Install PWA //
+  /*   // Install PWA //
 
   let deferredPrompt = null;
 
@@ -335,7 +335,7 @@ document.addEventListener("DOMContentLoaded", function() {
     e.preventDefault();
     console.log("Install 1");
     install();
-  };
+  }; */
 
   // W10 Compact Mode //
 
