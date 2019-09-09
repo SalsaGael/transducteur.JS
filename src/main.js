@@ -279,9 +279,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Ajout du bouton Insatll PWA si disponible //
 
-  if (prefer_related_applications === false) {
-    installPWA();
-  }
+  installPWA();
 
   // This is the service worker with the Advanced caching
 
