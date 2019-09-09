@@ -41,7 +41,7 @@ const installPWA = () => {
         navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false
       ) {
         alert(
-          "Sur iOS, cliquer sur l'icone partager de Safari et choisir \"Ecran d'accueil\""
+          'Sur iOS, cliquer sur l\'icone "Partager" de Safari et choisir "Ecran d\'accueil"'
         );
       }
     };
