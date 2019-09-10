@@ -274,8 +274,11 @@ document.addEventListener("DOMContentLoaded", function() {
   defStart();
 
   // Ajout de Share API si disponible Androïd / Windows 10 UWP //
-
-  shareAPI();
+  if (window.Windows || window.Android) {
+    console.log("Pas d'install PWA");
+  } else {
+    shareAPI();
+  }
 
   // Ajout du bouton Insatll PWA si disponible //
 
