@@ -2,7 +2,7 @@
   "name": "Transducteur",
   "short_name": "Transducteur",
   "start_url": "/",
-  "scope": "/",
+  "scope": "https://transducteur.netlify.com/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "white",
