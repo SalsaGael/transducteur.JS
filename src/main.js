@@ -274,15 +274,16 @@ document.addEventListener("DOMContentLoaded", function() {
   defStart();
 
   // Ajout de Share API si disponible Androïd / Windows 10 UWP //
-  if (window.Windows || window.Android) {
-    console.log("Pas d'install PWA");
-  } else {
-    shareAPI();
-  }
+
+  shareAPI();
 
   // Ajout du bouton Insatll PWA si disponible //
 
-  installPWA();
+  if (window.Windows || window.Android) {
+    console.log("Pas d'install PWA");
+  } else {
+    installPWA();
+  }
 
   // This is the service worker with the Advanced caching
 
