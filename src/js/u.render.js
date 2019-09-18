@@ -8,7 +8,7 @@ const renderTens = () => {
     </p>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-            <label class="input-group-text text-light bg-secondary input-ant">HT Triphasé</label>
+            <label class="input-group-text text-light bg-secondary input-ant">Triphasé HT</label>
         </div>
         <input type="number" id="uHT" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         <div class="input-group-append">
@@ -17,7 +17,7 @@ const renderTens = () => {
     </div>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-            <label class="input-group-text text-light bg-primary input-ant">HT Monophasé</label>
+            <label class="input-group-text text-light bg-primary input-ant">Monophasé HT</label>
         </div>
         <input type="number" id="vHT" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         <div class="input-group-append">
@@ -26,7 +26,7 @@ const renderTens = () => {
     </div>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-            <label class="input-group-text text-light bg-danger input-ant">BT Monophasé</label>
+            <label class="input-group-text text-light bg-danger input-ant">Monophasé BT</label>
         </div>
         <input type="number" id="vBT" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         <div class="input-group-append">
@@ -50,7 +50,7 @@ const renderTens = () => {
     </p>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-        <label for="KU" class="input-group-text">Rapport TT</label>
+        <label for="KU" class="input-group-text input-ant">Rapport TT</label>
         </div>
         <select id="KU" class="custom-select" value="">
             <option value="150">15 kV / 100 V</option>
@@ -71,31 +71,28 @@ const renderTens = () => {
     </p>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-            <label class="input-group-text" for="fuHT">Famille BT</label>
+            <label class="input-group-text input-ant" for="fuHT">Famille BT</label>
         </div>
            <select id="fuHT" class="custom-select" value="">
             <option value="0">Plage réglée</option>
-            <option value="1"><B>U1 - 0 à 124/√3</option>
-            <option value="2">U2 - 78/√3 à 121,25/√3</option>
-        </select>
-            <div class="input-group-append">
-        <span class="input-group-text">V</span>
-    </div>
-    </div>
+            <option value="1">U1 - 0 à 124 V</option>
+            <option value="2">U2 - 78 à 121,25 V</option>
+            </select>
+        </div>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-            <label class="input-group-text" for="uMin">Plage HT</label>
+            <label class="input-group-text input-ant" for="uMin">Plage HT</label>
         </div>
         <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="uMin" type="number" value=""/>
         <span class="input-group-text input-group-middle">à</span>
         <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="uMax" type="number" value=""/>
         <div class="input-group-append">
-            <span class="input-group-text">kV</span>
+            <span class="input-group-text input-post">kV</span>
         </div>
     </div>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-            <label for="smaMinU" class="input-group-text">Sortie</label>
+            <label for="smaMinU" class="input-group-text input-ant">Sortie procédé</label>
         </div>
         <select id='smaMinU' class="custom-select" value="">
             <option value="0">0</option>
@@ -108,7 +105,7 @@ const renderTens = () => {
             <option value="20">20</option>
         </select>
         <div class="input-group-append">
-            <span class="input-group-text">mA</span>
+            <span class="input-group-text input-post">mA</span>
         </div>
     </div>
 </div>

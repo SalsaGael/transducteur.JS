@@ -46,7 +46,7 @@ const renderPuisAct = () => {
 
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label for="KU" class="input-group-text">Rapport TT</label>
+        <label for="KU" class="input-group-text input-ant">Rapport TT</label>
     </div>
     <select id='KU' class="custom-select" value="">
     <option value="150">15 kV / 100 V</option>
@@ -64,7 +64,7 @@ const renderPuisAct = () => {
 
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label class="input-group-text" for="pTC">Rapport TC</label>
+        <label class="input-group-text input-ant" for="pTC">Rapport TC</label>
     </div>
     <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='pTC' type="number" value="" />
     <span class="input-group-text input-group-middle">/</span>
@@ -73,7 +73,7 @@ const renderPuisAct = () => {
         <option value="5">5</option>
     </select>
     <div class="input-group-append">
-        <label class="input-group-text" for="pTC">A</label>
+        <label class="input-group-text input-post" for="pTC">A</label>
     </div>
 </div>
  <p class = "mb-1">
@@ -81,36 +81,36 @@ const renderPuisAct = () => {
 </p>
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label class="input-group-text" for="fpaHT">Famille BT</label>
+        <label class="input-group-text input-ant" for="fpaHT">Famille BT</label>
     </div>
     <select id="fpaHT" class="custom-select" value="">
-        <option value="0">Plage personnalisée en HT</option>
-        <option value="1">P1 - 602,2</option>
-        <option value="2">P2 - 744,8</option>
-        <option value="3">P3 - 866</option>
-        <option value="4">P4 - 1039</option>
-        <option value="5">P5 - 1212</option>
-        <option value="6">P6 - 1464</option>
-        <option value="8">P8 - 1732</option>
-        <option value="9">P9 - 2148</option>
+        <option value="0">Plage réglée</option>
+        <option value="1">P1 - ± 602,2</option>
+        <option value="2">P2 - ± 744,8</option>
+        <option value="3">P3 - ± 866</option>
+        <option value="4">P4 - ± 1039</option>
+        <option value="5">P5 - ± 1212</option>
+        <option value="6">P6 - ± 1464</option>
+        <option value="8">P8 - ± 1732</option>
+        <option value="9">P9 - ± 2148</option>
     </select>
     <div class="input-group-append">
-        <span class="input-group-text">± W</span>
+        <span class="input-group-text input-post">W</span>
     </div>
 </div>
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label class="input-group-text" for="paMaxHT">Plage HT</label>
+        <label class="input-group-text input-ant" for="paMaxHT">Plage HT ±</label>
     </div>
     <input class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id='paMaxHT' type="number" value="" />
     <div class="input-group-append">
-        <span class="input-group-text">± MW</span>
+        <span class="input-group-text input-post">MW</span>
     </div>
 </div>
 
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label for="smaMin" class="input-group-text">Sortie</label>
+        <label for="smaMin" class="input-group-text input-ant">Sortie procédé</label>
     </div>
     <select id='smaMin' class="custom-select" value="">
     <option value="-20">-20</option>
@@ -126,7 +126,7 @@ const renderPuisAct = () => {
     <option value="20">20</option>
     </select>
     <div class="input-group-append">
-    <span class="input-group-text">mA</span>
+    <span class="input-group-text input-post">mA</span>
 </div>
 </div>
 </div>
