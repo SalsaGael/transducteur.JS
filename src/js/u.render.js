@@ -1,7 +1,7 @@
-import data from './data.js';
+import data from "./data.js";
 
 const renderTens = () => {
-    container.innerHTML = `
+  container.innerHTML = `
 <div class="bloccalc" id="bloccalc">
     <p class="mb-1">
         <a>Calcul des valeurs</a>
@@ -75,9 +75,12 @@ const renderTens = () => {
         </div>
            <select id="fuHT" class="custom-select" value="">
             <option value="0">Plage réglée</option>
-            <option value="1"><B>U1  0 à 124/√3 V</option>
-            <option value="2">U2  78/√3 à 121,25/√3 V</option>
+            <option value="1"><B>U1 - 0 à 124/√3</option>
+            <option value="2">U2 - 78/√3 à 121,25/√3</option>
         </select>
+            <div class="input-group-append">
+        <span class="input-group-text">V</span>
+    </div>
     </div>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
@@ -109,7 +112,7 @@ const renderTens = () => {
         </div>
     </div>
 </div>
-`
-}
+`;
+};
 
 export default renderTens;

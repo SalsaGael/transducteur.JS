@@ -1,7 +1,7 @@
-import data from './data.js';
+import data from "./data.js";
 
 const renderPuisReact = () => {
-    container.innerHTML = `
+  container.innerHTML = `
     <div class="bloccalc" id="bloccalc">
     <p class="mb-1">
     <a>Calcul des valeurs pour 100/√3 V φ=90°</a>
@@ -84,15 +84,15 @@ const renderPuisReact = () => {
     </div>
     <select id="fprHT" class="custom-select" value="">
         <option value="0">Plage réglée</option>
-        <option value="1">Q1  303,1</option>
-        <option value="2">Q2  372,4</option>
-        <option value="3">Q3  433</option>
-        <option value="4">Q4  519,6</option>
-        <option value="5">Q5  606,2</option>
-        <option value="6">Q6  848,7</option>
-        <option value="7">Q7  731,8</option>
-        <option value="8">Q8  866</option>
-        <option value="9">Q9  1074</option>
+        <option value="1">Q1 - 303,1</option>
+        <option value="2">Q2 - 372,4</option>
+        <option value="3">Q3 - 433</option>
+        <option value="4">Q4 - 519,6</option>
+        <option value="5">Q5 - 606,2</option>
+        <option value="6">Q6 - 848,7</option>
+        <option value="7">Q7 - 731,8</option>
+        <option value="8">Q8 - 866</option>
+        <option value="9">Q9 - 1074</option>
     </select>
     <div class="input-group-append">
         <span class="input-group-text">± var</span>
@@ -130,7 +130,7 @@ const renderPuisReact = () => {
 </div>
 </div>
 </div>
- `
-}
+ `;
+};
 
 export default renderPuisReact;

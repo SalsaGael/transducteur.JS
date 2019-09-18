@@ -1,7 +1,7 @@
 import data from "./data.js";
 
 const renderPuisAct = () => {
-    container.innerHTML = `
+  container.innerHTML = `
 <div class="bloccalc" id="bloccalc">
     <p class="mb-1">
         <a>Calcul des valeurs pour 100/√3 V φ=0°</a>
@@ -85,14 +85,14 @@ const renderPuisAct = () => {
     </div>
     <select id="fpaHT" class="custom-select" value="">
         <option value="0">Plage réglée</option>
-        <option value="1">P1  602,2</option>
-        <option value="2">P2  744,8</option>
-        <option value="3">P3  866</option>
-        <option value="4">P4  1039</option>
-        <option value="5">P5  1212</option>
-        <option value="6">P6  1464</option>
-        <option value="8">P8  1732</option>
-        <option value="9">P9  2148</option>
+        <option value="1">P1 - 602,2</option>
+        <option value="2">P2 - 744,8</option>
+        <option value="3">P3 - 866</option>
+        <option value="4">P4 - 1039</option>
+        <option value="5">P5 - 1212</option>
+        <option value="6">P6 - 1464</option>
+        <option value="8">P8 - 1732</option>
+        <option value="9">P9 - 2148</option>
     </select>
     <div class="input-group-append">
         <span class="input-group-text">± W</span>
