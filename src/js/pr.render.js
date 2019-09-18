@@ -83,7 +83,7 @@ const renderPuisReact = () => {
         <label class="input-group-text" for="fprHT">Famille BT</label>
     </div>
     <select id="fprHT" class="custom-select" value="">
-        <option value="0">Plage réglée</option>
+        <option value="0">Plage personnalisée en HT</option>
         <option value="1">Q1 - 303,1</option>
         <option value="2">Q2 - 372,4</option>
         <option value="3">Q3 - 433</option>

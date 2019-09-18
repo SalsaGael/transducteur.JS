@@ -63,7 +63,7 @@ const calcPuisAct = () => {
       fpaHT.value = 4;
     } else if (data.fpaHT == 5) {
       data.paMaxHT = data.paMaxHT5;
-      dfpaHT.value = 5;
+      fpaHT.value = 5;
     } else if (data.fpaHT == 6) {
       data.paMaxHT = data.paMaxHT6;
       fpaHT.value = 6;

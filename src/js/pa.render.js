@@ -84,7 +84,7 @@ const renderPuisAct = () => {
         <label class="input-group-text" for="fpaHT">Famille BT</label>
     </div>
     <select id="fpaHT" class="custom-select" value="">
-        <option value="0">Plage réglée</option>
+        <option value="0">Plage personnalisée en HT</option>
         <option value="1">P1 - 602,2</option>
         <option value="2">P2 - 744,8</option>
         <option value="3">P3 - 866</option>
