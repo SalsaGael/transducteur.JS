@@ -277,12 +277,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
   shareAPI();
 
-  // Ajout du bouton Insatll PWA si disponible //
+  // Ajout du bouton Install PWA si disponible //
 
   if (window.Windows || window.Android) {
-    console.log("Pas d'install PWA");
-  } else {
+    console.log("Pas d'installation PWA necessaire");
+  } else if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false) {
     installPWA();
+  } else if (window.chrome) {
+    let deferredPrompt = null;
+
+    window.addEventListener("beforeinstallprompt", e => {
+      // Prevent Chrome 67 and earlier from automatically showing the prompt
+      e.preventDefault();
+      // Stash the event so it can be triggered later.
+      deferredPrompt = e;
+      installPWA();
+    });
+  } else {
+    console.log("Pas d'installation PWA possible");
   }
 
   // This is the service worker with the Advanced caching

@@ -3,9 +3,8 @@
 const shareAPI = () => {
   // Afficher ou non le bouton partage //
 
-  const menulist = document.querySelector("#menulist");
-
   if (navigator.share || window.Windows) {
+    const menulist = document.querySelector("#menulist");
     let li = document.createElement("li");
     li.classList.add("m-4");
     li.innerHTML = `<button class="btn btn-dark theme-icon" type="button" id="sharebtn">
