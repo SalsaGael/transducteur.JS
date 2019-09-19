@@ -292,9 +292,9 @@ document.addEventListener("DOMContentLoaded", function() {
   window.addEventListener("beforeinstallprompt", e => {
     // Prevent Chrome 67 and earlier from automatically showing the prompt
     e.preventDefault();
+    installPWA();
     // Stash the event so it can be triggered later.
     deferredPrompt = e;
-    installPWA();
   });
 
   // This is the service worker with the Advanced caching
