@@ -19,12 +19,12 @@ const renderPuisReact = () => {
 
 <div class="input-group mb-2">
     <div class="input-group-prepend">
-        <label class="input-group-text text-light bg-primary input-ant">Courant BT</label>
+        <label class="input-group-text text-light bg-info input-ant">Courant BT</label>
     </div>
     <input type="number" id="irBT" placeholder="Entrez la valeur" class="form-control" aria-label="Small"
         aria-describedby="inputGroup-sizing-sm">
     <div class="input-group-append">
-        <span class="input-group-text text-light bg-primary input-post">A</span>
+        <span class="input-group-text text-light bg-info input-post">A</span>
     </div>
 </div>
 
