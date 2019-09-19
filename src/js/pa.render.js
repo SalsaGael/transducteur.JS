@@ -48,18 +48,21 @@ const renderPuisAct = () => {
     <div class="input-group-prepend">
         <label for="KU" class="input-group-text input-ant">Rapport TT</label>
     </div>
-    <select id='KU' class="custom-select" value="">
-    <option value="150">15 kV / 100 V</option>
-    <option value="200">20 kV / 100 V</option>
-    <option value="450">45 kV / 100 V</option>
-    <option value="600">60 kV / 100V</option>
-    <option value="630">63 kV / 100V</option>
-    <option value="900">90 kV / 100 V</option>
-    <option value="1500">150 kV / 100V</option>
-    <option value="2200">220 kV / 100V</option>
-    <option value="2250">225 kV / 100V</option>
-    <option value="4000">400 kV / 100V</option>
-    </select>
+      <select id="KU" class="custom-select" value="">
+            <option value="150">15000 / 100</option>
+            <option value="200">20000 / 100</option>
+            <option value="450">45000 / 100</option>
+            <option value="600">60000 / 100</option>
+            <option value="630">63000 / 100</option>
+            <option value="900">90000 / 100</option>
+            <option value="1500">150000 / 100</option>
+            <option value="2200">220000 / 100</option>
+            <option value="2250">225000 / 100</option>
+            <option value="4000">400000 / 100</option>
+        </select>
+         <div class="input-group-append">
+            <span class="input-group-text input-post">V</span>
+        </div>
 </div>
 
 <div class="input-group mb-2">
