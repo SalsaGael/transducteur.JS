@@ -8,11 +8,11 @@ const renderTens = () => {
     </p>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-            <label class="input-group-text text-light bg-secondary input-ant">Triphasé HT</label>
+            <label class="input-group-text text-light bg-danger input-ant">Triphasé HT</label>
         </div>
         <input type="number" id="uHT" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         <div class="input-group-append">
-        <span class="input-group-text text-light bg-secondary input-post">kV</span>
+        <span class="input-group-text text-light bg-danger input-post">kV</span>
         </div>
     </div>
     <div class="input-group mb-2">
@@ -24,15 +24,25 @@ const renderTens = () => {
             <span class="input-group-text text-light bg-primary input-post">kV</span>
         </div>
     </div>
+            <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <label class="input-group-text text-light bg-secondary input-ant">Triphasé BT</label>
+        </div>
+        <input type="number" id="uBT" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        <div class="input-group-append">
+            <span class="input-group-text text-light bg-secondary input-post">V</span>
+        </div>
+    </div>
     <div class="input-group mb-2">
         <div class="input-group-prepend">
-            <label class="input-group-text text-light bg-danger input-ant">Monophasé BT</label>
+            <label class="input-group-text text-light bg-info input-ant">Monophasé BT</label>
         </div>
         <input type="number" id="vBT" placeholder="Entrez la valeur" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         <div class="input-group-append">
-            <span class="input-group-text text-light bg-danger input-post">V</span>
+            <span class="input-group-text text-light bg-info input-post">V</span>
         </div>
     </div>
+
     <div class="input-group mb-2">
         <div class="input-group-prepend">
             <label class="input-group-text text-light bg-success input-ant">Sortie procédé</label>
