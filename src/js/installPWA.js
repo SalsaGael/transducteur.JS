@@ -52,7 +52,7 @@ const installPWA = () => {
 
     const install = () => {
       alert(
-        'Sur iOS, cliquer sur l\'icone "Partager" de Safari et choisir "Ecran d\'accueil"'
+        'Cliquer sur l\'icone "Partager" de Safari et choisir "Sur l\'écran d\'accueil"'
       );
     };
 
