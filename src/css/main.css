@@ -51,14 +51,14 @@ nav {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 245px;
+  width: 255px;
   top: 68px;
   bottom: 48px;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: rgba(240, 240, 240, 0.95);
   color: black;
-  transform: translateX(-250px);
+  transform: translateX(-255px);
   transition: 0.6s;
   z-index: 10;
 }
