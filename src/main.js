@@ -192,28 +192,29 @@ document.addEventListener("DOMContentLoaded", function() {
     const bloccalc = document.querySelector("#bloccalc");
     const blocset = document.querySelector("#blocset");
     if (data.theme == "dark") {
-      body.style.setProperty("background-color", "rgba(0, 0, 0, 0.85)");
-      bloccalc.style.setProperty("color", "grey");
-      blocset.style.setProperty("color", "grey");
-      nav.style.setProperty("background-color", "rgba(23, 162, 184, 0.9)");
-      footer.style.setProperty("background-color", "rgba(23, 162, 184, 0.9)");
-      menu.style.setProperty("background-color", "rgba(23, 162, 184, 0.9)");
+      body.style.setProperty("background-color", "rgba(0, 0, 0, 1)");
+      bloccalc.style.setProperty("color", "white");
+      blocset.style.setProperty("color", "white");
+      nav.style.setProperty("background-color", "rgba(23, 162, 184, 1)");
+      nav.style.setProperty("color", "black");
+      footer.style.setProperty("background-color", "rgba(23, 162, 184, 1)");
+      menu.style.setProperty("background-color", "rgba(23, 162, 184, 0.95)");
       menu.style.setProperty("color", "white");
     } else if (data.theme == "orange") {
-      body.style.setProperty("background-color", "rgba(0, 0, 0, 0.8)");
-      bloccalc.style.setProperty("color", "grey");
-      blocset.style.setProperty("color", "grey");
-      nav.style.setProperty("background-color", "rgba(255, 145, 0, 0.9)");
-      footer.style.setProperty("background-color", "rgba(255, 145, 0, 0.9)");
-      menu.style.setProperty("background-color", "rgba(255, 145, 0, 0.9)");
+      body.style.setProperty("background-color", "rgba(70, 70, 70, 1)");
+      bloccalc.style.setProperty("color", "white");
+      blocset.style.setProperty("color", "white");
+      nav.style.setProperty("background-color", "rgba(255, 130, 0, 9)");
+      footer.style.setProperty("background-color", "rgba(255, 130, 0, 0.9)");
+      menu.style.setProperty("background-color", "rgba(255, 130, 0, 0.9)");
       menu.style.setProperty("color", "black");
     } else {
-      body.style.setProperty("background-color", "initial");
+      body.style.setProperty("background-color", "rgba(220, 220, 220, 0.1)");
       bloccalc.style.setProperty("color", "initial");
       blocset.style.setProperty("color", "initial");
-      nav.style.setProperty("background-color", "rgba(240, 240, 240, 0.95)");
-      footer.style.setProperty("background-color", "rgba(240, 240, 240, 0.95)");
-      menu.style.setProperty("background-color", "rgba(240, 240, 240, 0.95)");
+      nav.style.setProperty("background-color", "rgba(220, 220, 220, 0.7)");
+      footer.style.setProperty("background-color", "rgba(220, 220, 220, 0.8)");
+      menu.style.setProperty("background-color", "rgba(220, 220, 220, 0.9)");
       menu.style.setProperty("color", "black");
     }
   };
