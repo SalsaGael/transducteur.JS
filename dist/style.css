@@ -10764,15 +10764,15 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 255px;
+  width: 260px;
   top: 68px;
   bottom: 48px;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: rgba(240, 240, 240, 0.95);
   color: black;
-  -webkit-transform: translateX(-255px);
-          transform: translateX(-255px);
+  -webkit-transform: translateX(-260px);
+          transform: translateX(-260px);
   -webkit-transition: 0.6s;
   transition: 0.6s;
   z-index: 10;
@@ -10851,8 +10851,8 @@ nav {
 }
 
 .theme-icon {
-  height: 42px !important;
-  width: 42px !important;
+  height: 40px !important;
+  width: 40px !important;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */

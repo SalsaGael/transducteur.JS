@@ -51,14 +51,14 @@ nav {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 255px;
+  width: 260px;
   top: 68px;
   bottom: 48px;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: rgba(240, 240, 240, 0.95);
   color: black;
-  transform: translateX(-255px);
+  transform: translateX(-260px);
   transition: 0.6s;
   z-index: 10;
 }
@@ -128,8 +128,8 @@ nav {
 }
 
 .theme-icon {
-  height: 42px !important;
-  width: 42px !important;
+  height: 40px !important;
+  width: 40px !important;
 }
 
 /* Extra small devices (portrait phones, less than 576px) */
