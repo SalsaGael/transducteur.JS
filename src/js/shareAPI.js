@@ -18,7 +18,6 @@ const shareAPI = () => {
 
     const share = async (title, text, url) => {
       if (window.Windows) {
-        console.log(url);
         const DataTransferManager =
           window.Windows.ApplicationModel.DataTransfer.DataTransferManager;
 
