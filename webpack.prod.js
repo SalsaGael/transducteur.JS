@@ -38,11 +38,7 @@ module.exports = {
             {
               loader: "postcss-loader",
               options: {
-                plugins: loader => [
-                  require("autoprefixer")({
-                    browsers: ["last 2 versions, > 1%"]
-                  })
-                ]
+                plugins: loader => [require("autoprefixer")]
               }
             }
           ]
@@ -63,11 +59,7 @@ module.exports = {
             {
               loader: "postcss-loader",
               options: {
-                plugins: loader => [
-                  require("autoprefixer")({
-                    browsers: ["last 2 versions, > 1%"]
-                  })
-                ]
+                plugins: loader => [require("autoprefixer")]
               }
             },
             "sass-loader"
