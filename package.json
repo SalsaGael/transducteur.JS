@@ -11,9 +11,11 @@
   "author": "Gaël Piconcely",
   "license": "MIT",
   "devDependencies": {
+    "@babel/preset-env": "^7.7.7",
     "autoprefixer": "^9.7.3",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
+    "babel-minify-webpack-plugin": "^0.3.1",
     "babel-preset-env": "^1.7.0",
     "css-loader": "^0.28.11",
     "css-vars-ponyfill": "^1.17.2",
