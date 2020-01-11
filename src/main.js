@@ -16,17 +16,17 @@ import cssreset from "./css/reset.css";
 import cssbootstrap from "./css/bootstrap.css";
 import css from "./css/main.css";
 
-// Applicationq //
+// Application //
 
 document.addEventListener("DOMContentLoaded", function() {
   // Force HTTPS pour Service Worker //
 
   if (navigator.serviceWorker) {
-    if (location.origin == "http://192.168.1.10:5500") {
+    if (location.origin == "http://192.168.1.10:8080") {
       console.log("Réseau local, https non requis, mais SW non activable");
-    } else if (location.origin == "http://127.0.0.1:5500") {
+    } else if (location.origin == "http://127.0.0.1:8080") {
       console.log("Machine locale, https non requis, et SW activable");
-    } else if (location.origin == "http://localhost:5500") {
+    } else if (location.origin == "http://localhost:8080") {
       console.log("Machine locale, https non requis, et SW activable");
     } else if (location.protocol == "https:") {
       console.log("https déja activé");

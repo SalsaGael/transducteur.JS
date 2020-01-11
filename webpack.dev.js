@@ -78,8 +78,5 @@ module.exports = {
   watchOptions: {
     aggregateTimeout: 300,
     poll: 1000
-  },
-  devServer: {
-    host: "0.0.0.0"
   }
 };

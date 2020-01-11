@@ -31,8 +31,7 @@ module.exports = {
               loader: "css-loader",
               options: {
                 importLoaders: 1,
-                sourceMap: false,
-                minimize: false
+                sourceMap: false
               }
             },
             {
@@ -52,8 +51,7 @@ module.exports = {
               loader: "css-loader",
               options: {
                 importLoaders: 1,
-                sourceMap: false,
-                minimize: false
+                sourceMap: false
               }
             },
             {
