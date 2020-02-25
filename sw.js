@@ -10,12 +10,12 @@ const offlineFallbackPage = "index.html";
 
 const networkFirstPaths = [
   /* Add an array of regex of paths that should go network first */
-  /\/api\/.*/
+  // Example: /\/api\/.*/
 ];
 
 const avoidCachingPaths = [
   /* Add an array of regex of paths that shouldn't be cached */
-  /\/api\/.*/
+  // Example: /\/api\/.*/
 ];
 
 function pathComparer(requestUrl, pathRegEx) {
