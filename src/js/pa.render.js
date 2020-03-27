@@ -88,7 +88,7 @@ const renderPuisAct = () => {
     </div>
     <select id="fpaHT" class="custom-select" value="">
         <option value="0">Plage réglée</option>
-        <option value="1">P1 - ± 602,2</option>
+        <option value="1">P1 - ± 606,2</option>
         <option value="2">P2 - ± 744,8</option>
         <option value="3">P3 - ± 866</option>
         <option value="4">P4 - ± 1039</option>
