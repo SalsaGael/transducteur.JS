@@ -9,8 +9,8 @@
   "theme_color": "#17a2b8",
   "dir": "ltr",
   "lang": "fr-FR",
-  "description": "Calculette rapide de conversion pour tranducteur de mesure",
-  "icons": [
+  "description": "Calculette rapide de conversion pour tranducteur de mesure"
+  /*   "icons": [
     {
       "src": "./AppImages/windows10/Square71x71Logo.scale-400.png",
       "sizes": "284x284"
@@ -443,5 +443,5 @@
       "src": "./AppImages/firefox/firefox-general-16-16.png",
       "sizes": "16x16"
     }
-  ]
+  ] */
 }
