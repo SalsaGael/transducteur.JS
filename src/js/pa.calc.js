@@ -1,4 +1,7 @@
-import { writeData, data } from "./data.js";
+import {
+  writeData,
+  data
+} from "./data.js";
 
 const calcPuisAct = () => {
   const paHT = document.getElementById("paHT");
@@ -40,8 +43,8 @@ const calcPuisAct = () => {
     data.paMaxHT1 = 606.2 * KP;
     data.paMaxHT2 = 744.8 * KP;
     data.paMaxHT3 = 866 * KP;
-    data.paMaxHT4 = 1039 * KP;
-    data.paMaxHT5 = 1212 * KP;
+    data.paMaxHT4 = 1039.2 * KP;
+    data.paMaxHT5 = 1212.4 * KP;
     data.paMaxHT6 = 1464 * KP;
     data.paMaxHT8 = 1732 * KP;
     data.paMaxHT9 = 2148 * KP;
@@ -116,14 +119,14 @@ const calcPuisAct = () => {
 
   smaMax.addEventListener("change", razAff);
 
-  fpaHT.addEventListener("change", function() {
+  fpaHT.addEventListener("change", function () {
     data.fpaHT = parseFloat(fpaHT.value);
     razAff();
   });
 
   // Changement de plage réglée //
 
-  paMaxHT.addEventListener("change", function() {
+  paMaxHT.addEventListener("change", function () {
     data.fpaHT = 0;
     razAff();
   });
@@ -150,7 +153,7 @@ const calcPuisAct = () => {
     writeData();
   };
 
-  paHT.addEventListener("change", function() {
+  paHT.addEventListener("change", function () {
     calcConst();
     if (paHT.value * 1000000 > data.paMaxHT) {
       horsLimite();
@@ -166,7 +169,7 @@ const calcPuisAct = () => {
     }
   });
 
-  iaBT.addEventListener("change", function() {
+  iaBT.addEventListener("change", function () {
     calcConst();
     if (iaBT.value > data.iaMaxBT) {
       horsLimite();
@@ -182,7 +185,7 @@ const calcPuisAct = () => {
     }
   });
 
-  sma.addEventListener("change", function() {
+  sma.addEventListener("change", function () {
     calcConst();
     if (sma.value > data.smaMax) {
       horsLimite();
