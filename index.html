@@ -1,199 +1,128 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Transducteur</title>
-    <meta name="application-name" content="Transducteur" />
-    <link rel="manifest" href="/manifest.json" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1 user-scalable=no"
-    />
-    <link rel="icon" type="image/png" href="/images/favicon.ico" />
-    <link rel="icon" type="image/png" href="/images/logo.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/images/apple-touch-icon.png"
-    />
-    <link rel="icon" type="image/png" sizes="48x48" href="/images/48.png" />
-    <link rel="icon" type="image/png" sizes="72x72" href="/images/72.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/96.png" />
-    <link rel="icon" type="image/png" sizes="144x144" href="/images/144.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/images/192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/images/512.png" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/images/favicon-16x16.png"
-    />
-    <link
-      rel="mask-icon"
-      href="/images/safari-pinned-tab.svg"
-      color="#5bbad5"
-    />
-    <meta name="msapplication-TileColor" content="#ebebeb" />
-    <meta name="msapplication-config" content="./images/browserconfig.xml" />
-    <meta name="msapplication-square70x70logo" content="/win-tiles/small.png" />
-    <meta
-      name="msapplication-square150x150logo"
-      content="/win-tiles/medium.png"
-    />
-    <meta name="msapplication-wide310x150logo" content="./win-tiles/wide.png" />
-    <meta
-      name="msapplication-square310x310logo"
-      content="/win-tiles/large.png"
-    />
 
-    <link rel="stylesheet" href="/dist/style.css" />
-    <script
-      type="text/javascript"
-      src="https://kit.fontawesome.com/43da9cbf75.js"
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script type="text/javascript" src="/dist/app.js" defer></script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <title>Transducteur</title>
+  <meta name="application-name" content="Transducteur" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no" />
+  <link rel="icon" type="image/png" href="/images/favicon.ico" />
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/48.png" />
+  <link rel="icon" type="image/png" sizes="72x72" href="/images/72.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/images/96.png" />
+  <link rel="icon" type="image/png" sizes="144x144" href="/images/144.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/512.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5" />
+  <meta name="msapplication-TileColor" content="#ebebeb" />
+  <meta name="msapplication-config" content="./images/browserconfig.xml" />
+  <meta name="msapplication-square70x70logo" content="/win-tiles/small.png" />
+  <meta name="msapplication-square150x150logo" content="/win-tiles/medium.png" />
+  <meta name="msapplication-wide310x150logo" content="./win-tiles/wide.png" />
+  <meta name="msapplication-square310x310logo" content="/win-tiles/large.png" />
 
-  <body id="body">
-    <nav id="nav" class="navbar navbar-light justify-content-between w-100">
-      <span class="navbar-brand">
-        <a href="#">
-          <img
-            src="./images/logo.png"
-            alt="Logo App"
-            height="45"
-            class="d-inline-block align-middle"
-          />
+  <link rel="stylesheet" href="/dist/style.css" />
+  <script type="text/javascript" src="https://kit.fontawesome.com/43da9cbf75.js" crossorigin="anonymous" defer></script>
+  <script type="text/javascript" src="/dist/app.js" defer></script>
+</head>
+
+<body id="body">
+  <nav id="nav" class="navbar navbar-light justify-content-between w-100">
+    <span class="navbar-brand">
+      <a href="#">
+        <img src="./images/logo.png" alt="Logo App" height="45" class="d-inline-block align-middle" />
+      </a>
+    </span>
+    <span id="titleAppShort" class="">
+      <a class="h5">Calculette pour capteur</a>
+    </span>
+    <span id="titleAppMedium" class="mr-auto">
+      <a class="h4">Calculette pour capteur</a>
+    </span>
+    <span id="titleApp" class="mr-auto">
+      <a class="h4">Calculette pour transducteur de mesure</a>
+    </span>
+    <span class="btn-group">
+      <button class="btn btn-dark btn-origin" type="button" id="tabCalcPuisAct">
+        <a class="">Puissance active</a>
+      </button>
+      <button class="btn btn-dark btn-origin" type="button" id="tabCalcPuisReact">
+        <a class="">Puissance réactive</a>
+      </button>
+      <button class="btn btn-dark btn-origin" type="button" id="tabCalcTens">
+        <a class="">Tension</a>
+      </button>
+    </span>
+  </nav>
+
+  <div class="container modal-body" id="container">
+    <!-- injection App -->
+  </div>
+
+  <div class="menu" id="menu">
+    <ul id="menulist">
+      <li id="" class="m-4">
+        <i class="fab fa-dev" aria-hidden="true" onClick="location.href='https://github.com/salsagael'"></i>
+
+        <a onClick="location.href='https://github.com/salsagael'">
+          20.09.04 - Gaël Piconcely
         </a>
-      </span>
-      <span id="titleAppShort" class="">
-        <a class="h5">Calculette pour capteur</a>
-      </span>
-      <span id="titleAppMedium" class="mr-auto">
-        <a class="h4">Calculette pour capteur</a>
-      </span>
-      <span id="titleApp" class="mr-auto">
-        <a class="h4">Calculette pour transducteur de mesure</a>
-      </span>
-      <span class="btn-group">
-        <button
-          class="btn btn-dark btn-origin"
-          type="button"
-          id="tabCalcPuisAct"
-        >
-          <a class="">Puissance active</a>
-        </button>
-        <button
-          class="btn btn-dark btn-origin"
-          type="button"
-          id="tabCalcPuisReact"
-        >
-          <a class="">Puissance réactive</a>
-        </button>
-        <button class="btn btn-dark btn-origin" type="button" id="tabCalcTens">
-          <a class="">Tension</a>
-        </button>
-      </span>
-    </nav>
-
-    <div class="container modal-body" id="container">
-      <!-- injection App -->
-    </div>
-
-    <div class="menu" id="menu">
-      <ul id="menulist">
-        <li id="" class="m-4">
-          <i
-            class="fab fa-dev"
-            aria-hidden="true"
-            onClick="location.href='https://github.com/salsagael'"
-          ></i>
-
-          <a onClick="location.href='https://github.com/salsagael'">
-            20.06.01 - Gaël Piconcely
-          </a>
-        </li>
-        <li id="" class="m-4">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <label
-                class="input-group-text bg-dark text-light theme-select"
-                for="theme"
-                >Thème</label
-              >
-            </div>
-            <select class="custom-select theme-select" id="theme">
-              <option value="light">Clair</option>
-              <option value="dark">Sombre</option>
-              <option value="orange">Orange</option>
-            </select>
+      </li>
+      <li id="" class="m-4">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <label class="input-group-text bg-dark text-light theme-select" for="theme">Thème</label>
           </div>
-        </li>
-        <li id="" class="m-4">
-          <button
-            class="btn btn-dark theme-icon"
-            onClick="location.href='mailto:gael.piconcely@free.fr?subject=Retour utilisateur'"
-          >
-            <i class="fa fa-envelope-open" aria-hidden="true"></i>
-          </button>
-          <a> Me contacter</a>
-        </li>
-        <li id="" class="m-4">
-          <button
-            class="btn btn-dark theme-icon"
-            onClick="location.href='https://twitter.com/salsagael'"
-          >
-            <i class="fab fa-twitter" aria-hidden="true"></i>
-          </button>
-          <a> Me suivre</a>
-        </li>
-        <li id="" class="m-4">
-          <button
-            class="btn btn-dark theme-icon"
-            onClick="location.href='https://paypal.me/PICONCELY/1.5'"
-          >
-            <i class="fab fa-paypal" aria-hidden="true"></i>
-          </button>
-          <a> Me payer un café</a>
-        </li>
-      </ul>
-    </div>
+          <select class="custom-select theme-select" id="theme">
+            <option value="light">Clair</option>
+            <option value="dark">Sombre</option>
+            <option value="orange">Orange</option>
+          </select>
+        </div>
+      </li>
+      <li id="" class="m-4">
+        <button class="btn btn-dark theme-icon"
+          onClick="location.href='mailto:gael.piconcely@free.fr?subject=Retour utilisateur'">
+          <i class="fa fa-envelope-open" aria-hidden="true"></i>
+        </button>
+        <a> Me contacter</a>
+      </li>
+      <li id="" class="m-4">
+        <button class="btn btn-dark theme-icon" onClick="location.href='https://twitter.com/salsagael'">
+          <i class="fab fa-twitter" aria-hidden="true"></i>
+        </button>
+        <a> Me suivre</a>
+      </li>
+      <li id="" class="m-4">
+        <button class="btn btn-dark theme-icon" onClick="location.href='https://paypal.me/PICONCELY/1.5'">
+          <i class="fab fa-paypal" aria-hidden="true"></i>
+        </button>
+        <a> Me payer un café</a>
+      </li>
+    </ul>
+  </div>
 
-    <div class="nav justify-content-left py-1" id="footer">
-      <button class="btn btn-dark ml-2 mr-auto" type="button" id="menubtn">
-        <a>
-          <i class="fa fa-bars" aria-hidden="true"></i>
-        </a>
-      </button>
-      <button
-        class="btn btn-dark btn-reduct ml-auto mr-2"
-        type="button"
-        id="tabCalcPuisActReduct"
-      >
-        <a class="btn-reduct">P </a>
-      </button>
-      <button
-        class="btn btn-dark btn-reduct ml-2 mr-2"
-        type="button"
-        id="tabCalcPuisReactReduct"
-      >
-        <a class="btn-reduct">Q </a>
-      </button>
-      <button
-        class="btn btn-dark btn-reduct ml-2 mr-2"
-        type="button"
-        id="tabCalcTensReduct"
-      >
-        <a class="">U</a>
-      </button>
-    </div>
-  </body>
+  <div class="nav justify-content-left py-1" id="footer">
+    <button class="btn btn-dark ml-2 mr-auto" type="button" id="menubtn">
+      <a>
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </a>
+    </button>
+    <button class="btn btn-dark btn-reduct ml-auto mr-2" type="button" id="tabCalcPuisActReduct">
+      <a class="btn-reduct">P </a>
+    </button>
+    <button class="btn btn-dark btn-reduct ml-2 mr-2" type="button" id="tabCalcPuisReactReduct">
+      <a class="btn-reduct">Q </a>
+    </button>
+    <button class="btn btn-dark btn-reduct ml-2 mr-2" type="button" id="tabCalcTensReduct">
+      <a class="">U</a>
+    </button>
+  </div>
+</body>
+
 </html>

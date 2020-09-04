@@ -1,6 +1,6 @@
 {
   "name": "transducteur",
-  "version": "20.03.27",
+  "version": "20.09.04",
   "description": "Calculette Transducteur",
   "main": ".src/main.js",
   "scripts": {
