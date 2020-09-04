@@ -45,7 +45,7 @@ const calcPuisAct = () => {
     data.paMaxHT3 = 866 * KP;
     data.paMaxHT4 = 1039.2 * KP;
     data.paMaxHT5 = 1212.4 * KP;
-    data.paMaxHT6 = 1464 * KP;
+    data.paMaxHT6 = 1463.6 * KP;
     data.paMaxHT8 = 1732 * KP;
     data.paMaxHT9 = 2148 * KP;
 
