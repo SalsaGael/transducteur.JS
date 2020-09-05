@@ -40,7 +40,7 @@
     "js-yaml": "^3.14.0",
     "mime": "^2.4.6",
     "postcss-cli": "^7.1.1",
-    "serialize-javascript": "^2.1.2",
+    "serialize-javascript": "^3.1.0",
     "webpack-dev-server": "^3.11.0",
     "webpack-plugin": "^1.0.5",
     "webpack-server": "^0.1.2",
