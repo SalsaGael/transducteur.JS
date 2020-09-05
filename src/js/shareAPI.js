@@ -56,7 +56,7 @@ const shareAPI = () => {
       share(
         "Transducteur PWA",
         "Calculette pratique pour capteur de mesure",
-        "https://transducteur.netlify.com"
+        "https://transducteur.web.app"
       );
     };
   } else {
