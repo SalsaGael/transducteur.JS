@@ -1,10 +1,12 @@
 # Pas de modules node.js
 node_modules/
 
-# Pas de Firebase
-.firebase/
-.firebaserc
-firebase.json
-
 # Pas de VSC
 .vscode/
+
+# Pas de Firebase
+.firebase/
+
+.firebaserc
+
+firebase.json
