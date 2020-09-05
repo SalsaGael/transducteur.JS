@@ -5,7 +5,7 @@
   "main": ".src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --config webpack.dev.js",
+    "dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
   "author": "Gaël Piconcely",
@@ -41,7 +41,9 @@
     "mime": "^2.4.6",
     "postcss-cli": "^7.1.1",
     "serialize-javascript": "^2.1.2",
+    "webpack-dev-server": "^3.11.0",
     "webpack-plugin": "^1.0.5",
+    "webpack-server": "^0.1.2",
     "whatwg-fetch": "^2.0.4"
   }
 }

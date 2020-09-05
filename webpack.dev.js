@@ -10,70 +10,71 @@ const fs = require("fs");
 module.exports = {
   mode: "development",
   entry: {
-    main: "./src/main.js"
+    main: "./src/main.js",
   },
   output: {
     path: path.resolve("./dist"),
-    filename: "app.js"
+    filename: "app.js",
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: "babel-loader",
       },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          use: [{
+          use: [
+            {
               loader: "css-loader",
               options: {
                 importLoaders: 1,
                 sourceMap: false,
-                minimize: false
-              }
+              },
             },
             {
               loader: "postcss-loader",
               options: {
-                plugins: loader => [require("autoprefixer")]
-              }
-            }
-          ]
-        })
+                plugins: (loader) => [require("autoprefixer")],
+              },
+            },
+          ],
+        }),
       },
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          use: [{
+          use: [
+            {
               loader: "css-loader",
               options: {
                 importLoaders: 1,
                 sourceMap: false,
-                minimize: false
-              }
+              },
             },
             {
               loader: "postcss-loader",
               options: {
-                plugins: loader => [require("autoprefixer")]
-              }
+                plugins: (loader) => [require("autoprefixer")],
+              },
             },
-            "sass-loader"
-          ]
-        })
-      }
-    ]
+            "sass-loader",
+          ],
+        }),
+      },
+    ],
   },
   plugins: [
     new UglifyJSPlugin({
-      exclude: /\/excludes/
+      exclude: /\/excludes/,
     }),
-    new ExtractTextPlugin("style.css")
+    new ExtractTextPlugin("style.css"),
   ],
   watch: true,
   watchOptions: {
     aggregateTimeout: 300,
-    poll: 1000
-  }
+    poll: 1000,
+  },
 };
