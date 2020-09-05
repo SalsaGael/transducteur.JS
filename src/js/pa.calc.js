@@ -95,11 +95,11 @@ const calcPuisAct = () => {
     paHT.value = ``;
     iaBT.placeholder = `Entrez la valeur`;
     iaBT.value = ``;
-    sma.placeholder = `Entrez lap valeur`;
+    sma.placeholder = `Entrez la valeur`;
     sma.value = ``;
     calcConst();
-    paMaxHT.value = Math.round(data.paMaxHT / 100000);
-    paMaxHT.placeholder = Math.round(data.paMaxHT / 100000);
+    paMaxHT.value = Math.round(data.paMaxHT / 1000) / 1000;
+    paMaxHT.placeholder = Math.round(data.paMaxHT / 1000) / 1000;
   };
 
   razAff();
@@ -152,9 +152,12 @@ const calcPuisAct = () => {
 
   paHT.addEventListener("change", function () {
     calcConst();
-    if (paHT.value * 1000000 > data.paMaxHT) {
+    if (paHT.value * 1000000 > Math.ceil(data.paMaxHT / 100000) * 100000) {
       horsLimite();
-    } else if (paHT.value * 1000000 < -data.paMaxHT) {
+    } else if (
+      paHT.value * 1000000 <
+      -Math.ceil(data.paMaxHT / 100000) * 100000
+    ) {
       horsLimite();
     } else {
       data.paHT = paHT.value * 1000000;

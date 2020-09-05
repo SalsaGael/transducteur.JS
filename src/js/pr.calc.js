@@ -1,7 +1,4 @@
-import {
-  writeData,
-  data
-} from "./data.js";
+import { writeData, data } from "./data.js";
 
 const calcPuisReact = () => {
   const prHT = document.getElementById("prHT");
@@ -156,9 +153,12 @@ const calcPuisReact = () => {
 
   prHT.addEventListener("change", function () {
     calcConst();
-    if (prHT.value * 1000000 > data.prMaxHT) {
+    if (prHT.value * 1000000 > Math.ceil(data.prMaxHT / 100000) * 100000) {
       horsLimite();
-    } else if (prHT.value * 1000000 < -data.prMaxHT) {
+    } else if (
+      prHT.value * 1000000 <
+      -Math.ceil(data.prMaxHT / 100000) * 100000
+    ) {
       horsLimite();
     } else {
       data.prHT = prHT.value * 1000000;
