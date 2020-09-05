@@ -41,6 +41,7 @@
     "mime": "^2.4.6",
     "postcss-cli": "^7.1.1",
     "serialize-javascript": "^2.1.2",
+    "webpack-plugin": "^1.0.5",
     "whatwg-fetch": "^2.0.4"
   }
 }

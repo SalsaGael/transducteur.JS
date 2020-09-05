@@ -17,8 +17,7 @@ module.exports = {
     filename: "app.js"
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "babel-loader"
@@ -26,8 +25,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          use: [
-            {
+          use: [{
               loader: "css-loader",
               options: {
                 importLoaders: 1,
@@ -46,8 +44,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          use: [
-            {
+          use: [{
               loader: "css-loader",
               options: {
                 importLoaders: 1,
