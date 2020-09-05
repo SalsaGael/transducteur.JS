@@ -1,7 +1,4 @@
-import {
-  writeData,
-  data
-} from "./data.js";
+import { writeData, data } from "./data.js";
 
 const calcPuisAct = () => {
   const paHT = document.getElementById("paHT");
@@ -98,11 +95,11 @@ const calcPuisAct = () => {
     paHT.value = ``;
     iaBT.placeholder = `Entrez la valeur`;
     iaBT.value = ``;
-    sma.placeholder = `Entrez la valeur`;
+    sma.placeholder = `Entrez lap valeur`;
     sma.value = ``;
     calcConst();
-    paMaxHT.value = Math.round(data.paMaxHT / 1000) / 1000;
-    paMaxHT.placeholder = Math.round(data.paMaxHT / 1000) / 1000;
+    paMaxHT.value = Math.round(data.paMaxHT / 100000);
+    paMaxHT.placeholder = Math.round(data.paMaxHT / 100000);
   };
 
   razAff();

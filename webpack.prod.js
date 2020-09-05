@@ -10,58 +10,61 @@ const fs = require("fs");
 module.exports = {
   mode: "production",
   entry: {
-    main: "./src/main.js"
+    main: "./src/main.js",
   },
   output: {
     path: path.resolve("./dist"),
-    filename: "app.js"
+    filename: "app.js",
   },
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: "babel-loader",
       },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          use: [{
+          use: [
+            {
               loader: "css-loader",
               options: {
                 importLoaders: 1,
-                sourceMap: false
-              }
+                sourceMap: false,
+              },
             },
             {
               loader: "postcss-loader",
               options: {
-                plugins: loader => [require("autoprefixer")]
-              }
-            }
-          ]
-        })
+                plugins: (loader) => [require("autoprefixer")],
+              },
+            },
+          ],
+        }),
       },
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          use: [{
+          use: [
+            {
               loader: "css-loader",
               options: {
                 importLoaders: 1,
-                sourceMap: false
-              }
+                sourceMap: false,
+              },
             },
             {
               loader: "postcss-loader",
               options: {
-                plugins: loader => [require("autoprefixer")]
-              }
+                plugins: (loader) => [require("autoprefixer")],
+              },
             },
-            "sass-loader"
-          ]
-        })
-      }
-    ]
+            "sass-loader",
+          ],
+        }),
+      },
+    ],
   },
-  plugins: [new UglifyJSPlugin(), new ExtractTextPlugin("style.css")]
+  plugins: [new UglifyJSPlugin(), new ExtractTextPlugin("style.css")],
 };

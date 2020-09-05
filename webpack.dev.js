@@ -13,7 +13,8 @@ module.exports = {
     main: "./src/main.js",
   },
   output: {
-    path: path.resolve("./dist"),
+    path: path.join(__dirname, "transducteur.cal/dist"),
+    publicPath: "dist/",
     filename: "app.js",
   },
   module: {
@@ -66,12 +67,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new UglifyJSPlugin({
-      exclude: /\/excludes/,
-    }),
-    new ExtractTextPlugin("style.css"),
-  ],
+  plugins: [new ExtractTextPlugin("style.css")],
   watch: true,
   watchOptions: {
     aggregateTimeout: 300,
