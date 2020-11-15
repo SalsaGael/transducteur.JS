@@ -10,18 +10,19 @@ const fs = require("fs");
 module.exports = {
   mode: "development",
   entry: {
-    main: "./src/main.js"
+    main: "./src/main.js",
   },
   output: {
-    path: path.resolve("./dist"),
-    filename: "app.js"
+    path: path.join(__dirname, "transducteur.cal/dist"),
+    publicPath: "dist/",
+    filename: "app.js",
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: "babel-loader",
       },
       {
         test: /\.css$/,
@@ -32,17 +33,16 @@ module.exports = {
               options: {
                 importLoaders: 1,
                 sourceMap: false,
-                minimize: false
-              }
+              },
             },
             {
               loader: "postcss-loader",
               options: {
-                plugins: loader => [require("autoprefixer")]
-              }
-            }
-          ]
-        })
+                plugins: (loader) => [require("autoprefixer")],
+              },
+            },
+          ],
+        }),
       },
       {
         test: /\.scss$/,
@@ -53,30 +53,24 @@ module.exports = {
               options: {
                 importLoaders: 1,
                 sourceMap: false,
-                minimize: false
-              }
+              },
             },
             {
               loader: "postcss-loader",
               options: {
-                plugins: loader => [require("autoprefixer")]
-              }
+                plugins: (loader) => [require("autoprefixer")],
+              },
             },
-            "sass-loader"
-          ]
-        })
-      }
-    ]
+            "sass-loader",
+          ],
+        }),
+      },
+    ],
   },
-  plugins: [
-    new UglifyJSPlugin({
-      exclude: /\/excludes/
-    }),
-    new ExtractTextPlugin("style.css")
-  ],
+  plugins: [new ExtractTextPlugin("style.css")],
   watch: true,
   watchOptions: {
     aggregateTimeout: 300,
-    poll: 1000
-  }
+    poll: 1000,
+  },
 };

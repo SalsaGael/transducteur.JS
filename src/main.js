@@ -1,4 +1,8 @@
-import { writeData, readData, data } from "./js/data.js";
+import {
+  writeData,
+  readData,
+  data
+} from "./js/data.js";
 
 import shareAPI from "./js/shareAPI.js";
 import installPWA from "./js/installPWA.js";
@@ -18,7 +22,7 @@ import css from "./css/main.css";
 
 // Application //
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Force HTTPS pour Service Worker //
 
   if (navigator.serviceWorker) {
@@ -137,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
       data.timer = 1;
       menu.classList.add("show");
       menubtn.classList.add("active");
-      setTimeout(function() {
+      setTimeout(function () {
         data.timer = 0;
         menu.classList.remove("show");
         menubtn.classList.remove("active");
@@ -176,11 +180,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var hammertime = new Hammer(container);
 
-  hammertime.on("swiperight", function(e) {
+  hammertime.on("swiperight", function (e) {
     showMenu();
   });
 
-  hammertime.on("swipeleft", function(e) {
+  hammertime.on("swipeleft", function (e) {
     hideMenu();
   });
 
@@ -221,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Selection du thème //
 
-  theme.addEventListener("change", function() {
+  theme.addEventListener("change", function () {
     data.themeselect = theme.value;
     if (data.themeselect == "system") {
       // Vérification du  Theme Windows 10 //
@@ -303,10 +307,10 @@ document.addEventListener("DOMContentLoaded", function() {
         .register("sw.js", {
           scope: "./"
         })
-        .then(function(reg) {
+        .then(function (reg) {
           console.log(
             "[PWA Builder] Service worker has been registered for scope: " +
-              reg.scope
+            reg.scope
           );
         });
     }

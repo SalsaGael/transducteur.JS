@@ -117,14 +117,14 @@ const calcPuisReact = () => {
 
   smaMax.addEventListener("change", razAff);
 
-  fprHT.addEventListener("change", function() {
+  fprHT.addEventListener("change", function () {
     data.fprHT = fprHT.value;
     razAff();
   });
 
   // Changement de plage réglée //
 
-  prMaxHT.addEventListener("change", function() {
+  prMaxHT.addEventListener("change", function () {
     data.fprHT = 0;
     razAff();
   });
@@ -151,11 +151,14 @@ const calcPuisReact = () => {
     writeData();
   };
 
-  prHT.addEventListener("change", function() {
+  prHT.addEventListener("change", function () {
     calcConst();
-    if (prHT.value * 1000000 > data.prMaxHT) {
+    if (prHT.value * 1000000 > Math.ceil(data.prMaxHT / 100000) * 100000) {
       horsLimite();
-    } else if (prHT.value * 1000000 < -data.prMaxHT) {
+    } else if (
+      prHT.value * 1000000 <
+      -Math.ceil(data.prMaxHT / 100000) * 100000
+    ) {
       horsLimite();
     } else {
       data.prHT = prHT.value * 1000000;
@@ -167,7 +170,7 @@ const calcPuisReact = () => {
     }
   });
 
-  irBT.addEventListener("change", function() {
+  irBT.addEventListener("change", function () {
     calcConst();
     if (irBT.value > data.irMaxBT) {
       horsLimite();
@@ -183,7 +186,7 @@ const calcPuisReact = () => {
     }
   });
 
-  sma.addEventListener("change", function() {
+  sma.addEventListener("change", function () {
     calcConst();
     if (sma.value > data.smaMax) {
       horsLimite();
