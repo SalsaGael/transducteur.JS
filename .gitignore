@@ -5,12 +5,7 @@ node_modules/
 .vscode/
 
 # Pas de Firebase
-.firebase/
-
-<<<<<<< HEAD
-=======
-.firebaserc
-
 firebase.json
-
->>>>>>> 6952d813c4fedffcc6d7293886e6c6ab9e573171
+.firebase/
+.firebaserc/
+.firebase/hosting..cache
