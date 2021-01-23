@@ -13,7 +13,7 @@ const installPWA = () => {
       let li = document.createElement("li");
       li.classList.add("m-4");
       li.innerHTML = `<button class="btn btn-dark theme-icon" id="installButton">
-        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        <img src="/images/plus-solid.svg">
       </button>
       <a> Installer la PWA</a>
     `;

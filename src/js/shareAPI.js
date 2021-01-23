@@ -8,7 +8,7 @@ const shareAPI = () => {
     let li = document.createElement("li");
     li.classList.add("m-4");
     li.innerHTML = `<button class="btn btn-dark theme-icon" type="button" id="sharebtn">
-        <i class="fa fa-share" aria-hidden="true"></i>
+    <img src="/images/share-solid.svg">
     </button>
     <a>Partager la PWA</a>
     `;

@@ -53,12 +53,6 @@
     />
 
     <link rel="stylesheet" href="/dist/style.css" />
-    <script
-      type="text/javascript"
-      src="https://kit.fontawesome.com/43da9cbf75.js"
-      crossorigin="anonymous"
-      defer
-    ></script>
     <script type="text/javascript" src="/dist/app.js" defer></script>
   </head>
 
@@ -111,15 +105,10 @@
     <div class="menu" id="menu">
       <ul id="menulist">
         <li id="" class="m-4">
-          <i
-            class="fab fa-dev"
-            aria-hidden="true"
-            onClick="location.href='https://github.com/salsagael'"
-          ></i>
-
+    
           <a onClick="location.href='https://github.com/salsagael'">
             Gaël Piconcely - </a
-          ><b>20.09.05</b>
+          ><b>2021.01.23</b>
         </li>
 
         <li id="" class="m-4">
@@ -138,12 +127,13 @@
             </select>
           </div>
         </li>
+
         <li id="" class="m-4">
           <button
             class="btn btn-dark theme-icon"
             onClick="location.href='mailto:gael.piconcely@free.fr?subject=Retour utilisateur'"
           >
-            <i class="fa fa-envelope-open" aria-hidden="true"></i>
+          <img src="/images/at-solid.svg">
           </button>
           <a> Me contacter</a>
         </li>
@@ -151,8 +141,7 @@
           <button
             class="btn btn-dark theme-icon"
             onClick="location.href='https://twitter.com/salsagael'"
-          >
-            <i class="fab fa-twitter" aria-hidden="true"></i>
+          ><img src="/images/twitter-brands.svg">
           </button>
           <a> Me suivre</a>
         </li>
@@ -161,7 +150,7 @@
             class="btn btn-dark theme-icon"
             onClick="location.href='https://paypal.me/PICONCELY/1.5'"
           >
-            <i class="fab fa-paypal" aria-hidden="true"></i>
+          <img src="/images/paypal-brands.svg">
           </button>
           <a> Me payer un café</a>
         </li>
@@ -169,10 +158,8 @@
     </div>
 
     <div class="nav justify-content-left py-1" id="footer">
-      <button class="btn btn-dark ml-2 mr-auto" type="button" id="menubtn">
-        <a>
-          <i class="fa fa-bars" aria-hidden="true"></i>
-        </a>
+      <button class="btn btn-dark ml-2 mr-auto theme-icon" type="button" id="menubtn">
+        <img src="/images/bars-solid.svg">
       </button>
       <button
         class="btn btn-dark btn-reduct ml-auto mr-2"
